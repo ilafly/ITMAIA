@@ -1,12 +1,12 @@
 \section{21/02/2024}
 
 \subsection{The Yang--Baxter equation}
-The Yang-Baxter equation is one important equation in mathematical physics.
+The Yang-Baxter equation (YBE) is one important equation in mathematical physics.
 It first appeared in two independent papers of Yang \cite{Yang1967} and Baxter\
 \cite{Baxter1971}.
 
 \begin{definition}
-    A solution of the \emph{Yang--Baxter eqution} is a linear map  $R: V\otimes V \to V \otimes V$, where $V$ is a vector space such that
+    A solution of the \emph{Yang--Baxter eqution} is a bijective linear map  $R: V\otimes V \to V \otimes V$, where $V$ is a vector space such that
     \begin{align*}
         R_{12}R_{13}R_{23} = R_{23}R_{13}R_{12}
     \end{align*}
@@ -31,7 +31,7 @@ It first appeared in two independent papers of Yang \cite{Yang1967} and Baxter\
     These lectures will focus on set-theoretic solutions to the Yang-Baxter equation and their connection with known and ``new'' algebraic structures. 
 
     \begin{definition}
-        A \emph{set-theoretic solution (to the Yang--Baxter equation)} is a pair $(X,r)$ where $X$ is a non-empty set and $r: X\times X \to X \times X$ is a map such that
+        A \emph{set-theoretic solution to the Yang--Baxter equation} is a pair $(X,r)$ where $X$ is a non-empty set and $r: X\times X \to X \times X$ is a bijective map such that
         
         \begin{align*}
             (r\times \id)(\id \times r)(r\times \id) = (\id \times r)(r\times \id)(\id \times r)
@@ -39,7 +39,7 @@ It first appeared in two independent papers of Yang \cite{Yang1967} and Baxter\
     \end{definition}
     
     \begin{convention}
-        If $(X,r)$ is a set-theoretic solution to the YBE, we write 
+        If $(X,r)$ is a set-theoretic solution to the Yang--Baxter equation, we write 
         \begin{align*}
             r(x,y) = (\lambda_x(y),\rho_y(x))        
         \end{align*}
@@ -47,13 +47,24 @@ It first appeared in two independent papers of Yang \cite{Yang1967} and Baxter\
     \end{convention}
 
 
-    \b
+    \begin{definition}
+        Let $(X,r)$ be a set-theoretic solution to the  Yang--Baxter equation. We say that 
         \begin{itemize}
-            \item $(X,r)$ is \emph{bijective} if $r$ is bijective.
             \item $(X,r)$ is \emph{finite} if $X$ is finite.
             \item $(X,r)$ is \emph{non-degenerate} if $\lambda_x,\rho_x$ are bijective for all $x\in X$.
         \end{itemize}
+    \end{definition}
 
+\subsection{Set-theoretic solutions to the Yang--Baxter equation and III Reidemeister move}
+
+\subsection{First examples}
+    \begin{examples}
+        Let $X$ be a non-empty set.  
+        \begin{enumerate}
+            \item The pair $(X,\id_{X\times X})$ is a  set-theoretic solution to the  Yang--Baxter equation. Note that $(X,\id_{X\times X})$ is not non-degenerate, since $\lambda_x(y)=x$ and $\rho_y(x)=y$, for all $x,y\in X$.
+            \item Let $\tau: X \times X \to X \times X$ be the flip map, i.e. $\tau(x,y)=(y,x)$ for all $x,y \in X$. Then, the pair $(X,\tau)$ is a set-theoretic solution to the Yang--Baxter equation. Moreover, it is non-degenerate since $\lambda_x=\rho_x=\id_X$ for all $x\in X$.
+        \end{enumerate}
+    \end{examples}
 
 
 % \subsection{A graphical representation.}
