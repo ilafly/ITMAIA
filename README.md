@@ -4,7 +4,7 @@ The notes correspond to the series of lectures on Skew braces and solutions to t
 equation taught as part of the conference [Introduction to Modern Advances in Algebra](https://sites.google.com/view/itmaia/home?authuser=0).
 
 ## PDF
-
+[Here](https://github.com/ilafly/ITMAIA/blob/main/main.pdf) is the pdf.
 
 ## License
 
