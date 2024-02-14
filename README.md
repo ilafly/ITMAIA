@@ -1,0 +1,12 @@
+## Ilaria Colazzo
+
+The notes correspond to the series of lectures on Skew braces and solutions to the Yang–Baxter
+equation taught as part of the conference [Introduction to Modern Advances in Algebra](https://sites.google.com/view/itmaia/home?authuser=0).
+
+## PDF
+
+
+## License
+
+License [Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)](https://creativecommons.org/licenses/by-nc-nd/4.0/deed.en).
+
