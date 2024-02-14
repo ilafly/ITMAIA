@@ -1,0 +1,318 @@
+\section{21/02/2024}
+
+\subsection{The Yang--Baxter equation}
+The Yang-Baxter equation is one important equation in mathematical physics.
+It first appeared in two independent papers of Yang \cite{Yang1967} and Baxter\
+\cite{Baxter1971}.
+
+\begin{definition}
+    A solution of the \emph{Yang--Baxter eqution} is a linear map  $R: V\otimes V \to V \otimes V$, where $V$ is a vector space such that
+    \begin{align*}
+        R_{12}R_{13}R_{23} = R_{23}R_{13}R_{12}
+    \end{align*}
+    where $R_{ij}$ denotes the map $V\otimes V\otimes V \to V \otimes V \otimes V$ acting as $R$ on the $(i,j)$
+    factor and as the identity on the remaining factor.
+\end{definition}
+    Let $\tau: V\otimes V \to V \otimes V$ be the map $\tau(u\otimes v) = v \otimes u$ for $u,v \in V$.
+    It's easy to check (try!) that $R: V \otimes V \to V \otimes V$ is a solution of the Yang--Baxter equation if and only if $\bar{R}:=\tau R$ satisfies 
+    \begin{align*}
+        \bar{R}_{12}\bar{R}_{23}\bar{R}_{12}=\bar{R}_{23}\bar{R}_{12}\bar{R}_{23}.
+    \end{align*}
+
+    An interesting class of solutions of the Yang--Baxter equation arises when $V$ has a $R$-invariant basis $X$. In such a case the solution is said to be set-theoretic. 
+
+\subsection{The set-theoretic version}
+    Drinfeld in \cite{Dri1992} observed it makes sense to consider the Yang--Baxter equation in the category of sets and stated that 
+
+    
+    \begin{quote}\textit{it would be interesting to study set-theoretic solutions.}\end{quote}
+    
+
+    These lectures will focus on set-theoretic solutions to the Yang-Baxter equation and their connection with known and ``new'' algebraic structures. 
+
+    \begin{definition}
+        A \emph{set-theoretic solution (to the Yang--Baxter equation)} is a pair $(X,r)$ where $X$ is a non-empty set and $r: X\times X \to X \times X$ is a map such that
+        
+        \begin{align*}
+            (r\times \id)(\id \times r)(r\times \id) = (\id \times r)(r\times \id)(\id \times r)
+        \end{align*}
+    \end{definition}
+    
+    \begin{convention}
+        If $(X,r)$ is a set-theoretic solution to the YBE, we write 
+        \begin{align*}
+            r(x,y) = (\lambda_x(y),\rho_y(x))        
+        \end{align*}
+        where $\lambda_x,\rho_x:X\to X$.
+    \end{convention}
+
+
+    \b
+        \begin{itemize}
+            \item $(X,r)$ is \emph{bijective} if $r$ is bijective.
+            \item $(X,r)$ is \emph{finite} if $X$ is finite.
+            \item $(X,r)$ is \emph{non-degenerate} if $\lambda_x,\rho_x$ are bijective for all $x\in X$.
+        \end{itemize}
+
+
+
+% \subsection{A graphical representation.}
+% \begin{frame}{Set-theoretic solutions and III Reidemeister move}
+% \end{frame}
+
+% \subsection{First examples.}
+% \begin{frame}{First examples}
+%     Let $X$ be a non-empty set.
+%     \bigskip
+    
+%     \begin{itemize}
+%         \item Then $(X,\id_{X\times X})$ is a bijective degenerate (i.e. not non-degenerate) set-theoretic solution to the YBE.
+%         \item[]
+%         \item Then $(X,\tau)$, where $\tau(x,y)=(y,x)$, is a bijective non-degenerate set-theoretic solution to the YBE.
+%     \end{itemize}
+% \end{frame}
+
+% \subsection{A characterisation.}
+% \begin{frame}{A characterisation}
+%     Let $X$ be a non-empty set and $r: X \times X \to X \times X$ be a map and write $r(x,y) = (\lambda_x(y),\rho_y(x))$. Then $(X,r)$ is a set-theoretic solution to the YBE if and only if
+%     \begin{itemize}
+%         \item $\lambda_x\lambda_y = \lambda_{\lambda_x(y)}\lambda_{\rho_y(x)}$
+%         \item $\lambda_{\rho_{\lambda_y(z)}(x)}\rho_z(y)=\rho_{\lambda_{\rho_y(x)}(z)}\lambda_x(y)$
+%         \item $\rho_z\rho_y=\rho_{\rho_z(y)}\rho_{\lambda_y(z)}$
+%     \end{itemize}
+%     for all $x,y,z\in X$.
+% \end{frame}
+
+% \begin{frame}
+% \frametitle{A characterisation}
+% \framesubtitle{Proof}
+%     \begin{itemize}
+%         \item Write $r_1=r\times \id$ and $r_2=\id \times r$.
+%         \item Compute $r_1r_2r_1(x,y,z)$. 
+%         \begin{align*}
+%             r_1r_2r_1(x,y,z)& = r_1r_2(\lambda_x(y),\rho_y(x),z) \\
+%             &= r_1(\lambda_x(y),\lambda_{\rho_y(x)}(z),\rho_z\rho_y(x))\\
+%             &= (\lambda_{\lambda_x(y)}\lambda_{\rho_y(x)}(z),\rho_{\lambda_{\rho_y(x)}(z)}\lambda_x(y),\rho_z\rho_y(x))
+%         \end{align*}
+%         \item Compute $r_2r_1r_2(x,y,z)$.
+%         \begin{align*}
+%             r_2r_1r_2(x,y,z) =& r_2r_1(x,\lambda_y(z),\rho_z(y)) \\
+%             &= r_2(\lambda_x\lambda_y(z),\rho_{\lambda_y(z)}(x),\rho_z(y))\\
+%             &= (\lambda_x\lambda_y(z),\lambda_{\rho_{\lambda_y(z)}(x)}\rho_z(y),\rho_{\rho_z(y)}\rho_{\lambda_y(z)}(x))
+%         \end{align*}
+%         \item Compare.
+%     \end{itemize}
+% \end{frame}
+
+% \begin{frame}{Example/Exercise 1}
+
+
+%     Let $(X,r)$ be a set-theoretic solution to the YBE. Define for all $x,y \in X$
+
+%     \begin{align*}
+%         \bar{r}(x,y) = \tau r \tau (x,y) = (\rho_x(y),\lambda_y(x)).
+%     \end{align*}
+%     Then $(X,\bar{r})$ is a set-theoretic solution to the YBE.
+    
+% \end{frame}
+
+% \begin{frame}{Example/Exercise 2}  
+    
+%     Let $X$ be a non-empty set.
+        
+%     Let $\triangleleft: X\times X \to X$ be a binary operation and define $r:X\times X \to X\times X$ such that $r(x,y)= (y,x \triangleleft y)$. Then $(X,r)$ is a set-theoretic solution to the YBE if and only if $(x\triangleleft y)\triangleleft z=(x\triangleleft z)\triangleleft(y\triangleleft z)$. 
+
+%     \bigskip\pause
+
+    
+%     \textbf{Proof.} Write $\lambda_x = \id_X$ and $\rho_y(x)=x \triangleleft y$.
+
+%     By the characterisation,
+%     \begin{itemize}
+%         \item $\lambda_x\lambda_y = \lambda_{\lambda_x(y)}\lambda_{\rho_y(x)}$ \hfill {\large \alert{\checkmark}}\qquad
+%         \item $\lambda_{\rho_{\lambda_y(z)}(x)}\rho_z(y)=\rho_{\lambda_{\rho_y(x)}(z)}\lambda_x(y)$
+%         \item[] \textcolor{gray}{i.e., $\rho_z(y)=\rho_{z}(y)$}\hfill {\large \alert{\checkmark}}\qquad
+%         \item $\rho_z\rho_y=\rho_{\rho_z(y)}\rho_{\lambda_y(z)}$
+%         \item[] \textcolor{gray}{i.e., $\rho_z\rho_y(x)=\rho_{\rho_z(y)}\rho_{\lambda_y(z)}(x)$}
+%         \item[] \textcolor{gray}{i.e., $(x\triangleleft y)\triangleleft z=(x\triangleleft z)\triangleleft(y\triangleleft z)$}\hfill {\large \alert{\checkmark}}\qquad
+%     \end{itemize}   
+% \end{frame}
+
+% \begin{frame}{Racks}
+%     A \alert{(right) shelf} is a pair $(X,\triangleleft)$ where $X$ is a non-empty set and $\triangleleft$ is a binary operation such that 
+%     \begin{align*}
+%         (x\triangleleft y)\triangleleft z=(x\triangleleft z)\triangleleft(y\triangleleft z).
+%     \end{align*}
+%     If, in addition, the maps $\rho_y:X \to X, x \to x\triangleleft y$ are bijective for all $y\in X$, then $(X,\triangleleft)$ is called a \alert{(right) rack}.
+
+% \end{frame}
+
+% \begin{frame}
+%     With the previous example, we proved the following.
+%     \medskip
+
+%     \textbf{Proposition. } Let $X$ be a non-empty set with a binary operation $\triangleleft: X\times X \to X$. Then $r(x,y) =(y,x\triangleleft y)$ is a set-theoretic solution to the YBE if and only if $(X,\triangleleft)$ is a shelf. 
+    
+%     Moreover, $(X,r)$ is bijective and non-degenerate if and only if $(X,r)$ is a rack. \alert{(prove it.)}
+
+% \end{frame}
+
+% \begin{frame}{Example/Exercise 3}
+%     Let $X$ be a non-empty set.
+%     \bigskip
+
+%     \begin{itemize}
+%         \item Let $\lambda,\rho:X \to X$ and define $r:X\times X \to X\times X$ such that $r(x,y)= (\lambda(y),\rho(x))$. Then $(X,r)$ is a set-theoretic solution to the YBE if and only if $\lambda\rho = \rho\lambda$.\footnote{When $\lambda$ and $\rho$ are bijective the solution is called the \alert{permutation solution} associated with the permutations $\lambda$ and $\rho$.} 
+%     \end{itemize}
+%     \bigskip
+
+%     \pause
+%     \remarkbox[ExeterLightYellow]{\textcolor{ExeterGreen}{
+%     Why? 
+%     Can you say when $(X,r)$ is bijective? 
+%     What about non-degenerate?}}
+% \end{frame}
+
+% \begin{frame}{Example/Exercise 4}
+
+%     Let $G$ be a group. Then $(G,r)$ where $r(x,y)=(y, y^{-1}xy)$ is a bijective non-degenerate set-theoretic solution to the YBE. \\(\alert{Prove it}).
+
+%     \bigskip\pause
+    
+%     \textbf{Hint. } Prove that $G$ with the binary operation defined by $x\triangleleft y = y^{-1}xy$ is a rack.
+% \end{frame}
+
+% \section{Bijective non-degenerate set-theoretic solutions to the YBE.}
+
+% \begin{frame}{Convention}
+
+%      From now on, a \alert{solution} (to the YBE) will always mean a bijective non-degenerate set-theoretic solution to the YBE.
+     
+% \end{frame}
+
+
+% \subsection{An intriguing connection with group actions.}
+
+% \begin{frame}
+% \frametitle{Main result}
+% \framesubtitle{An intriguing connection between group actions and solutions}
+
+%     Let $G$ be a group, let $\lambda: G\times G \to G, (x,y)\mapsto \lambda_x(y)$ a left group action of $G$ on itself as a set and $\rho: G\times G \to G, (x,y)\mapsto \rho_y(x)$ a right group action of $G$ on itself as a set. If the ``compatibility'' condition 
+%     \begin{align*}
+%         uv = \lambda_u(v)\rho_v(u)
+%     \end{align*}
+%     holds, then $(G,r)$, where
+%     \begin{align*}
+%         r:G\times G \to G\times G, \qquad (x,y)\mapsto (\lambda_x(y),\rho_y(x))
+%     \end{align*}
+%     is a solution to the YBE.\footfullcite{LYZ00}
+% \end{frame}
+
+% \begin{frame}{Proof.}
+%     \begin{itemize}
+%         \item Write $r_1=r\times \id$ and $r_2=\id \times r$.
+%         \item Write 
+%         \begin{align*}
+%             r_1r_2r_1(x,y,z)&= (\lambda_{\lambda_x(y)}\lambda_{\rho_y(x)}(z),\rho_{\lambda_{\rho_y(x)}(z)}\lambda_x(y),\rho_z\rho_y(x)) \\&=(u_1,v_1,w_1).
+%         \end{align*}
+%         \item Write 
+%         \begin{align*}
+%             r_2r_1r_2(x,y,z)&=(\lambda_x\lambda_y(z),\lambda_{\rho_{\lambda_y(z)}(x)}\rho_z(y),\rho_{\rho_z(y)}\rho_{\lambda_y(z)}(x))\\&=(u_2,v_2,w_2).
+%         \end{align*}
+%     \end{itemize}
+% \end{frame}
+
+% \begin{frame}{Proof.}
+%     $(u_1,v_1,w_1)= (\lambda_{\lambda_x(y)}\lambda_{\rho_y(x)}(z),\rho_{\lambda_{\rho_y(x)}(z)}\lambda_x(y),\rho_z\rho_y(x))$
+
+%     $(u_2,v_2,w_2)=(\lambda_x\lambda_y(z),\lambda_{\rho_{\lambda_y(z)}(x)}\rho_z(y),\rho_{\rho_z(y)}\rho_{\lambda_y(z)}(x))$
+
+%     \vspace{6cm}
+
+% \end{frame}
+
+% \begin{frame}{Proof.}
+%     $(u_1,v_1,w_1)= (\lambda_{\lambda_x(y)}\lambda_{\rho_y(x)}(z),\rho_{\lambda_{\rho_y(x)}(z)}\lambda_x(y),\rho_z\rho_y(x))$
+
+%     $(u_2,v_2,w_2)=(\lambda_x\lambda_y(z),\lambda_{\rho_{\lambda_y(z)}(x)}\rho_z(y),\rho_{\rho_z(y)}\rho_{\lambda_y(z)}(x))$
+
+%     \vspace{6cm}
+
+% \end{frame}
+
+% \begin{frame}{Proof.}
+%     We know $u_1v_1w_1=xyz=u_2v_2w_2$.
+    
+%     $(u_1,v_1,w_1)= (\lambda_{\lambda_x(y)}\lambda_{\rho_y(x)}(z),\rho_{\lambda_{\rho_y(x)}(z)}\lambda_x(y),\rho_z\rho_y(x))$
+
+%     $(u_2,v_2,w_2)=(\lambda_x\lambda_y(z),\lambda_{\rho_{\lambda_y(z)}(x)}\rho_z(y),\rho_{\rho_z(y)}\rho_{\lambda_y(z)}(x))$
+
+%     \vspace{6cm}
+
+% \end{frame}
+
+% \begin{frame}{Proof.}
+%     We know $u_1v_1w_1=xyz=u_2v_2w_2$.
+    
+%     $(u_1,v_1,w_1)= (\lambda_{\lambda_x(y)}\lambda_{\rho_y(x)}(z),\rho_{\lambda_{\rho_y(x)}(z)}\lambda_x(y),\rho_z\rho_y(x))$
+
+%     $(u_2,v_2,w_2)=(\lambda_x\lambda_y(z),\lambda_{\rho_{\lambda_y(z)}(x)}\rho_z(y),\rho_{\rho_z(y)}\rho_{\lambda_y(z)}(x))$
+
+%     \vspace{6cm}
+
+% \end{frame}
+
+% \begin{frame}{Proof.}
+%     We know 
+    
+%     $u_1v_1w_1=xyz=u_2v_2w_2$,
+    
+%     $u_1=u_2$,
+
+%     $w_1 =w_2$.
+
+%      $(u_1,v_1,w_1)= (\lambda_{\lambda_x(y)}\lambda_{\rho_y(x)}(z),\rho_{\lambda_{\rho_y(x)}(z)}\lambda_x(y),\rho_z\rho_y(x))$
+
+%     $(u_2,v_2,w_2)=(\lambda_x\lambda_y(z),\lambda_{\rho_{\lambda_y(z)}(x)}\rho_z(y),\rho_{\rho_z(y)}\rho_{\lambda_y(z)}(x))$
+%     \vspace{6cm}
+
+% \end{frame}
+
+% \begin{frame}{Proof.}
+%     We are left to prove that $r$ is bijective. 
+%     We will see this in the next lecture.
+% \end{frame}
+
+% % \begin{frame}{Proof.}
+% %    Prove $r$ is bijective. 
+
+% %     \vspace{6cm}
+% % \end{frame}
+
+% % \begin{frame}{Proof.}
+% %    Define $r'(x,y)=((\rho_{x^{-1}}(y^{-1}))^{-1},(\lambda_{y^{-1}}(x^{-1}))^{-1})$. 
+
+% %    Prove $rr'=\id_{X\times X} = r'r$.
+
+% %     \vspace{6cm}
+% % \end{frame}
+
+% \begin{frame}{Some Exercises}
+%     \begin{enumerate}
+%         \item Let $G$ be a group. Prove that the following maps satisfy the set-theoretic YBE.
+%         \begin{enumerate}
+%             \item $r(x,y) = (y, x^{-1})$.
+%             \item $r(x,y) = (y^{-1}, x^{-1})$.
+%             \item $r(x,y) = (x^2y,y^{-1}x^{-1}y)$.
+%         \end{enumerate}
+%         \item Let $(X,r)$ be a set-theoretic solution to the YBE. Prove that $X$ with the map $\tau r \tau$ , where $\tau:X\times X, (x,y)\mapsto (y,x)$, is a set-theoretic solution to the YBE.
+%         \item Let $G$ be a group. Prove that the following maps satisfy the set-theoretic YBE.
+%         \begin{enumerate}
+%             \item $r(x,y) = (x^myx^{-m}, x)$, for any integer $m$.
+%             \item $r(x,y) = (xy^{-1}x,x)$.
+%         \end{enumerate}
+%     \end{enumerate}
+% \end{frame}
+
+% \end{document}
+
