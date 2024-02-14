@@ -63,8 +63,22 @@ It first appeared in two independent papers of Yang \cite{Yang1967} and Baxter\
         \begin{enumerate}
             \item The pair $(X,\id_{X\times X})$ is a  set-theoretic solution to the  Yang--Baxter equation. Note that $(X,\id_{X\times X})$ is not non-degenerate, since $\lambda_x(y)=x$ and $\rho_y(x)=y$, for all $x,y\in X$.
             \item Let $\tau: X \times X \to X \times X$ be the flip map, i.e. $\tau(x,y)=(y,x)$ for all $x,y \in X$. Then, the pair $(X,\tau)$ is a set-theoretic solution to the Yang--Baxter equation. Moreover, it is non-degenerate since $\lambda_x=\rho_x=\id_X$ for all $x\in X$.
+            \item Let $\lambda, \rho$ be permutaions of $X$. Then $r(x,y)=(\lambda(y),\rho(x))$ is a
+            non-degenerate set-theoretic solution to the Yang--Baxter equation if and only if $\lambda\rho = \rho\lambda$.
+            Morever, $(X , r )$ is involutive if and only if $\rho = \lambda^{-1}$. The solution 
+            $(X,r)$ is called a \emph{permutational solution} or a \emph{Lyubashenko's solution}.
         \end{enumerate}
     \end{examples}
+
+    If on the set $X$ we have a bit more structure we can define some more sophisticated solutions.
+    \begin{example}
+        Let $G$ be a group and let
+        \begin{align*}
+            r_1(x,y) &= (y, y^{-1}xy)\\
+            r_2(x,y) &= (x^{2}y, y^{-1}x^{-1}y).
+        \end{align*}
+        Then $(X,r_1)$ and $(X,r_2)$ are bijective non-degenerate set-theoretic solutions to the Yang--Baxter equation.
+    \end{example}
 
 
 % \subsection{A graphical representation.}
