@@ -229,40 +229,33 @@ It first appeared in two independent papers of Yang \cite{Yang1967} and Baxter\
         Follows from exercise~\ref{ex2}.
     \end{proof}
 
-% \begin{frame}
-%     With the previous example, we proved the following.
-%     \medskip
-
-%     \textbf{Proposition. } 
+    \begin{exercise}
+         Let $G$ be a group. Then $(G,r)$ where $r(x,y)=(y, y^{-1}xy)$ is a 
+         non-degenerate set-theoretic solution to the Yang--Baxter equation.
+    \end{exercise}
     
-%     Moreover, $(X,r)$ is bijective and non-degenerate if and only if $(X,r)$ is a rack. \alert{(prove it.)}
+    \begin{convention}
+        From now on, a \emph{solution}  will always mean a non-degenerate set-theoretic solution to the Yang--Baxter equation.
+    \end{convention}
 
-% \end{frame}
+\subsection{An intriguing connection between group actions and solutions}
+    The following theorem is the core result of the paper \cite{LYZ00} by Lu, Yan Zhu.
 
-% \begin{frame}{Example/Exercise 3}
-%     Let $X$ be a non-empty set.
-%     \bigskip
+    \begin{theorem}\label{thm:LYZ}
+         Let $G$ be a group, let $\lambda: G\times G \to G, (x,y)\mapsto \lambda_x(y)$ a left group action of $G$ on itself as a set and $\rho: G\times G \to G, (x,y)\mapsto \rho_y(x)$ a right group action of $G$ on itself as a set. If the ``compatibility'' condition 
+        \begin{align}\label{eq:LYZ}
+            uv = \lambda_u(v)\rho_v(u)
+        \end{align}
+        holds, then $(G,r)$, where
+        \begin{align*}
+            r:G\times G \to G\times G, \qquad (x,y)\mapsto (\lambda_x(y),\rho_y(x))
+        \end{align*}
+        is a solution.
+    \end{theorem}
 
-%     \begin{itemize}
-%         \item Let $\lambda,\rho:X \to X$ and define $r:X\times X \to X\times X$ such that $r(x,y)= (\lambda(y),\rho(x))$. Then $(X,r)$ is a set-theoretic solution to the YBE if and only if $\lambda\rho = \rho\lambda$.\footnote{When $\lambda$ and $\rho$ are bijective the solution is called the \alert{permutation solution} associated with the permutations $\lambda$ and $\rho$.} 
-%     \end{itemize}
-%     \bigskip
-
-%     \pause
-%     \remarkbox[ExeterLightYellow]{\textcolor{ExeterGreen}{
-%     Why? 
-%     Can you say when $(X,r)$ is bijective? 
-%     What about non-degenerate?}}
-% \end{frame}
-
-% \begin{frame}{Example/Exercise 4}
-
-%     Let $G$ be a group. Then $(G,r)$ where $r(x,y)=(y, y^{-1}xy)$ is a bijective non-degenerate set-theoretic solution to the YBE. \\(\alert{Prove it}).
-
-%     \bigskip\pause
-    
-%     \textbf{Hint. } Prove that $G$ with the binary operation defined by $x\triangleleft y = y^{-1}xy$ is a rack.
-% \end{frame}
+    \begin{exercise}\label{ex:LYZ}
+        Prove Theorem~\ref{thm:LYZ}
+    \end{exercise}
 
 % \section{Bijective non-degenerate set-theoretic solutions to the YBE.}
 
@@ -279,86 +272,9 @@ It first appeared in two independent papers of Yang \cite{Yang1967} and Baxter\
 % \frametitle{Main result}
 % \framesubtitle{An intriguing connection between group actions and solutions}
 
-%     Let $G$ be a group, let $\lambda: G\times G \to G, (x,y)\mapsto \lambda_x(y)$ a left group action of $G$ on itself as a set and $\rho: G\times G \to G, (x,y)\mapsto \rho_y(x)$ a right group action of $G$ on itself as a set. If the ``compatibility'' condition 
-%     \begin{align*}
-%         uv = \lambda_u(v)\rho_v(u)
-%     \end{align*}
-%     holds, then $(G,r)$, where
-%     \begin{align*}
-%         r:G\times G \to G\times G, \qquad (x,y)\mapsto (\lambda_x(y),\rho_y(x))
-%     \end{align*}
-%     is a solution to the YBE.\footfullcite{LYZ00}
+%    
 % \end{frame}
 
-% \begin{frame}{Proof.}
-%     \begin{itemize}
-%         \item Write $r_1=r\times \id$ and $r_2=\id \times r$.
-%         \item Write 
-%         \begin{align*}
-%             r_1r_2r_1(x,y,z)&= (\lambda_{\lambda_x(y)}\lambda_{\rho_y(x)}(z),\rho_{\lambda_{\rho_y(x)}(z)}\lambda_x(y),\rho_z\rho_y(x)) \\&=(u_1,v_1,w_1).
-%         \end{align*}
-%         \item Write 
-%         \begin{align*}
-%             r_2r_1r_2(x,y,z)&=(\lambda_x\lambda_y(z),\lambda_{\rho_{\lambda_y(z)}(x)}\rho_z(y),\rho_{\rho_z(y)}\rho_{\lambda_y(z)}(x))\\&=(u_2,v_2,w_2).
-%         \end{align*}
-%     \end{itemize}
-% \end{frame}
-
-% \begin{frame}{Proof.}
-%     $(u_1,v_1,w_1)= (\lambda_{\lambda_x(y)}\lambda_{\rho_y(x)}(z),\rho_{\lambda_{\rho_y(x)}(z)}\lambda_x(y),\rho_z\rho_y(x))$
-
-%     $(u_2,v_2,w_2)=(\lambda_x\lambda_y(z),\lambda_{\rho_{\lambda_y(z)}(x)}\rho_z(y),\rho_{\rho_z(y)}\rho_{\lambda_y(z)}(x))$
-
-%     \vspace{6cm}
-
-% \end{frame}
-
-% \begin{frame}{Proof.}
-%     $(u_1,v_1,w_1)= (\lambda_{\lambda_x(y)}\lambda_{\rho_y(x)}(z),\rho_{\lambda_{\rho_y(x)}(z)}\lambda_x(y),\rho_z\rho_y(x))$
-
-%     $(u_2,v_2,w_2)=(\lambda_x\lambda_y(z),\lambda_{\rho_{\lambda_y(z)}(x)}\rho_z(y),\rho_{\rho_z(y)}\rho_{\lambda_y(z)}(x))$
-
-%     \vspace{6cm}
-
-% \end{frame}
-
-% \begin{frame}{Proof.}
-%     We know $u_1v_1w_1=xyz=u_2v_2w_2$.
-    
-%     $(u_1,v_1,w_1)= (\lambda_{\lambda_x(y)}\lambda_{\rho_y(x)}(z),\rho_{\lambda_{\rho_y(x)}(z)}\lambda_x(y),\rho_z\rho_y(x))$
-
-%     $(u_2,v_2,w_2)=(\lambda_x\lambda_y(z),\lambda_{\rho_{\lambda_y(z)}(x)}\rho_z(y),\rho_{\rho_z(y)}\rho_{\lambda_y(z)}(x))$
-
-%     \vspace{6cm}
-
-% \end{frame}
-
-% \begin{frame}{Proof.}
-%     We know $u_1v_1w_1=xyz=u_2v_2w_2$.
-    
-%     $(u_1,v_1,w_1)= (\lambda_{\lambda_x(y)}\lambda_{\rho_y(x)}(z),\rho_{\lambda_{\rho_y(x)}(z)}\lambda_x(y),\rho_z\rho_y(x))$
-
-%     $(u_2,v_2,w_2)=(\lambda_x\lambda_y(z),\lambda_{\rho_{\lambda_y(z)}(x)}\rho_z(y),\rho_{\rho_z(y)}\rho_{\lambda_y(z)}(x))$
-
-%     \vspace{6cm}
-
-% \end{frame}
-
-% \begin{frame}{Proof.}
-%     We know 
-    
-%     $u_1v_1w_1=xyz=u_2v_2w_2$,
-    
-%     $u_1=u_2$,
-
-%     $w_1 =w_2$.
-
-%      $(u_1,v_1,w_1)= (\lambda_{\lambda_x(y)}\lambda_{\rho_y(x)}(z),\rho_{\lambda_{\rho_y(x)}(z)}\lambda_x(y),\rho_z\rho_y(x))$
-
-%     $(u_2,v_2,w_2)=(\lambda_x\lambda_y(z),\lambda_{\rho_{\lambda_y(z)}(x)}\rho_z(y),\rho_{\rho_z(y)}\rho_{\lambda_y(z)}(x))$
-%     \vspace{6cm}
-
-% \end{frame}
 
 % \begin{frame}{Proof.}
 %     We are left to prove that $r$ is bijective. 
