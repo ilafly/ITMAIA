@@ -5,7 +5,7 @@ The Yang-Baxter equation (YBE) is one important equation in mathematical physics
 It first appeared in two independent papers of Yang \cite{Yang1967} and Baxter\
 \cite{Baxter1971}.
 
-\begin{definition}
+\begin{definition}\index{Yang--Baxter equation}
     A solution of the \emph{Yang--Baxter eqution} is a bijective linear map  $R: V\otimes V \to V \otimes V$, where $V$ is a vector space such that
     \begin{align*}
         R_{12}R_{13}R_{23} = R_{23}R_{13}R_{12}
@@ -30,12 +30,11 @@ It first appeared in two independent papers of Yang \cite{Yang1967} and Baxter\
 
     These lectures will focus on set-theoretic solutions to the Yang-Baxter equation and their connection with known and ``new'' algebraic structures. 
 
-    \begin{definition}
+    \begin{definition}\index{Set-theoretic solution}
         A \emph{set-theoretic solution to the Yang--Baxter equation} is a pair $(X,r)$ where $X$ is a non-empty set and $r: X\times X \to X \times X$ is a bijective map such that
-        
-        \begin{align*}
+        \begin{align}\label{eq:YBE}
             (r\times \id)(\id \times r)(r\times \id) = (\id \times r)(r\times \id)(\id \times r)
-        \end{align*}
+        \end{align}
     \end{definition}
     
     \begin{convention}
@@ -47,7 +46,7 @@ It first appeared in two independent papers of Yang \cite{Yang1967} and Baxter\
     \end{convention}
 
 
-    \begin{definition}
+    \begin{definition}\index{Set-theoretic solution!Finite}\index{Set-theoretic solution!Non-degenerate}
         Let $(X,r)$ be a set-theoretic solution to the  Yang--Baxter equation. We say that 
         \begin{itemize}
             \item $(X,r)$ is \emph{finite} if $X$ is finite.
@@ -56,6 +55,96 @@ It first appeared in two independent papers of Yang \cite{Yang1967} and Baxter\
     \end{definition}
 
 \subsection{Set-theoretic solutions to the Yang--Baxter equation and III Reidemeister move}
+    Let us represent the map $r:X \times X \to X \times X$ as a crossing and the identity on $X$ as a straight line, see Figure~\ref{fig:crossing}. \index{III Reidemeister move}
+    \begin{figure}[h!]
+        \centering
+        \begin{tikzpicture}
+            \pic[braid/.cd,
+                number of strands=3,
+                ultra thick,
+                gap=0.1,
+                name prefix=braid,
+            ] {braid={a_1}};
+        \end{tikzpicture}
+        \caption{The map $r$ represented as a crossing and the identity as a straight line.}
+        \label{fig:crossing}
+    \end{figure}
+
+    Then the Yang--Baxter equation can be pictured as in Figure~\ref{fig:YangBaxter}.
+
+    \begin{figure}
+        \centering
+        \begin{tikzpicture}
+            \pic[braid/.cd,
+                number of strands=3,
+                ultra thick,
+                gap=0.1,
+                name prefix=braid,
+            ] {braid={a_{1}a_2a_1}};
+            \node[font=\Large] at (3,-2) {\(=\)};
+        \end{tikzpicture}
+        \hspace{.5cm}
+        \begin{tikzpicture}
+        \pic[braid/.cd,
+            number of strands=3,
+            ultra thick,
+            gap=0.1,
+            name prefix=braid,
+        ] {braid={a_{2}a_1a_2}};
+        \end{tikzpicture}
+        \caption{The Yang--Baxter equation.}
+        \label{fig:YangBaxter}
+    \end{figure}
+
+    Moreover, under the assumption of $(X,r)$ being non-degenerate we have the following lemma. 
+    
+    \begin{lemma}
+    \label{lem:LYZ}
+        Let $(X,r)$ be a solution to the Yang--Baxter equation. 
+        \begin{enumerate}
+            \item Given $x,u\in X$, there exist unique $y,v\in X$ such that $r(x,y)=(u,v)$. 
+            \item Given $y,v\in X$, there exist unique $x,u\in X$ such that $r(x,y)=(u,v)$. 
+        \end{enumerate}
+    \end{lemma}
+    \begin{proof}
+        For the first claim take $y=\lambda_x^{-1}(u)$ and $v=\rho_y(x)$. 
+        For the second, $x=\rho_y^{-1}(v)$ and $u=\lambda_x(y)$. 
+    \end{proof}
+
+    So, the bijectivity of $r$ means that any row in Figure~\ref{fig:braid} determines the whole square. By Lemma~\ref{lem:LYZ} we have that non-degeneracy means that any column in Figure~\ref{fig:braid} also determines the whole square. 
+
+    \begin{figure}[h!]
+    \centering
+        \begin{tikzpicture}
+            \pic[braid/.cd,
+                number of strands=2,
+                ultra thick,
+                gap=0.1,
+                name prefix=braid,
+            ] {braid={a_{1}^{-1}}};
+            \node[] at (-.25,-.12) {$x$};
+            \node[] at (1.25,-.12) {$y$};
+            \node[] at (-.25,-1.4) {$u$};
+            \node[] at (1.25,-1.4) {$v$};
+            \node[] at (-.25,-.75) {$r$};
+        \end{tikzpicture}
+        \hspace{1cm}
+        \begin{tikzpicture}
+            \pic[braid/.cd,
+                number of strands=2,
+                ultra thick,
+                gap=0.1,
+                name prefix=braid,
+            ] {braid={a_{1}}};
+            \node[] at (-.25,-.12) {$x$};
+            \node[] at (1.25,-.12) {$y$};
+            \node[] at (-.25,-1.4) {$u$};
+            \node[] at (1.25,-1.4) {$v$};
+            \node[] at (-.25,-.75) {$r^{-1}$};
+        \end{tikzpicture}
+        \caption{Any row or column determines the whole square.}
+        \label{fig:braid}
+    \end{figure}
 
 \subsection{First examples}
     \begin{examples}
@@ -80,103 +169,71 @@ It first appeared in two independent papers of Yang \cite{Yang1967} and Baxter\
         Then $(X,r_1)$ and $(X,r_2)$ are bijective non-degenerate set-theoretic solutions to the Yang--Baxter equation.
     \end{example}
 
+    \subsection{A characterisation}
+    \begin{proposition}\label{prop:characterisation}
+        Let $X$ be a non-empty set and $r: X \times X \to X \times X$ be a  map, written ase $r(x,y) = (\lambda_x(y),\rho_y(x))$. Then $r$ satisfies equation~\ref{eq:YBE} if and only if
+    \begin{enumerate}
+        \item $\lambda_x\lambda_y = \lambda_{\lambda_x(y)}\lambda_{\rho_y(x)}$
+        \item $\lambda_{\rho_{\lambda_y(z)}(x)}\rho_z(y)=\rho_{\lambda_{\rho_y(x)}(z)}\lambda_x(y)$
+        \item $\rho_z\rho_y=\rho_{\rho_z(y)}\rho_{\lambda_y(z)}$
+    \end{enumerate}
+    for all $x,y,z\in X$.
 
-% \subsection{A graphical representation.}
-% \begin{frame}{Set-theoretic solutions and III Reidemeister move}
-% \end{frame}
+    In particular, $(X,r)$ is a solution to the Yang--Baxter equation when $r$ is bijective.
+    \end{proposition}
+    \begin{proof}
+        Let us write $r_1=r\times \id$ and $r_2=\id \times r$. Then  
+        \begin{align*}
+            r_1r_2r_1(x,y,z)& = r_1r_2(\lambda_x(y),\rho_y(x),z) \\
+            &= r_1(\lambda_x(y),\lambda_{\rho_y(x)}(z),\rho_z\rho_y(x))\\
+            &= (\lambda_{\lambda_x(y)}\lambda_{\rho_y(x)}(z),\rho_{\lambda_{\rho_y(x)}(z)}\lambda_x(y),\rho_z\rho_y(x)),
+        \end{align*}
+        and 
+        \begin{align*}
+            r_2r_1r_2(x,y,z) =& r_2r_1(x,\lambda_y(z),\rho_z(y)) \\
+            &= r_2(\lambda_x\lambda_y(z),\rho_{\lambda_y(z)}(x),\rho_z(y))\\
+            &= (\lambda_x\lambda_y(z),\lambda_{\rho_{\lambda_y(z)}(x)}\rho_z(y),\rho_{\rho_z(y)}\rho_{\lambda_y(z)}(x)).
+        \end{align*}
+        Therefore $r_1r_2r_1= r_2r_1r_2$ if and only if $1), 2)$ and $3)$ hold.     
+    \end{proof}
 
-% \subsection{First examples.}
-% \begin{frame}{First examples}
-%     Let $X$ be a non-empty set.
-%     \bigskip
+    \begin{exercise}
+        Let $(X,r)$ be a set-theoretic solution to the Yang--Baxter equation. Define for all $x,y \in X$
+        \begin{align*}
+            \bar{r}(x,y) = \tau r \tau (x,y) = (\rho_x(y),\lambda_y(x)).
+        \end{align*}
+        Then $(X,\bar{r})$ is a set-theoretic solution to the Yang--Baxter equation.
+    \end{exercise}
+
+    \subsection{Shelfs and racks}\mbox{}
     
-%     \begin{itemize}
-%         \item Then $(X,\id_{X\times X})$ is a bijective degenerate (i.e. not non-degenerate) set-theoretic solution to the YBE.
-%         \item[]
-%         \item Then $(X,\tau)$, where $\tau(x,y)=(y,x)$, is a bijective non-degenerate set-theoretic solution to the YBE.
-%     \end{itemize}
-% \end{frame}
+    \begin{exercise}\label{ex2}
+         Let $X$ be a non-empty set.
+         Let $\triangleleft: X\times X \to X$ be a binary operation and define $r: X\times X \to X\times X$ such that $r(x,y)= (y,x \triangleleft y)$. Then $r$ satisfies equation~\ref{eq:YBE} if and only if $(x\triangleleft y)\triangleleft z=(x\triangleleft z)\triangleleft(y\triangleleft z)$ holds for all $x,y,z \in X$. 
+         Moreover, $r$ is bijective if and only if the maps $\rho_y:X\to X, x \mapsto x\triangleleft y$ are bijective.
+    \end{exercise}
 
-% \subsection{A characterisation.}
-% \begin{frame}{A characterisation}
-%     Let $X$ be a non-empty set and $r: X \times X \to X \times X$ be a map and write $r(x,y) = (\lambda_x(y),\rho_y(x))$. Then $(X,r)$ is a set-theoretic solution to the YBE if and only if
-%     \begin{itemize}
-%         \item $\lambda_x\lambda_y = \lambda_{\lambda_x(y)}\lambda_{\rho_y(x)}$
-%         \item $\lambda_{\rho_{\lambda_y(z)}(x)}\rho_z(y)=\rho_{\lambda_{\rho_y(x)}(z)}\lambda_x(y)$
-%         \item $\rho_z\rho_y=\rho_{\rho_z(y)}\rho_{\lambda_y(z)}$
-%     \end{itemize}
-%     for all $x,y,z\in X$.
-% \end{frame}
+    \begin{definition}\index{Shelf}\index{Rack}
+         A \emph{(right) shelf} is a pair $(X,\triangleleft)$ where $X$ is a non-empty set and $\triangleleft$ is a binary operation such that 
+        \begin{align*}
+            (x\triangleleft y)\triangleleft z=(x\triangleleft z)\triangleleft(y\triangleleft z).
+        \end{align*}
+        If, in addition, the maps $\rho_y:X \to X, x \mapsto x\triangleleft y$ are bijective for all $y\in X$, then $(X,\triangleleft)$ is called a \emph{(right) rack}.
+    \end{definition}
 
-% \begin{frame}
-% \frametitle{A characterisation}
-% \framesubtitle{Proof}
-%     \begin{itemize}
-%         \item Write $r_1=r\times \id$ and $r_2=\id \times r$.
-%         \item Compute $r_1r_2r_1(x,y,z)$. 
-%         \begin{align*}
-%             r_1r_2r_1(x,y,z)& = r_1r_2(\lambda_x(y),\rho_y(x),z) \\
-%             &= r_1(\lambda_x(y),\lambda_{\rho_y(x)}(z),\rho_z\rho_y(x))\\
-%             &= (\lambda_{\lambda_x(y)}\lambda_{\rho_y(x)}(z),\rho_{\lambda_{\rho_y(x)}(z)}\lambda_x(y),\rho_z\rho_y(x))
-%         \end{align*}
-%         \item Compute $r_2r_1r_2(x,y,z)$.
-%         \begin{align*}
-%             r_2r_1r_2(x,y,z) =& r_2r_1(x,\lambda_y(z),\rho_z(y)) \\
-%             &= r_2(\lambda_x\lambda_y(z),\rho_{\lambda_y(z)}(x),\rho_z(y))\\
-%             &= (\lambda_x\lambda_y(z),\lambda_{\rho_{\lambda_y(z)}(x)}\rho_z(y),\rho_{\rho_z(y)}\rho_{\lambda_y(z)}(x))
-%         \end{align*}
-%         \item Compare.
-%     \end{itemize}
-% \end{frame}
+    \begin{proposition}
+        Let $X$ be a non-empty set with a binary operation $\triangleleft: X\times X \to X$. Then $r(x,y) =(y,x\triangleleft y)$ is a set-theoretic solution to the Yang--Baxter equation if and only if $(X,\triangleleft)$ is a rack. 
+    \end{proposition}
 
-% \begin{frame}{Example/Exercise 1}
-
-
-%     Let $(X,r)$ be a set-theoretic solution to the YBE. Define for all $x,y \in X$
-
-%     \begin{align*}
-%         \bar{r}(x,y) = \tau r \tau (x,y) = (\rho_x(y),\lambda_y(x)).
-%     \end{align*}
-%     Then $(X,\bar{r})$ is a set-theoretic solution to the YBE.
-    
-% \end{frame}
-
-% \begin{frame}{Example/Exercise 2}  
-    
-%     Let $X$ be a non-empty set.
-        
-%     Let $\triangleleft: X\times X \to X$ be a binary operation and define $r:X\times X \to X\times X$ such that $r(x,y)= (y,x \triangleleft y)$. Then $(X,r)$ is a set-theoretic solution to the YBE if and only if $(x\triangleleft y)\triangleleft z=(x\triangleleft z)\triangleleft(y\triangleleft z)$. 
-
-%     \bigskip\pause
-
-    
-%     \textbf{Proof.} Write $\lambda_x = \id_X$ and $\rho_y(x)=x \triangleleft y$.
-
-%     By the characterisation,
-%     \begin{itemize}
-%         \item $\lambda_x\lambda_y = \lambda_{\lambda_x(y)}\lambda_{\rho_y(x)}$ \hfill {\large \alert{\checkmark}}\qquad
-%         \item $\lambda_{\rho_{\lambda_y(z)}(x)}\rho_z(y)=\rho_{\lambda_{\rho_y(x)}(z)}\lambda_x(y)$
-%         \item[] \textcolor{gray}{i.e., $\rho_z(y)=\rho_{z}(y)$}\hfill {\large \alert{\checkmark}}\qquad
-%         \item $\rho_z\rho_y=\rho_{\rho_z(y)}\rho_{\lambda_y(z)}$
-%         \item[] \textcolor{gray}{i.e., $\rho_z\rho_y(x)=\rho_{\rho_z(y)}\rho_{\lambda_y(z)}(x)$}
-%         \item[] \textcolor{gray}{i.e., $(x\triangleleft y)\triangleleft z=(x\triangleleft z)\triangleleft(y\triangleleft z)$}\hfill {\large \alert{\checkmark}}\qquad
-%     \end{itemize}   
-% \end{frame}
-
-% \begin{frame}{Racks}
-%     A \alert{(right) shelf} is a pair $(X,\triangleleft)$ where $X$ is a non-empty set and $\triangleleft$ is a binary operation such that 
-%     \begin{align*}
-%         (x\triangleleft y)\triangleleft z=(x\triangleleft z)\triangleleft(y\triangleleft z).
-%     \end{align*}
-%     If, in addition, the maps $\rho_y:X \to X, x \to x\triangleleft y$ are bijective for all $y\in X$, then $(X,\triangleleft)$ is called a \alert{(right) rack}.
-
-% \end{frame}
+    \begin{proof}
+        Follows from exercise~\ref{ex2}.
+    \end{proof}
 
 % \begin{frame}
 %     With the previous example, we proved the following.
 %     \medskip
 
-%     \textbf{Proposition. } Let $X$ be a non-empty set with a binary operation $\triangleleft: X\times X \to X$. Then $r(x,y) =(y,x\triangleleft y)$ is a set-theoretic solution to the YBE if and only if $(X,\triangleleft)$ is a shelf. 
+%     \textbf{Proposition. } 
     
 %     Moreover, $(X,r)$ is bijective and non-degenerate if and only if $(X,r)$ is a rack. \alert{(prove it.)}
 

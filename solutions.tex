@@ -1,0 +1,19 @@
+\section*{Some solutions}
+
+\fancyhf{}
+\fancyfoot[R]{\thepage}
+\fancyhead[L]{\course}
+\fancyhead[R]{Some solutions}
+\setlength{\headheight}{14pt}
+
+
+\begin{sol}{ex2}
+    For every $x,y \in X$ let us write $\lambda_x = \id_X$ and $\rho_y(x)=x \triangleleft y$.
+    We want to apply Proposition~\ref{prop:characterisation}.
+    First note that clearly $\lambda_x\lambda_y =\id_X = \lambda_{\lambda_x(y)}\lambda_{\rho_y(x)}$, i.e. 1) is satisfied. 
+    Moreover,$\lambda_{\rho_{\lambda_y(z)}(x)}\rho_z(y)=\rho_{\lambda_{\rho_y(x)}(z)}\lambda_x(y)$ reduce to the trivial identity $\rho_z(y)=\rho_{z}(y)$.
+    Finally,  $\rho_z\rho_y(x)=\rho_{\rho_z(y)}\rho_{\lambda_y(z)}(x)$ is equivalent to $(x\triangleleft y)\triangleleft z=(x\triangleleft z)\triangleleft(y\triangleleft z)$.
+
+    Now assume that $r$ is bijective. If $x_1,x_2\in X$ such that $\rho_y{x_1}=\rho_y(x_2)$, then $r(x_1,y)=r(x_2,y)$ and so $x_1=x_2$, i.e. $\rho_y$ is injective. Now, let $z \in X$ and let $x\in X$ such that $r(x,y) =(y,z)$. It follows that $\rho_y(x)=z$ and $\rho_y$ is bijective. 
+    Similarly one obtains the converse. 
+\end{sol}
