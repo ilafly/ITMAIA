@@ -55,7 +55,7 @@ It first appeared in two independent papers of Yang \cite{Yang1967} and Baxter\
     \end{definition}
 
 \subsection{Set-theoretic solutions to the Yang--Baxter equation and III Reidemeister move}
-    Let us represent the map $r:X \times X \to X \times X$ as a crossing and the identity on $X$ as a straight line, see Figure~\ref{fig:crossing}. \index{III Reidemeister move}
+    Let us represent the map $r:X \times X \to X \times X$ as a crossing and the identity on $X$ as a straight line; see Figure~\ref{fig:crossing}. \index{III Reidemeister move}
     \begin{figure}[h!]
         \centering
         \begin{tikzpicture}
@@ -66,7 +66,7 @@ It first appeared in two independent papers of Yang \cite{Yang1967} and Baxter\
                 name prefix=braid,
             ] {braid={a_1}};
         \end{tikzpicture}
-        \caption{The map $r$ represented as a crossing and the identity as a straight line.}
+        \caption{The map $r$ represented by a crossing and the identity as a straight line.}
         \label{fig:crossing}
     \end{figure}
 
@@ -96,7 +96,7 @@ It first appeared in two independent papers of Yang \cite{Yang1967} and Baxter\
         \label{fig:YangBaxter}
     \end{figure}
 
-    Moreover, under the assumption of $(X,r)$ being non-degenerate we have the following lemma. 
+    Moreover, we have the following lemma under the assumption of $(X,r)$ being non-degenerate 
     
     \begin{lemma}
     \label{lem:LYZ}
@@ -111,7 +111,7 @@ It first appeared in two independent papers of Yang \cite{Yang1967} and Baxter\
         For the second, $x=\rho_y^{-1}(v)$ and $u=\lambda_x(y)$. 
     \end{proof}
 
-    So, the bijectivity of $r$ means that any row in Figure~\ref{fig:braid} determines the whole square. By Lemma~\ref{lem:LYZ} we have that non-degeneracy means that any column in Figure~\ref{fig:braid} also determines the whole square. 
+    So, the bijectivity of $r$ means that any row in Figure~\ref{fig:braid} determines the whole square. By Lemma~\ref{lem:LYZ} we have that non-degeneracy means that any column in Figure~\ref{fig:braid} also determines the entire square. 
 
     \begin{figure}[h!]
     \centering
@@ -159,9 +159,9 @@ It first appeared in two independent papers of Yang \cite{Yang1967} and Baxter\
         \end{enumerate}
     \end{examples}
 
-    If on the set $X$ we have a bit more structure we can define some more sophisticated solutions.
+    If, on the set $X$, we have a bit more structure, we can define some more sophisticated solutions.
     \begin{example}
-        Let $G$ be a group and let
+        Let $G$ be a group and, let
         \begin{align*}
             r_1(x,y) &= (y, y^{-1}xy)\\
             r_2(x,y) &= (x^{2}y, y^{-1}x^{-1}y).
@@ -257,60 +257,533 @@ It first appeared in two independent papers of Yang \cite{Yang1967} and Baxter\
         Prove Theorem~\ref{thm:LYZ}
     \end{exercise}
 
-% \section{Bijective non-degenerate set-theoretic solutions to the YBE.}
+\subsection{Radical rings}
+    \begin{definition}
+         A non-empty set $R$ with two binary operations the addition~$+$ (addition) and the multiplication~$\cdot$ is a \emph{ring}\index{Ring} if
+    \begin{itemize}
+        \item $(R,+)$ is an abelian group,
+        \item $(R,\cdot)$ is a semigroup (i.e. $\cdot$ is associative),
+        \item The multiplication is distributive with respect to the addition, i.e.
+        \begin{align*}
+            a\cdot (b+c)&=(a\cdot b)+(a\cdot c)&\text{(left distributivity)}\\
+            (b+c)\cdot a&=(b\cdot a)+(c\cdot a)&\text{(right distributivity)}
+        \end{align*}
+        for all $a,b,c\in R$.
+    \end{itemize}
+    A ring $(R,+,\cdot)$ is \emph{unitary} if there is an element $1$ in $R$ such that $a\cdot 1= 1\cdot a=a$ for all $a \in R$ (i.e., $1$ is the \emph{multiplicative identity}).
+    \end{definition}
 
-% \begin{frame}{Convention}
+    Let $R$ be a non-unitary ring. Consider $R_1 = \mathbb{Z}\times R$ with the addition defined component-wise and multiplication
+    \begin{align*}
+        (k,a)(l,b)=(kl,kb+la+ab)
+    \end{align*}
+    for all $k,l\in \mathbb{Z}$ and $a,b\in R$.
+    
+    Then $R_1$ is a ring and $(1, 0)$ is its multiplicative identity.
+    
+    Note that $\{0\}\times R$ is isomorphic to $R$ as non-unitary rings.
 
-%      From now on, a \alert{solution} (to the YBE) will always mean a bijective non-degenerate set-theoretic solution to the YBE.
-     
-% \end{frame}
+    \begin{exercise}\label{ex:invertible elements}
+         Let $R$ be a non-unitary ring. Consider $R_1 = \mathbb{Z}\times R$ as before. If $(k,x)\in R_1$ is invertible, then $k \in\{1,-1\}$.
+    \end{exercise}
+
+   \begin{definition}
+        Let $R$ be a unitary ring.  The \emph{(Jacobson) radical} $J(R)$ of $R$ is defined as the intersection of all maximal left ideals\footnote{A \emph{left ideal} of $R$ is an additive subgroup $I$ of $R$ such that $ax\in I$ for all $a\in R$ and $x\in I$.} of $R$.
+   \end{definition}
+
+   \begin{exercise}\label{ex:Jideal}
+       Let $R$ be a unitary ring. 
+       \begin{enumerate}
+           \item Prove that $J(R)$ in an ideal of $R$.
+           \item Prove that  $x\in J(R)$ if and only if $1 + rx$ is invertible for all $r\in R$.
+       \end{enumerate}
+   \end{exercise}
+
+   \begin{definition}
+       A non-unitary ring $R$ is a  \emph{(Jacobson)radical ring} if it is isomorphic
+        to the Jacobson radical of a unitary ring. 
+   \end{definition}
+
+    \begin{proposition}
+        Let $R$ be a non-unitary ring. The following statements are equivalent.
+    \begin{enumerate}
+        \item $R$ is a radical ring.
+        \item For all $a\in R$ there exists a unique $b\in R$ such that $a+b+ab=a+b+ba= 0$.
+        \item $R$ is isomorphic to $J(R_1)$.
+    \end{enumerate}
+    \end{proposition}
+
+    \begin{proof}
+        Let us first prove that 1) implies 2). 
+        Let $M$ be a unitary ring such that $R$ is isomorphic to its Jacobson radical $J(M)$ and let $\psi: R \to M$ be a homomorphism such that $\psi(R)$ is isomorphic to $J(M)$. 
+        Now, if $a\in R$, then $\psi(a)\in J(M)$. By Exercise~\ref{ex:Jideal}, $1+\psi(a)$ is invertible, i.e. there exists $c\in M$ such that 
+        \begin{align*}
+            (1+\psi(a))(1+c) = 1 = (1+c) (1+\psi(a)).
+        \end{align*}
+        It follows that $c\in J(M)$, i.e. $c=\psi(b)$ for some $b\in R$. Moreover, since $\psi$ is a homomorphism
+        \begin{align*}
+            1 &= (1+\psi(a))(1+c) = (1+\psi(a))(1+\psi(b)) \\&= 1 + \psi(a)+\psi(b)+\psi(a)\psi(b)
+            = 1 + \psi(a+b +ab)
+        \end{align*}
+        and 
+        \begin{align*}
+            1 &= (1+c)(1+\psi(a)) = (1+\psi(b))(1+\psi(a)) \\&= 1 + \psi(b)+\psi(a)+\psi(b)\psi(a)
+            = 1 + \psi(a+b+ba).
+        \end{align*}
+        Hence, 2) holds. 
+
+        Now let us prove 2) implies 3). Let $a\in R$, we aim to prove that $(1,a)\in R_1$ is invertible. By 2) there exists $b\in R$ such that 
+        \begin{align*}
+            (1,a)(1,b) = (1, a+b+ab) = (1,0)\\
+            (1,b)(1,a) = (1, b+a+ba) = (1,0).   
+        \end{align*}
+        Now, consider $(k,a)\in J(R_1)$. We want to prove that $k=0$, i.e. $J(R_1)\subseteq \{0\}\times R$. Since $(k,a)\in J(R_1)$ follows that $(1,0)+(3,0)(k,a)=)(1+3k,3a)$ is invertible by Exercise~\ref{ex:Jideal}, and so $k=0$. Therefore $J(R_1)\subseteq \{0\}\times R$. Moreover, let $(0,R)\in\{0\}\times R$. then 
+        \begin{align*}
+            (1,0) + (k,a) (0,x) = (1,0)+(0,kx+ka) = (1, kx+ka)
+        \end{align*}
+        which is invertible. So $(0,x)\in J(R_1)$.
+        Finally the implication 3) implies 1) is trivially true.
+    \end{proof}
+
+    \begin{definition}
+         Let $R$ be any ring. Define on $R$ the binary operation $\circ$ called the \emph{adjoint multiplication} of $R$
+        \begin{align*}
+            a\circ b = a+b+ab,
+        \end{align*}
+        for all $a,b\in R$. 
+    \end{definition}
+
+    \begin{lemma}\label{lem:adjoint}
+        Then $(R,\circ)$ is a monoid with neutral element $0$. 
+    \end{lemma}
+
+    \begin{exercise}
+        Prove Lemma~\ref{lem:adjoint}.
+    \end{exercise}
+
+    \begin{convention}
+        If $a\in R$ is invertible in the monoid $(R, \circ)$, 
+        we will denote by $a'$ its inverse.
+    \end{convention}
+
+    \begin{examples}\mbox{}
+        \begin{enumerate}
+            \item Let $p$ be a prime and let $A = \mathbb{Z}/(p^2) = \mathbb{Z}/p^2\mathbb{Z}$ be the ring of integers modulo $p^2$. Then $(A,+)$ with a new multiplication $\ast$ defined by $a\ast b = pab$ is a radical ring. In this case, $a\circ b = a+b+pab$, and $a' =-a+pa^2$. 
+            \item Let $n$ be an integer such that $n>1$. Let 
+                \begin{align*}
+                    A=\left\{\dfrac{nx}{ny+1}\colon x,y \in \mathbb{Z}\right\}\subseteq \mathbb{Q}.
+                \end{align*}
+                $A$ is a (non-unitary) subring of $\mathbb{Q}$. In fact, $A$ is a radical ring. A straightforward computation shows
+                \begin{align*}
+                    \left(\dfrac{nx}{ny+1}\right)' = \dfrac{-nx}{n(x+y)+1}.
+                \end{align*}
+        \end{enumerate}
+    \end{examples}
+
+    \subsection{Involutive solutions}
+    In \cite{MR2278047}, Rump proved that radical rings provide examples of involutive solutions.
+
+    \begin{definition}
+        A solution $(X,r)$ is said to be \emph{involutive} if $r^2=\id_{X\times X}$.
+    \end{definition}
+    
+    \begin{proposition}
+        Let $R$ be a radical ring. Then $(R,r)$, where 
+        \begin{align}\label{eq:solradical}
+            r(x, y) = (-x + x\circ y, (-x + x \circ y)'\circ x\circ y)
+        \end{align}
+        is an involutive solution to the YBE.
+    \end{proposition}
+
+    \begin{exercise}\label{ex:involutive}
+        Let $X$ be a non-empty set and $\lambda_x:X \to X$ bijective maps. Define $r:X\times X \to X \times X$ by $r(x,y)=(\lambda_x(y),\lambda^{-1}_{\lambda_x(y)}(x))$. Prove that $(X,r)$ is an involutive map satisfying \eqref{eq:YBE} if and only if 
+        \begin{align*}
+            \lambda_x\lambda_{\lambda^{-1}_x(y)} =\lambda_y\lambda_{\lambda^{-1}_y(x)},
+        \end{align*}
+        for all $x,y\in X$.
+    \end{exercise}
 
 
-% \subsection{An intriguing connection with group actions.}
+    \subsection{Skew braces}
+    Do we need radical rings to produce solutions of the form \eqref{eq:solradical}?
 
-% \begin{frame}
-% \frametitle{Main result}
-% \framesubtitle{An intriguing connection between group actions and solutions}
+    \begin{definition}
+         A \emph{skew (left) brace} is a triple $(A,+,\circ)$, where 
+        $(A,+)$ and $(A,\circ)$ 
+    	are (not necessarily abelian) 
+    	groups and 
+    	\begin{align}\label{compatibility}
+    	    a\circ(b+c)=(a\circ b)-a+(a\circ c)
+    	\end{align}
+    	holds for all $a,b,c\in A$. 
+    
+    The groups $(A,+)$ and $(A,\circ)$ are respectively the \emph{additive} and \emph{multiplicative} group	of the skew brace $A$.
+    \end{definition}
 
-%    
-% \end{frame}
+    One says that a skew left brace $A$ is of \emph{abelian type} (it also is simply called a left brace) if $(A,+)$ is an abelian group. 
+    In general, the properties of the additive group determine the type of a skew brace\footnote{Such terminology is borrowed from Hopf-Galois extension where the additive group determines the type of the extension.}.
+    
+    \begin{remark}
+        Even though we use the additive notation, the group $(A,+)$ is not necessarily abelian.
+    \end{remark}
+
+    \begin{convention}
+         The identity of $(A,+)$ will be denoted by $0$ and the inverse of an element $a$ will be denoted by $-a$. 
+
+         As for radical rings, we write $a'$ to denote the inverse of $a$ with respect to the circle operation $\circ$. 
+    \end{convention}
+        
+    Right left braces are defined similarly.
+
+    \begin{definition}
+         A \emph{skew right brace} is a triple $(A,+,\circ)$, where 
+        $(A,+)$ and $(A,\circ)$ 
+	   are groups and 
+	   \begin{align*}
+	       (a+b)\circ c=a\circ c-c+b\circ c.
+	   \end{align*}
+	   holds for all $a,b,c\in A$. 
+    \end{definition}
+
+   \begin{exercise}
+        Prove that there exists a bijective correspondence between skew left braces
+        and skew right braces.
+   \end{exercise}
+
+    \begin{convention}
+        From now on, with the term skew brace, we will always mean a skew left brace.
+    \end{convention}
+
+    \begin{examples}
+        Let $(A,+)$ be a group. 
+        \begin{enumerate}
+            \item Then $A$ is a skew brace with
+            $a\circ b=a+b$ for all $a,b\in A$. Such a skew brace is called a \emph{trival skew brace}.
+            \item Similarly, the operation $a\circ b=b+a$ turns $A$ into a skew brace. Such a skew brace is called an \emph{almost trivial skew brace}. 
+        \end{enumerate}
+    \end{examples}
+
+    \subsection{First examples}
+
+    \begin{example}
+        Let $(A,+)$ be a group. Then $A$ is a skew brace with
+            $a\circ b=a+b$ for all $a,b\in A$. Such a skew brace is called a \emph{trivial skew brace}.
+    \end{example}
+    
+    \begin{example}
+          Let $(A,+)$ be a group. The operation $a\circ b=b+a$ turns $A$ into a skew brace. Such a skew brace is called an \emph{almost trivial skew brace}. 
+    \end{example}
+
+    \begin{definition}
+        Let $A$ and $B$ be skew braces. Then $A\times B$ with 
+    	\begin{align*}
+    		(a,b)+(a_1,b_1)&=(a+a_1,b+b_1),\\
+    		(a,b)\circ (a_1,b_1)&=(a\circ a_1,b\circ b_1),
+    	\end{align*}
+    	is a skew brace. This is the \emph{direct product} of the skew braces $A$ and $B$. 
+    \end{definition}
+    
+    \begin{exercise}\label{ex:sd}
+    	Let $(A,+)$ and $(M,+)$ be groups and let $\alpha\colon A\to\Aut(M)$ be a
+    	group homomorphism. Prove that $M\times A$ with 
+    	\begin{align*}
+        	(x,a)+(y,b)&=(x+y,a+b),
+        	\\
+        	(x,a)\circ (y,b)&=(x+\alpha_a(y),a+b)
+    	\end{align*}
+    	is a skew brace. Similarly, prove that $M\times A$ with
+    	\begin{align*}
+        	(x,a)+(y,b)&=(x+\alpha_a(y),a+b),\\
+        	(x,a)\circ (y,b)&=(x+y,b+a)
+    	\end{align*}
+    	is a skew brace. 
+    \end{exercise}
+
+    \begin{exercise}\label{ex:ef}
+        Let $(A,+)$ be a group with an \emph{exact factorisation} through the subgroups $B$ and $C$ (i.e. $B$ and $C$ are subgroups of $A$ such that $B\cap C=\{ 0\}$ and $A=B+C$). 
+        This means that each $x\in A$ can be written in a unique way as $x=x_B+x_C$, for some $x_B\in B$ and $x_C\in C$.
+        Set
+        \begin{align*}
+		    x\circ y&=x_B+y+x_C.
+	    \end{align*}
+        Prove that
+        \begin{enumerate}
+            \item $(A,\circ)$ is a group isomorphic to $B\times C$, the direct product of $B$ and $C$.
+            \item $(A,+,\circ)$ is a  skew brace.
+        \end{enumerate}
+    \end{exercise}
+
+    
+    \subsection{Basic properties of skew braces}
+
+    \begin{lemma}\label{lem:propskew}
+        Let $A$ be a skew brace. The following statements hold.
+        \begin{enumerate}
+            \item $1=0$, where $0$ denotes the identity of $(A,+)$ and by $1$ the identity of $(A,\circ)$.
+            \item $-(a\circ b) = - a + a\circ(- b) - a$, for all $a,b \in A$.
+        \end{enumerate}
+    \end{lemma}
+    \begin{proof}
+        By \eqref{compatibility} we have
+        \begin{align*}
+            0= 1\circ 0 = 1 \circ (0+0) = 1\circ 0 -1 + 1 \circ 0 = -1.
+        \end{align*}
+        Hence $0=1$. 
+        Now, let $a,b\in B$. From what we just proved and by \eqref{compatibility}
+        we have 
+        \begin{align*}
+            a = a \circ 0 = a\circ (b-b) = a\circ b - a + a\circ (-b).
+        \end{align*}
+        and 2) follows. 
+    \end{proof}
+    
+    \begin{proposition}\label{prop:lambda}
+        Let $A$ be a skew brace. For each $a\in A$, the map 
+        \begin{align*}
+            \lambda_a:A\to A, b\mapsto -a + a \circ b
+        \end{align*}
+    is an automorphism of $(A,+)$. 
+    
+    Moreover, the map $\lambda: (A,\circ) \to \Aut(A,+), a \mapsto \lambda_a$, is a group homomorphism.
+    \end{proposition}
+
+    \begin{proof}
+        First, let us prove that $\lambda_a$ is an endomorphism of $(A,+)$, for all $a\in A$.
+        We have that
+        \begin{align*}
+            \lambda_a(b+c) = -a+a\circ (b+c) \overset{\eqref{compatibility}}{=} -a +a\circ b -a +a\circ c,
+        \end{align*}
+        for all $b,c\in A$. Now, for any $b\in A$,
+        \begin{align*}
+            \lambda_0(b) = - 0 + 0 \circ b \overset{1=0}{=} b,
+        \end{align*}
+        hence $\lambda_0=\id_A$. Moreover, for any $a,b,c\in A$, 
+        \begin{align*}
+            \lambda_a\lambda_b(c) = -a +a\circ(-b+b\circ c) = -a + a\circ(-b) - a + a\circ b \circ c=-(a\circ b) + a\circ b \circ c = \lambda_{a\circ b}(c).
+        \end{align*}
+        Hence, $\lambda_a\lambda_b=\lambda_{a\circ b}$, for all $a,b\in A$. It follows that for any $a\in A$, the map $\lambda_a$ is bijective with inverse $\lambda_{a'}$. 
+    \end{proof}
+
+    \begin{exercise}\label{ex:rho}
+        Let $A$ be a skew brace. Prove that 
+        \begin{align*}
+            a\circ(a'+b) = \lambda_a(b),
+        \end{align*}
+        for all $a,b\in A$. As a consequence, we have that $\rho_b(a)=(a'+b)'\circ b$, for all $a,b\in A$.
+    \end{exercise}
+
+    \begin{proposition}\label{prop:rho}
+        Let $A$ be a brace. For each $a\in A$, the map
+        \begin{align*}
+            \rho_b\colon A\to A,\quad
+            \mapsto (\lambda_a(b))'\circ a\circ b,
+        \end{align*}
+        is bijective. Moreover, the map 
+        $\rho\colon (A,\circ)\to\Sym(A)$, $b\mapsto\rho_b$, satisfies $\rho_c\rho_b=\rho_{b\circ c}$, for all $b,c\in A$. 
+    \end{proposition}
+
+    \begin{proof}
+    By Exercise~\ref{ex:rho}, we get that $\rho_b(a)=(a'+b)'\circ b$, for all $a,b\in A$.
+    Now, for all $a\in A$, we have that 
+    \begin{align*}
+        \rho_0(a) = (a'+0)'\circ 0 = a,
+    \end{align*}
+    i.e., $\rho_0=\id_A$. Moreover, for all $a,b,c\in A$, we have
+    \begin{align*}
+        \rho_c\rho_b(a)&=((\rho_b(a))'+c)'\circ c
+        = (((a'+b)'\circ b)' + c)' \circ c\\
+        &= ((b'\circ (a'+b) + c)'\circ c
+        = (b'\circ a' - b + c)' \circ c\\
+        &= (b'\circ(a' +b\circ c))'\circ c
+        = (a' +b\circ c)'\circ b \circ c\\
+        &= \rho_{b\circ c}(a),
+    \end{align*}
+    i.e., $\rho_{b\circ c} = \rho_c\rho_b$. It also follows that $\rho_b$ is bijective with inverse $\rho_{b'}$ for every $b\in A$.
+    \end{proof}
+
+    \subsection{Skew braces and solutions}
+    
+    Now we can state the theorem that gives a first connection of skew braces with solutions. 
+    The following result has been proved by Guarnieri and Vendramin in \cite{MR3647970} extending an analogous result proved by Rump in \cite{MR2278047} for involutive solutions.  
+
+    \begin{theorem}
+        Let $A$ be a skew brace. Then $(A,r_A)$, where 
+        \begin{align*}
+            r_A(x, y) = (-x + x\circ y, (-x + x \circ y)'\circ x\circ y)
+        \end{align*}
+        is a bijective solution to the YBE.
+        Moreover, $(A, r_A)$ is involutive if and only if $A$ is of abelian type.
+    \end{theorem}
+
+    \begin{proof}
+        As before, let us set 
+        \begin{align*}
+            \lambda_x(y)&=-x+x\circ y\\
+            \rho_y(x) &= (\lambda_x(y))'\circ x \circ y.
+        \end{align*}
+        By Proposition~\ref{prop:lambda} and Proposition~\ref{prop:rho}, we have that 
+        $\lambda: A \to \Aut(A,+)$ is a left action of $A$ on itself and $\rho: A\to \Sym(A)$ is a right action of $A$ on itself. Moreover, by definition
+        \begin{align*}
+            \lambda_x(y)\circ\rho_y(x)=x\circ y,
+        \end{align*}
+        i.e. condition~\eqref{eq:LYZ} in Theorem~\ref{thm:LYZ} is satisfied. 
+        Hence, by Theorem~\ref{thm:LYZ}, $(A,r_A)$ is a solution.
+
+        Now let us compute $r_A^2$,
+        \begin{align*}
+            r_A^2(x,y) = (-\lambda_x(y) + \lambda_x(y)\circ \rho_y(x), (-\lambda_x(y) + \lambda_x(y)\circ \rho_y(x))'\circ \lambda_x(y)\circ \rho_y(x)).
+        \end{align*}
+
+        First if we assume $(A,+)$ abelian, we have
+        \begin{align*}
+            -\lambda_x(y) + \lambda_x(y)\circ \rho_y(x) &= -(-x+x\circ y) + x\circ y
+            = -(x\circ y) +x +x\circ y \\
+            &\overset{\text{Lemma}~\ref{lem:propskew}}{=}
+            - x + x\circ (-y) +x\circ y = x\circ (-y)-x +x\circ y \\
+            &\overset{\eqref{compatibility}}{=} x\circ(-y+y) = x
+        \end{align*}
+        and
+        \begin{align*}
+            (-\lambda_x(y) + \lambda_x(y)\circ \rho_y(x))'\circ \lambda_x(y)\circ \rho_y(x)
+            =x' \circ x\circ y = y.
+        \end{align*}
+        Hence, $(A,r_A)$ is involutive.
+
+        Now let us assume $(A,r_A)$ involutive. In particular, for all $x,y\in A$
+        \begin{align*}
+            x= -\lambda_x(y) + \lambda_x(y)\circ \rho_y(x) = -(x\circ y) +x +x\circ y.
+        \end{align*}
+        For the arbitrary of $y$ and since $(A,\circ)$ is a group, it follows
+        $x=-y+x+y$, for all $x,y \in A$, i.e. $(A,+)$ is abelian.        
+    \end{proof}
+
+    \begin{exercise}\label{ex:sumprod}
+        Let $A$ be a skew brace. Prove that 
+        \begin{align*}
+            a+b = a\circ\lambda^{-1}_{a}(b)
+        \end{align*}
+        and
+        \begin{align*}
+            a\circ b = a + \lambda_a(b)
+        \end{align*}
+    \end{exercise}
 
 
-% \begin{frame}{Proof.}
-%     We are left to prove that $r$ is bijective. 
-%     We will see this in the next lecture.
-% \end{frame}
+\subsection{Subbraces and ideals.}
 
-% % \begin{frame}{Proof.}
-% %    Prove $r$ is bijective. 
+    \begin{definition}
+        Let $A$ be a skew brace. 
 
-% %     \vspace{6cm}
-% % \end{frame}
+        A \emph{subbrace} f $A$ is a subset $B$ of $A$ such
+        that $(B,+)$ is a subgroup of $(A,+)$ and $(B,\circ)$ is a subgroup of $(A,\circ)$.
 
-% % \begin{frame}{Proof.}
-% %    Define $r'(x,y)=((\rho_{x^{-1}}(y^{-1}))^{-1},(\lambda_{y^{-1}}(x^{-1}))^{-1})$. 
+        A \emph{left ideal} of $A$ is a subgroup $(I,+)$ of $(A,+)$ such that $\lambda_b(I) \subseteq I$ for all $b\in B$, i.e. $\lambda_b(x)\in I$ for all $b\in A$ and $x\in I$.
 
-% %    Prove $rr'=\id_{X\times X} = r'r$.
+        A \emph{strong left ideal} of $A$ is a left ideal $I$ of $A$ such that $(I,+)$ is a normal subgroup of $(A,+)$.
+    \end{definition}
 
-% %     \vspace{6cm}
-% % \end{frame}
+    \begin{lemma}
+        A left ideal $I$ of a skew brace $A$ is a subbrace of $B$.
+    \end{lemma}
 
-% \begin{frame}{Some Exercises}
-%     \begin{enumerate}
-%         \item Let $G$ be a group. Prove that the following maps satisfy the set-theoretic YBE.
-%         \begin{enumerate}
-%             \item $r(x,y) = (y, x^{-1})$.
-%             \item $r(x,y) = (y^{-1}, x^{-1})$.
-%             \item $r(x,y) = (x^2y,y^{-1}x^{-1}y)$.
-%         \end{enumerate}
-%         \item Let $(X,r)$ be a set-theoretic solution to the YBE. Prove that $X$ with the map $\tau r \tau$ , where $\tau:X\times X, (x,y)\mapsto (y,x)$, is a set-theoretic solution to the YBE.
-%         \item Let $G$ be a group. Prove that the following maps satisfy the set-theoretic YBE.
-%         \begin{enumerate}
-%             \item $r(x,y) = (x^myx^{-m}, x)$, for any integer $m$.
-%             \item $r(x,y) = (xy^{-1}x,x)$.
-%         \end{enumerate}
-%     \end{enumerate}
-% \end{frame}
+    \begin{proof}
+        We need to prove that $(I,\circ)$ is a subgroup of $(A,\circ)$. 
+        Clearly $I$ is non-empty, as it is an additive subgroup of $A$. 
+        If $x,y\in I$, then 
+        \begin{align*}
+            x\circ y = x - x+ x\circ y = x+\lambda_x(y) \in I + I = I
+        \end{align*}
+        and
+        \begin{align*}
+            x'=-\lambda_{x'}(x) \in I. 
+        \end{align*}
+    \end{proof}
 
-% \end{document}
+    \begin{exercise}
+    Let $A$ be a skew brace. Then
+    \begin{align*}
+        \Fix(A) = \{b \in B\colon \lambda_x(b)=b,\ \forall b\in A\}
+    \end{align*}
+    is a left ideal of $A$.
+    \end{exercise}
 
+    \begin{definition}
+        An \emph{ideal} of a skew brace $A$ is a strong left ideal $I$ of $A$ such that    $(I,\circ)$ is a normal subgroup of $(A,\circ)$.
+    \end{definition}
+
+    In general, left ideals, strong left ideals and ideals are different notions.
+    
+    \begin{definition}
+        Let $A$ be a skew brace. The subset $\Soc(A) = \ker \lambda \cap Z(A, +)$ is the
+        \emph{socle} of $A$.
+    \end{definition}
+
+    \begin{proof}
+        First, $\Soc(A) \neq \empty$, since $0\in \Soc(A)$. Moreover, if $x\in \Soc(A)$, then $x'=\lambda_x(x') = - x$.
+        It follows that if $x,y\in \Soc(A)$ then 
+        \begin{align*}
+            \lambda_{x-y}=\lambda_{x\circ y'} = \lambda_x\lambda_{y'} =\lambda_x\lambda^{-1}_y =\id_A,
+        \end{align*}
+        and, clearly $x-y\in Z(A,+)$. Hence, $\Soc(A)$ is an additive subgroup of $A$ and since $\Soc(A)$ is a subgroup of $Z(A,+)$ it is also a normal additive subgroup of $A$. 
+        Moreover,
+        for all $x\in \Soc(A)$ and $a \in A$: 
+        \begin{align}
+            \label{eq1}\lambda_a(x)=a\circ x - a\\
+            \label{eq2}\lambda_a(x)=a\circ x\circ a'.
+        \end{align}
+        For the first equality we have that applying Exercise~\ref{ex:sumprod}
+        \begin{align*}
+            \lambda_a(x)= a\circ (a'+x) = a\circ(x+a') \overset{\eqref{compatibility}}{=} a\circ x - a,
+        \end{align*}
+        for the second equality
+        \begin{align*}
+            \lambda_a(x)=a\circ (a'+x) =a\circ(x\circ\lambda_x(a')) = a\circ x \circ a'.
+        \end{align*}
+        It follows that, for all $x\in \Soc(A)$ and $a,b\in A$, we have
+        \begin{align*}
+            \lambda_{\lambda_a(x)} \overset{\eqref{eq1}}{=} \lambda_{a\circ x \circ a'} = \lambda_a\lambda_x\lambda_a^{-1} = \lambda_a\lambda_a^{-1}=\id_A
+        \end{align*}
+        and, by Exercise~\ref{ex:sumprod},
+        \begin{align*}
+            b+\lambda_a(x) &= b\circ\lambda^{-1}_{b}\lambda_a(x) = b \circ\lambda_{b'\circ a}(x) \overset{\eqref{eq2}}{=} a \circ x \circ a \circ b \\&\overset{\eqref{eq2}}{=} \lambda_a(x)\circ b = \lambda_a(x) + \lambda_{\lambda_a(x)}(b) = \lambda_a(x) +b,
+        \end{align*}
+        i.e., $\lambda_a(x)\in Z(A,+)$. Finally, it also follows that for any $a\in A$ and $x\in \Soc(A)$, $a\circ x\circ a'\in \Soc(A)$. Therefore, $\Soc(A)$ is an ideal of $A$.
+    \end{proof}
+
+    \begin{exercise}
+        Let $A$ be a skew brace. Prove that $\Soc(A)=\ker \lambda \cap \ker \rho$.
+    \end{exercise}
+
+    \begin{definition}
+         Let $A$ be a skew brace. The subset $\Ann(A) = \Soc(A) \cap Z(B, \circ)$ is the
+        \emph{annihilator} of $B$.
+    \end{definition}
+
+    \begin{proposition}
+         The annihilator of a skew brace $A$ is an ideal of $A$.
+    \end{proposition}
+
+    \begin{proof}
+        First, if $x,y\in \Ann(A)$, then $x-y\in \Soc(A)$ and for any $a\in A$
+        \begin{align*}
+            (x-y)\circ a = x\circ y' \circ a = x\circ a\circ y' a\circ x \circ y' = a\circ (x-y),
+        \end{align*}
+        i.e. $x-y\in \Ann(A)$. Now, since $\Ann(A)\subseteq Z(A,+)\cap Z(A,\circ)$, we only need to prove $\lambda_a(x)\in \Ann(A)$, for all $x\in \Ann(A)$ and $a\in A$. By \eqref{eq1} we have that $\lambda_a(x)=a\circ x\circ a'= x\circ a \circ a' = x\in \Ann(A)$. 
+    \end{proof}
+
+    \subsection{The isomorphism theorems}
+
+    If $A$ is a skew brace and $I$ is an ideal of $A$, then $a+I = a\circ I$ for all $a\in A$. 
+    
+    This allows us to prove that there exists a unique skew brace structure over $A/I$ such that the map
+    \begin{align*}
+        A\mapsto A/I, \quad a\mapsto a+I=a\circ I,
+    \end{align*}
+    is a homomorphism of skew braces. 
+    
+    \begin{definition}
+        The skew brace $A/I$ is the \emph{quotient skew brace} of $A$ modulo $I$. 
+    \end{definition}
+    
+    
+    It is possible to prove the isomorphism theorems for skew braces. (See Exercises~\ref{ex:thmiso1}--\ref{ex:thmiso4}).
