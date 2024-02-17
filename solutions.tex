@@ -88,3 +88,44 @@
         &=((x^{-1})^{-1},(y^{-1})^{-1}) = (x,y).
     \end{align*}
 \end{sol}
+
+\begin{sol}{ex:ef}
+    Consider the map $\varphi:A\to B\times C, (x) \mapsto (x_B,-x_C)$. Clearly, $\varphi$ is bijective. Moreover, for $x,y\in A$ we have
+    \begin{align*}
+        \varphi(x\circ y) = \varphi(x_B+y+x_C) = \varphi(x_B+y_B+y_C+x_C) 
+        =(x_B+y_B,-(y_C+x_C)) = (x_B+y_B,-x_C-y_C),
+    \end{align*}
+    and 
+    \begin{align*}
+        \varphi(x)+\varphi(y) = (x_B,-x_C) + (y_B,-y_C) = (x_B+y_B,-x_C-y_C).
+    \end{align*}
+    Hence $\varphi$ is an isomorphism from $(A,\circ$ to the direct product $B\times C$.
+    
+    Now, let $x,y,z \in A$. Then 
+    \begin{align*}
+        x\circ y - x + x\circ z &= x_B + y + x_C - (x_B+x_C) +x_B + z + x_C\\
+        &=x_B + y + z + x_C = x \circ (y+z).
+    \end{align*}
+    Hence $(A,+,\circ)$ is a skew brace.
+\end{sol}
+
+\begin{sol}{ex:rho}
+    Let $a,b,c\in A$. We have that
+    \begin{align*}
+        a\circ(a'+b) \overset{\eqref{compatibility}}{=} a \circ a' - a + a\circ b \overset{0=1}{=} 0 - a + a\circ b = \lambda_a(b).
+    \end{align*}
+    Hence, $\lambda_a(b)= a\circ(a'+b)$. Moreover,
+    \begin{align*}
+        \rho_b(a) = (\lambda_a(b))'\circ a \circ b =(a\circ(a'+b))' \circ a \circ b
+        = (a'+b)'\circ b.
+    \end{align*}
+\end{sol}
+
+\begin{sol}{ex:fix}
+    Note that  
+    \begin{align*}
+        \lambda_{(a,x)}(b,y) &= - (a,x) + (a,x)\circ (b,y)\\ &= -(a,x)+(a+(-1)^xb, x+y) \\&=((-1)^xb,y).
+    \end{align*}
+    and hence $\Fix(A) = \{(0,0),(0,1)\}$ is not a normal subgroup of $(A,\circ)$. 
+    In particular, $\Fix(A)$ is not an ideal of $A$.
+\end{sol}

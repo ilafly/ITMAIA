@@ -1,0 +1,102 @@
+\subsection{Exercises and Problems}\mbox{ }
+
+\begin{exercise}
+    Let $(X,r)$ be a solution. Define 
+    \begin{align*}
+        x\triangleleft y = \lambda_y\rho_{\lambda_x^{-1}(xy}(x).
+    \end{align*}
+    Prove that $(X,\triangleleft)$ is a shelf.
+\end{exercise}
+
+\begin{exercise}
+    Let $p$ be a prime number and let  $A=\mathbb{Z}/(p^2)$ the ring of integers modulo $p^2$. Prove that $A$ with respect to the usual sum and the operation given by $x \circ y = x+y+pxy$ is a skew brace.
+\end{exercise}
+
+\begin{exercise}
+    Let $A$ be a skew brace. Prove that
+    \begin{align*}
+        \rho_b(a) = \lambda^{-1}_{\lambda_a(b)}(-(a\circ b) +a+a\circ b)
+    \end{align*}
+\end{exercise}
+
+\begin{exercise}
+    Let $(A,+)$ be a (not necessarily abelian) group. 
+    \begin{enumerate}
+        \item Prove that a structure of skew brace over $A$ is equivalent to an operation $A\times A \to A$ $(a,b)\mapsto a\ast b$, such that
+        \begin{align*}
+            a \ast (b+c) = a\ast b + b + a\ast c - b
+        \end{align*}
+        holds for all $a,b,c \in A$ and the operation $a\circ b = a+ a\ast b + c$ turns $A$ into a group.
+        \item Deduce that radical rings are examples of skew braces. 
+        \end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+    Let $A$ be a skew brace and $a\ast b = \lambda_a(b)-b = -a+a\circ b - b$. Prove the following identities:
+    \begin{enumerate}
+        \item $a\ast (b+c) = a\ast b + b +a\ast c -b$.
+        \item $(a\circ b)\ast c = (a\ast(b\ast c)) + b\ast c + a\ast c$.
+    \end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+    Let $(A,+,\circ)$ be a triple, where $(A,+)$ and $(A,\circ)$ are groups, and $\lambda: A \to \Sym(A)$, $a\mapsto \lambda_a$ with $\lambda_a(b)=-a+a\circ b$. Prove that the following statements are equivalent:
+    \begin{enumerate}
+        \item $(A,+,\circ)$ is a skew brace.
+        \item $\lambda_a\lambda_b(c)=\lambda_{a\circ b}(c)$, for all $a,b,c\in A$.
+        \item $\lambda_a(b+c) = \lambda_a(b)+\lambda_a(c)$, for all $a,b,c\in A$.
+    \end{enumerate}
+\end{exercise}
+
+\begin{exercise}[The semidirect product]
+    Let $A,B$ be skew braces. 
+    Let $\alpha: (B,\circ)\to\Aut(A,+,\circ)$ be a homomorphism of groups. 
+    Define two operations on $A\times B$ by
+    \begin{align*}
+        (a,x)+(b,y) &= (a+b,x+y)\\
+        (a,x)\circ(b,y) &= (a\circ\alpha_{x}(b), x\circ y),
+    \end{align*}
+    for all $a,b\in A$ and $x,y\in B$. Prove that $(A\times B, +,\circ)$ is a skew brace. 
+    
+    This skew brace is the \emph{semidirect product} of the skew brace $A$ by $B$ via $\alpha$, and it is denoted by $A\rtimes_{\alpha}B$.
+\end{exercise}
+
+\begin{exercise}\label{ex:fix}
+    Consider the semidirect product $A= \mathbb{Z}/(3) \rtimes \mathbb{Z}/(2)$ of the trivial
+    skew braces $\mathbb{Z}/(3)$ and $\mathbb{Z}/(2)$ via the non-trivial action of $\mathbb{Z}/(2)$ over $\mathbb{Z}/(3)$.
+    Prove that $\Fix(B) $ is not an ideal of $A$.
+\end{exercise}
+
+\begin{exercise}
+     A map $f:A\to B$ between two skew braces $A$ and $B$ is a \emph{homomorphism} of skew braces if $f(a + b)= f(a) +f(b)$ and $f(a\circ b)= f(a)\circ f(b)$, for all $a,b\in A$.The \emph{kernel} of $f$ is
+    \begin{align*}
+        \ker f = \{a\in A\colon f(a)=0\}.
+    \end{align*}
+    
+    Let $f:A\to B$ be a homomorphism of two skew braces $A$ and $B$. 
+    Prove that $\ker f$ is an ideal of $A$.
+\end{exercise}
+
+\begin{exercise}\label{ex:thmiso1}
+    Let $f : A\to B$ be a homomorphism of skew braces. Prove that $A/\ker f \cong f(A)$.
+\end{exercise}
+
+\begin{exercise}\label{ex:thmiso2}
+    Let $A$ be a skew brace and let $B$ be a subbrace of $A$. Prove that if $I$ is an ideal of $A$, then $B\circ I$ is a subbrace of $A$, $B\cap I$ is an ideal of $B$ and $(B\circ I)/I \cong B/(B\cap I)$.
+\end{exercise}
+
+\begin{exercise}\label{ex:thmiso3}
+    Let $A$ be a skew brace and $I$ and $J$ be ideals of $A$. Prove that if $I\subseteq J$, then $A/J\cong (A/I)/(J/I)$.
+\end{exercise}
+
+\begin{exercise}\label{ex:thmiso4}
+    Let $A$ be a skew brace and let $I$ be an ideal of $A$. Prove that there is a bijective correspondence between (left) ideals of $A$ containing $I$ and (left) ideals of $A/I$.
+\end{exercise}
+
+\begin{exercise}
+    Let $A$ be a skew brace and $I$ be a characteristic subgroup of the additive. Prove that $I$ is a left ideal of $A$.
+\end{exercise}
+
+\begin{exercise}
+    Let $A$ and $B$ be skew braces. Prove that $f :A \to B$ is a homomorphism of skew braces if and only if $f(a+b)= f(a)+f(b)$ and $f(\lambda_a(b))=\lambda_{f(a)}(f(b))$, for all $a,b\in B$.
+\end{exercise}
