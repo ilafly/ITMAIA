@@ -6,7 +6,7 @@ It first appeared in two independent papers of Yang \cite{Yang1967} and Baxter\
 \cite{Baxter1971}.
 
 \begin{definition}\index{Yang--Baxter equation}
-    A solution of the \emph{Yang--Baxter eqution} is a bijective linear map  $R: V\otimes V \to V \otimes V$, where $V$ is a vector space such that
+    A solution of the \emph{Yang--Baxter eqution} is a linear map  $R: V\otimes V \to V \otimes V$, where $V$ is a vector space such that
     \begin{align*}
         R_{12}R_{13}R_{23} = R_{23}R_{13}R_{12}
     \end{align*}
@@ -31,7 +31,7 @@ It first appeared in two independent papers of Yang \cite{Yang1967} and Baxter\
     These lectures will focus on set-theoretic solutions to the Yang-Baxter equation and their connection with known and ``new'' algebraic structures. 
 
     \begin{definition}\index{Set-theoretic solution}
-        A \emph{set-theoretic solution to the Yang--Baxter equation} is a pair $(X,r)$ where $X$ is a non-empty set and $r: X\times X \to X \times X$ is a bijective map such that
+        A \emph{set-theoretic solution to the Yang--Baxter equation} is a pair $(X,r)$ where $X$ is a non-empty set and $r: X\times X \to X \times X$ is a map such that
         \begin{align}\label{eq:YBE}
             (r\times \id)(\id \times r)(r\times \id) = (\id \times r)(r\times \id)(\id \times r)
         \end{align}
@@ -49,10 +49,64 @@ It first appeared in two independent papers of Yang \cite{Yang1967} and Baxter\
     \begin{definition}\index{Set-theoretic solution!Finite}\index{Set-theoretic solution!Non-degenerate}
         Let $(X,r)$ be a set-theoretic solution to the  Yang--Baxter equation. We say that 
         \begin{itemize}
+            \item $(X,r)$ is \emph{bijective} if $r$ is bijective.
             \item $(X,r)$ is \emph{finite} if $X$ is finite.
             \item $(X,r)$ is \emph{non-degenerate} if $\lambda_x,\rho_x$ are bijective for all $x\in X$.
         \end{itemize}
     \end{definition}
+
+
+
+\subsection{A characterisation}
+    \begin{proposition}\label{prop:characterisation}
+        Let $X$ be a non-empty set and $r: X \times X \to X \times X$ be a  map, written ase $r(x,y) = (\lambda_x(y),\rho_y(x))$. Then $r$ satisfies equation~\ref{eq:YBE} if and only if
+    \begin{enumerate}
+        \item $\lambda_x\lambda_y = \lambda_{\lambda_x(y)}\lambda_{\rho_y(x)}$
+        \item $\lambda_{\rho_{\lambda_y(z)}(x)}\rho_z(y)=\rho_{\lambda_{\rho_y(x)}(z)}\lambda_x(y)$
+        \item $\rho_z\rho_y=\rho_{\rho_z(y)}\rho_{\lambda_y(z)}$
+    \end{enumerate}
+    for all $x,y,z\in X$.
+
+    In particular, $(X,r)$ is a solution to the Yang--Baxter equation when $r$ is bijective.
+    \end{proposition}
+    \begin{proof}
+        Let us write $r_1=r\times \id$ and $r_2=\id \times r$. Then  
+        \begin{align*}
+            r_1r_2r_1(x,y,z)& = r_1r_2(\lambda_x(y),\rho_y(x),z) \\
+            &= r_1(\lambda_x(y),\lambda_{\rho_y(x)}(z),\rho_z\rho_y(x))\\
+            &= (\lambda_{\lambda_x(y)}\lambda_{\rho_y(x)}(z),\rho_{\lambda_{\rho_y(x)}(z)}\lambda_x(y),\rho_z\rho_y(x)),
+        \end{align*}
+        and 
+        \begin{align*}
+            r_2r_1r_2(x,y,z) =& r_2r_1(x,\lambda_y(z),\rho_z(y)) \\
+            &= r_2(\lambda_x\lambda_y(z),\rho_{\lambda_y(z)}(x),\rho_z(y))\\
+            &= (\lambda_x\lambda_y(z),\lambda_{\rho_{\lambda_y(z)}(x)}\rho_z(y),\rho_{\rho_z(y)}\rho_{\lambda_y(z)}(x)).
+        \end{align*}
+        Therefore $r_1r_2r_1= r_2r_1r_2$ if and only if $1), 2)$ and $3)$ hold.     
+    \end{proof}
+
+\subsection{First examples}
+    \begin{examples}
+        Let $X$ be a non-empty set.  
+        \begin{enumerate}
+            \item The pair $(X,\id_{X\times X})$ is a  set-theoretic solution to the  Yang--Baxter equation. Note that $(X,\id_{X\times X})$ is not non-degenerate, since $\lambda_x(y)=x$ and $\rho_y(x)=y$, for all $x,y\in X$.
+            \item Let $\tau: X \times X \to X \times X$ be the flip map, i.e. $\tau(x,y)=(y,x)$ for all $x,y \in X$. Then, the pair $(X,\tau)$ is a set-theoretic solution to the Yang--Baxter equation. Moreover, it is non-degenerate since $\lambda_x=\rho_x=\id_X$ for all $x\in X$.
+            \item Let $\lambda, \rho$ be permutations of $X$. Then $r(x,y)=(\lambda(y),\rho(x))$ is a
+            non-degenerate set-theoretic solution to the Yang--Baxter equation if and only if $\lambda\rho = \rho\lambda$.
+            Moreover, $(X , r )$ is involutive if and only if $\rho = \lambda^{-1}$. The solution 
+            $(X,r)$ is called a \emph{permutational solution} or a \emph{Lyubashenko's solution}.
+        \end{enumerate}
+    \end{examples}
+
+    If, on the set $X$, we have a bit more structure, we can define some more sophisticated solutions.
+    \begin{example}
+        Let $G$ be a group and, let
+        \begin{align*}
+            r_1(x,y) &= (y, y^{-1}xy)\\
+            r_2(x,y) &= (x^{2}y, y^{-1}x^{-1}y).
+        \end{align*}
+        Then $(X,r_1)$ and $(X,r_2)$ are bijective non-degenerate set-theoretic solutions to the Yang--Baxter equation.
+    \end{example}
 
 \subsection{Set-theoretic solutions to the Yang--Baxter equation and III Reidemeister move}
     Let us represent the map $r:X \times X \to X \times X$ as a crossing and the identity on $X$ as a straight line; see Figure~\ref{fig:crossing}. \index{III Reidemeister move}
@@ -146,243 +200,40 @@ It first appeared in two independent papers of Yang \cite{Yang1967} and Baxter\
         \label{fig:braid}
     \end{figure}
 
-\subsection{First examples}
-    \begin{examples}
-        Let $X$ be a non-empty set.  
-        \begin{enumerate}
-            \item The pair $(X,\id_{X\times X})$ is a  set-theoretic solution to the  Yang--Baxter equation. Note that $(X,\id_{X\times X})$ is not non-degenerate, since $\lambda_x(y)=x$ and $\rho_y(x)=y$, for all $x,y\in X$.
-            \item Let $\tau: X \times X \to X \times X$ be the flip map, i.e. $\tau(x,y)=(y,x)$ for all $x,y \in X$. Then, the pair $(X,\tau)$ is a set-theoretic solution to the Yang--Baxter equation. Moreover, it is non-degenerate since $\lambda_x=\rho_x=\id_X$ for all $x\in X$.
-            \item Let $\lambda, \rho$ be permutaions of $X$. Then $r(x,y)=(\lambda(y),\rho(x))$ is a
-            non-degenerate set-theoretic solution to the Yang--Baxter equation if and only if $\lambda\rho = \rho\lambda$.
-            Morever, $(X , r )$ is involutive if and only if $\rho = \lambda^{-1}$. The solution 
-            $(X,r)$ is called a \emph{permutational solution} or a \emph{Lyubashenko's solution}.
-        \end{enumerate}
-    \end{examples}
 
-    If, on the set $X$, we have a bit more structure, we can define some more sophisticated solutions.
-    \begin{example}
-        Let $G$ be a group and, let
+
+\subsection{The derived solution}
+   
+    \begin{proposition}\label{prop:derived}
+        Let $(X,r)$ be a non-degenerate set-theoretic solution to the Yang--Baxter equation. For any $x,y\in X$ consider
         \begin{align*}
-            r_1(x,y) &= (y, y^{-1}xy)\\
-            r_2(x,y) &= (x^{2}y, y^{-1}x^{-1}y).
+            \sigma_{y}(x)= \lambda_y\rho_{\lambda_x^{-1}(y)}(x).
         \end{align*}
-        Then $(X,r_1)$ and $(X,r_2)$ are bijective non-degenerate set-theoretic solutions to the Yang--Baxter equation.
-    \end{example}
-
-    \subsection{A characterisation}
-    \begin{proposition}\label{prop:characterisation}
-        Let $X$ be a non-empty set and $r: X \times X \to X \times X$ be a  map, written ase $r(x,y) = (\lambda_x(y),\rho_y(x))$. Then $r$ satisfies equation~\ref{eq:YBE} if and only if
-    \begin{enumerate}
-        \item $\lambda_x\lambda_y = \lambda_{\lambda_x(y)}\lambda_{\rho_y(x)}$
-        \item $\lambda_{\rho_{\lambda_y(z)}(x)}\rho_z(y)=\rho_{\lambda_{\rho_y(x)}(z)}\lambda_x(y)$
-        \item $\rho_z\rho_y=\rho_{\rho_z(y)}\rho_{\lambda_y(z)}$
-    \end{enumerate}
-    for all $x,y,z\in X$.
-
-    In particular, $(X,r)$ is a solution to the Yang--Baxter equation when $r$ is bijective.
+        Then $s:X\times X\to X \times X$ defined by $s(x,y) =(y,\sigma_y(x))$ is a solution to the Yang-Baxter equation.
+        Moreover, $r$ is bijective if and only if $\sigma_y$ is bijective for every $y\in X$.
     \end{proposition}
-    \begin{proof}
-        Let us write $r_1=r\times \id$ and $r_2=\id \times r$. Then  
-        \begin{align*}
-            r_1r_2r_1(x,y,z)& = r_1r_2(\lambda_x(y),\rho_y(x),z) \\
-            &= r_1(\lambda_x(y),\lambda_{\rho_y(x)}(z),\rho_z\rho_y(x))\\
-            &= (\lambda_{\lambda_x(y)}\lambda_{\rho_y(x)}(z),\rho_{\lambda_{\rho_y(x)}(z)}\lambda_x(y),\rho_z\rho_y(x)),
-        \end{align*}
-        and 
-        \begin{align*}
-            r_2r_1r_2(x,y,z) =& r_2r_1(x,\lambda_y(z),\rho_z(y)) \\
-            &= r_2(\lambda_x\lambda_y(z),\rho_{\lambda_y(z)}(x),\rho_z(y))\\
-            &= (\lambda_x\lambda_y(z),\lambda_{\rho_{\lambda_y(z)}(x)}\rho_z(y),\rho_{\rho_z(y)}\rho_{\lambda_y(z)}(x)).
-        \end{align*}
-        Therefore $r_1r_2r_1= r_2r_1r_2$ if and only if $1), 2)$ and $3)$ hold.     
-    \end{proof}
-
-    \begin{exercise}
-        Let $(X,r)$ be a set-theoretic solution to the Yang--Baxter equation. Define for all $x,y \in X$
-        \begin{align*}
-            \bar{r}(x,y) = \tau r \tau (x,y) = (\rho_x(y),\lambda_y(x)).
-        \end{align*}
-        Then $(X,\bar{r})$ is a set-theoretic solution to the Yang--Baxter equation.
-    \end{exercise}
-
-    \subsection{Shelfs and racks}\mbox{}
     
-    \begin{exercise}\label{ex2}
-         Let $X$ be a non-empty set.
-         Let $\triangleleft: X\times X \to X$ be a binary operation and define $r: X\times X \to X\times X$ such that $r(x,y)= (y,x \triangleleft y)$. Then $r$ satisfies equation~\ref{eq:YBE} if and only if $(x\triangleleft y)\triangleleft z=(x\triangleleft z)\triangleleft(y\triangleleft z)$ holds for all $x,y,z \in X$. 
-         Moreover, $r$ is bijective if and only if the maps $\rho_y:X\to X, x \mapsto x\triangleleft y$ are bijective.
-    \end{exercise}
-
-    \begin{definition}\index{Shelf}\index{Rack}
-         A \emph{(right) shelf} is a pair $(X,\triangleleft)$ where $X$ is a non-empty set and $\triangleleft$ is a binary operation such that 
-        \begin{align*}
-            (x\triangleleft y)\triangleleft z=(x\triangleleft z)\triangleleft(y\triangleleft z).
-        \end{align*}
-        If, in addition, the maps $\rho_y:X \to X, x \mapsto x\triangleleft y$ are bijective for all $y\in X$, then $(X,\triangleleft)$ is called a \emph{(right) rack}.
-    \end{definition}
-
-    \begin{proposition}
-        Let $X$ be a non-empty set with a binary operation $\triangleleft: X\times X \to X$. Then $r(x,y) =(y,x\triangleleft y)$ is a set-theoretic solution to the Yang--Baxter equation if and only if $(X,\triangleleft)$ is a rack. 
-    \end{proposition}
-
-    \begin{proof}
-        Follows from exercise~\ref{ex2}.
-    \end{proof}
-
-    \begin{exercise}
-         Let $G$ be a group. Then $(G,r)$ where $r(x,y)=(y, y^{-1}xy)$ is a 
-         non-degenerate set-theoretic solution to the Yang--Baxter equation.
+    \begin{exercise}\label{ex:derived}
+        Prove Proposition~\ref{prop:derived}.
     \end{exercise}
     
     \begin{convention}
-        From now on, a \emph{solution}  will always mean a non-degenerate set-theoretic solution to the Yang--Baxter equation.
+        From now on, a \emph{solution}  will always mean a non-degenerate bijective set-theoretic solution to the Yang--Baxter equation.
     \end{convention}
 
-\subsection{An intriguing connection between group actions and solutions}
-    The following theorem is the core result of the paper \cite{LYZ00} by Lu, Yan Zhu.
-
-    \begin{theorem}\label{thm:LYZ}
-         Let $G$ be a group, let $\lambda: G\times G \to G, (x,y)\mapsto \lambda_x(y)$ a left group action of $G$ on itself as a set and $\rho: G\times G \to G, (x,y)\mapsto \rho_y(x)$ a right group action of $G$ on itself as a set. If the ``compatibility'' condition 
-        \begin{align}\label{eq:LYZ}
-            uv = \lambda_u(v)\rho_v(u)
-        \end{align}
-        holds, then $(G,r)$, where
-        \begin{align*}
-            r:G\times G \to G\times G, \qquad (x,y)\mapsto (\lambda_x(y),\rho_y(x))
-        \end{align*}
-        is a solution.
-    \end{theorem}
-
-    \begin{exercise}\label{ex:LYZ}
-        Prove Theorem~\ref{thm:LYZ}
-    \end{exercise}
-
-\subsection{Radical rings}
     \begin{definition}
-         A non-empty set $R$ with two binary operations the addition~$+$ (addition) and the multiplication~$\cdot$ is a \emph{ring}\index{Ring} if
-    \begin{itemize}
-        \item $(R,+)$ is an abelian group,
-        \item $(R,\cdot)$ is a semigroup (i.e. $\cdot$ is associative),
-        \item The multiplication is distributive with respect to the addition, i.e.
-        \begin{align*}
-            a\cdot (b+c)&=(a\cdot b)+(a\cdot c)&\text{(left distributivity)}\\
-            (b+c)\cdot a&=(b\cdot a)+(c\cdot a)&\text{(right distributivity)}
-        \end{align*}
-        for all $a,b,c\in R$.
-    \end{itemize}
-    A ring $(R,+,\cdot)$ is \emph{unitary} if there is an element $1$ in $R$ such that $a\cdot 1= 1\cdot a=a$ for all $a \in R$ (i.e., $1$ is the \emph{multiplicative identity}).
+         Let $(X,r)$ be a solution. The pair $(X,s)$ is called the \emph{derived solution} of the solution $(X,r)$.
     \end{definition}
 
-    Let $R$ be a non-unitary ring. Consider $R_1 = \mathbb{Z}\times R$ with the addition defined component-wise and multiplication
-    \begin{align*}
-        (k,a)(l,b)=(kl,kb+la+ab)
-    \end{align*}
-    for all $k,l\in \mathbb{Z}$ and $a,b\in R$.
-    
-    Then $R_1$ is a ring and $(1, 0)$ is its multiplicative identity.
-    
-    Note that $\{0\}\times R$ is isomorphic to $R$ as non-unitary rings.
 
-    \begin{exercise}\label{ex:invertible elements}
-         Let $R$ be a non-unitary ring. Consider $R_1 = \mathbb{Z}\times R$ as before. If $(k,x)\in R_1$ is invertible, then $k \in\{1,-1\}$.
-    \end{exercise}
-
-   \begin{definition}
-        Let $R$ be a unitary ring.  The \emph{(Jacobson) radical} $J(R)$ of $R$ is defined as the intersection of all maximal left ideals\footnote{A \emph{left ideal} of $R$ is an additive subgroup $I$ of $R$ such that $ax\in I$ for all $a\in R$ and $x\in I$.} of $R$.
-   \end{definition}
-
-   \begin{exercise}\label{ex:Jideal}
-       Let $R$ be a unitary ring. 
-       \begin{enumerate}
-           \item Prove that $J(R)$ in an ideal of $R$.
-           \item Prove that  $x\in J(R)$ if and only if $1 + rx$ is invertible for all $r\in R$.
-       \end{enumerate}
-   \end{exercise}
-
-   \begin{definition}
-       A non-unitary ring $R$ is a  \emph{(Jacobson)radical ring} if it is isomorphic
-        to the Jacobson radical of a unitary ring. 
-   \end{definition}
-
-    \begin{proposition}
-        Let $R$ be a non-unitary ring. The following statements are equivalent.
-    \begin{enumerate}
-        \item $R$ is a radical ring.
-        \item For all $a\in R$ there exists a unique $b\in R$ such that $a+b+ab=a+b+ba= 0$.
-        \item $R$ is isomorphic to $J(R_1)$.
-    \end{enumerate}
-    \end{proposition}
-
-    \begin{proof}
-        Let us first prove that 1) implies 2). 
-        Let $M$ be a unitary ring such that $R$ is isomorphic to its Jacobson radical $J(M)$ and let $\psi: R \to M$ be a homomorphism such that $\psi(R)$ is isomorphic to $J(M)$. 
-        Now, if $a\in R$, then $\psi(a)\in J(M)$. By Exercise~\ref{ex:Jideal}, $1+\psi(a)$ is invertible, i.e. there exists $c\in M$ such that 
-        \begin{align*}
-            (1+\psi(a))(1+c) = 1 = (1+c) (1+\psi(a)).
-        \end{align*}
-        It follows that $c\in J(M)$, i.e. $c=\psi(b)$ for some $b\in R$. Moreover, since $\psi$ is a homomorphism
-        \begin{align*}
-            1 &= (1+\psi(a))(1+c) = (1+\psi(a))(1+\psi(b)) \\&= 1 + \psi(a)+\psi(b)+\psi(a)\psi(b)
-            = 1 + \psi(a+b +ab)
-        \end{align*}
-        and 
-        \begin{align*}
-            1 &= (1+c)(1+\psi(a)) = (1+\psi(b))(1+\psi(a)) \\&= 1 + \psi(b)+\psi(a)+\psi(b)\psi(a)
-            = 1 + \psi(a+b+ba).
-        \end{align*}
-        Hence, 2) holds. 
-
-        Now let us prove 2) implies 3). Let $a\in R$, we aim to prove that $(1,a)\in R_1$ is invertible. By 2) there exists $b\in R$ such that 
-        \begin{align*}
-            (1,a)(1,b) = (1, a+b+ab) = (1,0)\\
-            (1,b)(1,a) = (1, b+a+ba) = (1,0).   
-        \end{align*}
-        Now, consider $(k,a)\in J(R_1)$. We want to prove that $k=0$, i.e. $J(R_1)\subseteq \{0\}\times R$. Since $(k,a)\in J(R_1)$ follows that $(1,0)+(3,0)(k,a)=)(1+3k,3a)$ is invertible by Exercise~\ref{ex:Jideal}, and so $k=0$. Therefore $J(R_1)\subseteq \{0\}\times R$. Moreover, let $(0,R)\in\{0\}\times R$. then 
-        \begin{align*}
-            (1,0) + (k,a) (0,x) = (1,0)+(0,kx+ka) = (1, kx+ka)
-        \end{align*}
-        which is invertible. So $(0,x)\in J(R_1)$.
-        Finally the implication 3) implies 1) is trivially true.
-    \end{proof}
-
-    \begin{definition}
-         Let $R$ be any ring. Define on $R$ the binary operation $\circ$ called the \emph{adjoint multiplication} of $R$
-        \begin{align*}
-            a\circ b = a+b+ab,
-        \end{align*}
-        for all $a,b\in R$. 
-    \end{definition}
-
-    \begin{lemma}\label{lem:adjoint}
-        Then $(R,\circ)$ is a monoid with neutral element $0$. 
-    \end{lemma}
-
-    \begin{exercise}
-        Prove Lemma~\ref{lem:adjoint}.
-    \end{exercise}
-
-    \begin{convention}
-        If $a\in R$ is invertible in the monoid $(R, \circ)$, 
-        we will denote by $a'$ its inverse.
-    \end{convention}
-
-    \begin{examples}\mbox{}
-        \begin{enumerate}
-            \item Let $p$ be a prime and let $A = \mathbb{Z}/(p^2) = \mathbb{Z}/p^2\mathbb{Z}$ be the ring of integers modulo $p^2$. Then $(A,+)$ with a new multiplication $\ast$ defined by $a\ast b = pab$ is a radical ring. In this case, $a\circ b = a+b+pab$, and $a' =-a+pa^2$. 
-            \item Let $n$ be an integer such that $n>1$. Let 
-                \begin{align*}
-                    A=\left\{\dfrac{nx}{ny+1}\colon x,y \in \mathbb{Z}\right\}\subseteq \mathbb{Q}.
-                \end{align*}
-                $A$ is a (non-unitary) subring of $\mathbb{Q}$. In fact, $A$ is a radical ring. A straightforward computation shows
-                \begin{align*}
-                    \left(\dfrac{nx}{ny+1}\right)' = \dfrac{-nx}{n(x+y)+1}.
-                \end{align*}
-        \end{enumerate}
-    \end{examples}
 
     \subsection{Involutive solutions}
     In \cite{MR2278047}, Rump proved that radical rings provide examples of involutive solutions.
 
+    \begin{definition}
+        A ring $(R,+,\cdot)$ is said to be \emph{radical} if $R$ with respect the binary operation $\circ$ defined by $x\circ y=x+y+xy$ is a group. We denote by $x'$ the inverse of $x$ with respect to $\circ$.  
+    \end{definition}
+    
     \begin{definition}
         A solution $(X,r)$ is said to be \emph{involutive} if $r^2=\id_{X\times X}$.
     \end{definition}
