@@ -6,6 +6,63 @@
 \fancyhead[R]{Some solutions}
 \setlength{\headheight}{14pt}
 
+\begin{sol}{ex:taurtau}
+    It is enough to apply Proposition~\ref{prop:characterisation}.
+\end{sol}
+
+
+\begin{sol}{ex:derived}
+    First, let us prove note that $s(x,y) =(y,\sigma_y(x))$ satisfies the Yang--Baxter equation if and only if 
+    \begin{align*}
+        \sigma_z\sigma_y=\sigma_{\sigma_z(y)}\sigma_z.
+    \end{align*}
+
+    Note that 2) in Proposition~\ref{prop:characterisation}, implies that 
+    \begin{align}\label{eq:lambdasigma}
+        \lambda_x\sigma_y = \sigma_{\lambda_x(y)}\lambda_x.
+    \end{align}
+    Indeed, for any $x,y,z\in X$ it holds
+    \begin{align*}
+        \lambda_{\rho_{\lambda_y(z)}(x)}\rho_z(y)= \lambda_{\rho_{\lambda_y(z)}(x)}\lambda^{-1}_{\lambda_y(z)}\sigma_{_{\lambda_y(z)}}(y)
+        \overset{1)}{=}\lambda^{-1}_{\lambda_x\lambda_y(z)}\lambda_x\sigma_{\lambda_y(z)}(y)
+    \end{align*}
+    and
+    \begin{align*}
+        \rho_{\lambda_{\rho_y(x)}(z)}\lambda_x(y) = \lambda^{-1}_{\lambda_{\lambda_x(y)}\lambda_{\rho_y(x)}(z)}\sigma_{\lambda_{\lambda_x(y)}\lambda_{\rho_y(x)}(z)}\lambda_x(y)\overset{1)}{=}\lambda^{-1}_{\lambda_x\lambda_y(z)}\sigma_{\lambda_x\lambda_y(z)}\lambda_x(y)
+    \end{align*}
+    Moreover, 3) in  Proposition~\ref{prop:characterisation}, implies that 
+    \begin{align*}
+        \sigma_z\sigma_y=\sigma_{\sigma_z(y)}\sigma_z.
+    \end{align*}
+    Indeed
+    \begin{align*}
+        \rho_z\rho_y(x) &=\lambda^{-1}_{\lambda_{\rho_y(x)}(z)}\sigma_{\lambda_{\rho_y(x)}(z)}\lambda^{-1}_{\lambda_x(y)}\sigma_{\lambda_x(y)}(x)
+        \overset{\eqref{eq:lambdasigma}}{=}\lambda^{-1}_{\lambda_{\rho_y(x)}(z)}\lambda^{-1}_{\lambda_x(y)}\sigma_{\lambda_{\lambda_x(y)}\lambda_{\rho_y(x)}(z)}\sigma_{\lambda_x(y)}(x)\\
+        &\overset{1)}{=}\lambda^{-1}_{\lambda_{\rho_y(x)}(z)}\lambda^{-1}_{\lambda_x(y)}\sigma_{\lambda_x\lambda_y(z)}\sigma_{\lambda_x(y)}(x).
+    \end{align*}
+    and
+    \begin{align*}
+        \rho_{\rho_z(y)}\rho_{\lambda_y(z)}(x) = 
+        \lambda^{-1}_{\lambda_{\rho_{\lambda_y(z)}(x)}\rho_z(y)}\lambda^{-1}_{\lambda_x\lambda_y(z)}\sigma_{\lambda_x\lambda_{\lambda_y(z)}\rho_z(y)}\sigma_{\lambda_x\lambda_y(z)}(x)\\
+        \overset{1)\&2)}{=}\lambda^{-1}_{\rho_{\lambda_{\rho_y(x)}(z)}\lambda_x(y)}\lambda^{-1}_{\lambda_{\lambda_x(y)}\lambda_{\rho_y(x)}(z)}\sigma_{\lambda_x\sigma_{\lambda_y(z)}(y)}\sigma_{\lambda_x\lambda_y(z)}(x)\\
+        \overset{1)}{=}\lambda^{-1}_{\lambda_{\rho_y(x)}(z)}\lambda^{-1}_{\lambda_x(y)}\sigma_{\sigma_{\lambda_x\lambda_y(z)}\lambda_x(y)}\sigma_{\lambda_x\lambda_y(z)}(x).
+    \end{align*}
+    Hence, for all $x,y,z\in X$
+    \begin{align*}
+        \sigma_{\lambda_x\lambda_y(z)}\sigma_{\lambda_x(y)}(x)=\sigma_{\sigma_{\lambda_x\lambda_y(y)}\lambda_x(z)}\sigma_{\lambda_x\lambda_y(z)}(x)
+    \end{align*}
+    and the wanted equality follows.
+
+    This prove that $s$ satisfies the Yang--Baxter equation.
+
+    Now to prove that $r$ is bijective if and only if $s$ is non-degenerate (i.e. all $\sigma_y$ bijective). Let us first notice that $\varphi r\varphi^{-1} = s$ where $\varphi(x,y)=(x,\lambda_x(y))$. Indeed
+    \begin{align*}
+        \varphi r \varphi^{-1}(x,y) = \varphi r (x, \lambda^{-1}x(y))
+        =\varphi(\lambda_x\lambda^{-1}x(y), \rho_{\lambda^{-1}x(y)}(x))
+        =(y, \lambda_y\rho_{\lambda^{-1}x(y)}(x)) = (y,\sigma_y(x)).
+    \end{align*}
+    It follows that $r$ is bijective if and only if $s$ is bijective. Finally clearly $s$ is bijective if and only if $\sigma_y$ is bijective for every $y\in X$. 
+\end{sol}
 
 \begin{sol}{ex2}
     For every $x,y \in X$ let us write $\lambda_x = \id_X$ and $\rho_y(x)=x \triangleleft y$.
@@ -128,4 +185,20 @@
     \end{align*}
     and hence $\Fix(A) = \{(0,0),(0,1)\}$ is not a normal subgroup of $(A,\circ)$. 
     In particular, $\Fix(A)$ is not an ideal of $A$.
+\end{sol}
+
+\begin{sol}{ex:hat}
+    Let us compute
+    \begin{align*}
+        (x,y)=r^{-1}r(x,y) = (\hat{\lambda}_{\lambda_x(y)}\rho_y(x),\hat{\rho}_{\rho_y(x)}\lambda_x(y)).
+    \end{align*}
+    It follows that 
+    \begin{align*}
+        (x,\lambda^{-1}_x{y})=(\hat{\lambda}_y\rho_{\lambda^{-1}_x(y)}(x),\hat{\rho}_{\rho_{\lambda^{-1}_x(y)(x)}}(y)),
+    \end{align*}
+    hence $\hat{\lambda}^{-1}_y(x)=\rho_{\lambda^{-1}_x(y)}(x)$ and $\lambda^{-1}_x(y)=\hat{\rho}_{\hat{\lambda}^{-1}_y(x)}(y)$. Similarly
+    \begin{align*}
+        ({\rho^{-1}_y(x)},y)=(\hat{\lambda}_{\lambda_{\rho^{-1}_y(x)}(y)}(x),\hat{\rho}_{x}\lambda_{\rho^{-1}_y(x)}(y)),
+    \end{align*}
+    hence $\hat{\rho}^{-1}_x(y)=\lambda_{\rho^{-1}_y(y)}(y)$ and $\rho^{-1}_y(x) = \hat{\lambda}_{\hat{\rho}^{-1}_x(y)}(x)$.
 \end{sol}
