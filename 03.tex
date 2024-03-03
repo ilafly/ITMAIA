@@ -5,16 +5,16 @@
     \begin{definition}
         Let $(X,r)$ be a solution. The \emph{structure group} of $(X,r)$ is the group
         \begin{align*}
-            G(X,r)=\gr(X : xy=\lambda_x(y)\rho_y(x) \text{ for all }x,y\in X).
+            G(X,r)=\langle X : xy=\lambda_x(y)\rho_y(x) \text{ for all }x,y\in X \rangle.
         \end{align*}
         The \emph{derived structure group} of $(X,r)$ is the group
         \begin{align*} 
-            A(X,r)=\gr(X : x\lambda_x(y)=\lambda_x(y)\lambda_{\lambda_x(y)}\rho_y(x) \text{ for all }x,y\in X).
+            A(X,r)=\langle X : x\lambda_x(y)=\lambda_x(y)\lambda_{\lambda_x(y)}\rho_y(x) \text{ for all }x,y\in X \rangle.
         \end{align*}
     \end{definition}
 
         
-    \begin{theorem}[\cite{MR1722951} or \cite{LYZ00}]
+    \begin{theorem}[\cite{MR1722951} or \cite{LYZ00}]\label{thm:structuregroup}
     Let $(X,r)$ be a solution.
     Then, there exists a unique structure of skew brace with multiplicative group the structure group isomorphic to $G(X,r)$, additive strucutre isomorphic to $A(X,r)$ and such that $\lambda_{i(x)}(i(y))=i(\lambda_x(y))$ for all $x,y\in X$, where $\iota: X\to G(X,r), x\mapsto x$ is the canoical map. 
     \end{theorem}
@@ -22,6 +22,17 @@
     \begin{proof}
         Omitted.
     \end{proof}
+
+    Note that the map $i$ in the previous theorem is not necessarily injective.
+
+    \begin{example}
+        Let $X=\{1,2,3,4\}$, $\lambda= (1\ 2)$ and $\rho=(3\ 4)$. Since $\lambda\rho=\rho\lambda$, we have that $r:X\times X\to X \times X$ defined by $r(x,y)=(\lambda(y),\rho(x))$ gives a solution. In $G(X,r)$ the elements $1$ and $2$ are identified and also $3$ and $4$. Indded in $G(X,r)$ we have 
+        \begin{align*}
+            1\circ 1 = \lambda(1)\circ \rho(1) = 2 \circ 1 \implies 1 = 2,\\
+            3\circ 3 = \lambda(3)\circ \rho(3) = 3 \circ 4 \implies 3=4.
+        \end{align*}
+        Therefore, $i$ is not injective. 
+    \end{example}
 
     The structure skew brace defined in the previous theorem satisfies the following universal property.
     
@@ -43,212 +54,98 @@
 
     \subsection{The permutation group of a solution}
 
+    If $(X,r)$ is a finite solution we can consider a finite quotient (as skew brace) of the strucure group that governs important property of such solution. 
+
     Let $(X,r)$ be a solution. Consider the structure group $G(X,r)$ of the solution $(X,r)$. Let $i\colon X\to G(X,r)$ be the natural map. 
 
     \index{Solution!permutation group}
     The \emph{permutation group} of $(X,r)$ is the subgroup
-\[\mathcal{G}(X,r)=\langle (\sigma_x,\tau^{-1}_x) : x\in X\rangle\subseteq\Sym_X\times\Sym_X.\]
+\[\mathcal{G}(X,r)=\langle (\lambda_x,\rho^{-1}_x) : x\in X\rangle\subseteq\Sym_X\times\Sym_X.\]
 Since 
-\[ \sigma_x\sigma_y=\sigma_{\sigma_x(y)}\sigma_{\tau_y(x)}\quad\text{and}\quad \tau^{-1}_x\tau^{-1}_y=\tau^{-1}_{\sigma_x(y)}\tau^{-1}_{\tau_y(x)} \]
+\[ \lambda_x\lambda_y=\lambda_{\lambda_x(y)}\lambda_{\rho_y(x)}\quad\text{and}\quad \rho^{-1}_x\rho^{-1}_y=\rho^{-1}_{\lambda_x(y)}\rho^{-1}_{\rho_y(x)} \]
 for all $x,y\in X$, there exists a unique group homomorphism
-$h\colon G(X,r)\to \mathcal{G}(x,r)$ such that $hi(x)=(\sigma_x,\tau^{-1}_x)$ for all $x\in X$. We write
-\[ h(a)=(\sigma_a,\tau_a^{-1})\]
+$h\colon G(X,r)\to \mathcal{G}(x,r)$ such that $hi(x)=(\lambda_x,\rho^{-1}_x)$ for all $x\in X$. We write $h(a)=(\lambda_a,\rho_a^{-1})$,
 for all $a\in G(X,r)$.
-By Theorem \ref{thm:GVbraces1}, $G(X,r)$ has a unique structure of skew brace with multiplicative group the structure group $G(X,r)$ and $\lambda_{i(x)}(i(y))=i(\sigma_x(y))$ for all $x,y\in X$. We shall see that $\ker h$ is an ideal of the skew brace $G(X,r)$. Note that
-\[\mu_{i(y)}(i(x))=\lambda_{i(x)}(i(y))^{-1}i(x)i(y)=i(\sigma_x(y))^{-1}i(x)i(y)=i(\tau_y(x))\]
-for all $x,y\in X$, by the defining relations of $G(X,r)$.
+By Theorem~\ref{thm:structuregroup}, $G(X,r)$ has a unique structure of skew brace with multiplicative group the structure group $G(X,r)$ and $\lambda_{i(x)}(i(y))=i(\lambda_x(y))$ for all $x,y\in X$. One can prove that $\ker h$ is an ideal of the skew brace $G(X,r)$. Hence, $\mathcal{G}(X,r)$ inherits a skew brace structure form $G(X,r)$.
 
+Given a skew brace $(A,+,\circ)$ with $(A,+)$ abelian, Bachiller, Cedó and Jespers in \cite{} provided a method to recostruct all (involutive) solutions such that $\mathcal{G}(X,r)$ is isomorphic as skew brace to $A$. In \cite{}, Bchiller generalised this construction dropping the assumption $(A,+)$ abelian.
 
-% \section{The permutation group of a solution.}
+\subsection{Simple solutions}
 
-% \begin{frame}{The permutation group}
-%     Let $(X,r)$ be a solution to the YBE. 
-   
-%     Write  $r(x,y)=(\lambda_x(y),\rho_y(x))$. 
+Describing simple solution is a very hard and challenging task. A strategy to tackle such problem is to focus on ``building blocks'', such us indecomposable solutions and simple solutions. 
 
-%     The \alert{permutation group} of $(X,r)$ is the subgroup
-%     \[\mathcal{G}(X,r)=\langle (\lambda_x,\rho^{-1}_x) : x\in X\rangle\subseteq\Sym_X\times\Sym_X.\]
+\begin{definition}
+    A solution $(X,r)$ is said to be \emph{decomposable} if there exist $\emptyset \neq Y,Z \subseteq X$ such that $Y\cup Z = X$, $Y \cap Z = \emptyset$ and $r(Y\times Y)\subseteq Y\times Y$, $r(Z\times Z)\subseteq Z \times Z$. Otherwise, $(X,r)$ is said \emph{indecomposable}.
+\end{definition}
 
-% \end{frame}
-% \begin{frame}{}
-%     From  
-%     \[ \lambda_x\lambda_y=\lambda_{\lambda_x(y)}\lambda_{\rho_y(x)}\quad\text{and}\quad \rho^{-1}_x\rho^{-1}_y=\rho^{-1}_{\lambda_x(y)}\rho^{-1}_{\rho_y(x)} \]
-%     we get that 
+It is not difficult to prove that a solution $(X,r)$ is indecomposable if the group $\langle \lambda_x, \rho_y \colon x, y \in \rangle$ acts transitivelly on $X$.
 
-%     there exists a unique group homomorphism
-%     $h\colon G(X,r)\to \mathcal{G}(x,r)$ such that $hi(x)=(\lambda_x,\rho^{-1}_x)$ for all $x\in X$.
+\begin{definition}
+    A solution $(X,r)$ is said to be \emph{simple} if for any epimorphism of solutions $\varphi: (X,r) \to (Y,t)$, we have either $\varphi$ an isomorphis or $Y$ as singleton.
+\end{definition}
 
-%     \bigskip
-    
-    
-% \end{frame}
+One can prove that a simple solution is in particular indecomposable. 
 
-\subsection{The retraction of a solution.}
+Cedó and Okniński in \cite{} proved that ome simple skew brace with additive structure abelian provide examples of (involutive) simple solutions. 
 
-Let $(X,r)$ be a solution and define on $X$ the following relation
-\begin{align*}
-    x\sim y \quad \iff \quad \lambda_x=\lambda_y \text{ and } \rho_x=\rho_y.
-\end{align*}
+Joyce in 1982 studied simple racks and provided an algebraic characterisation of such racks. By Proposition~\ref{prop:rack}, a rack provide a solution and it is not difficult to see that simple racks are in particular examples of simple solutions. 
 
-Let $\bar{X}=X/\sim$ denote the set of equivalence classes and let $[x]$ denote the class of $x$.
-
-\begin{lemma}\label{lem:hat}
-    Let $(X,r)$ be a solution and write $r^{-1}(x,y)= (\hat{\lambda}_x(y),\hat{\rho}_y(x))$.
-    Then 
-    \begin{align}
-        \label{eq:hat1}\hat{\lambda}^{-1}_y(x)=\rho_{\lambda^{-1}_x(y)}(x),\\
-        \label{eq:hat2}\lambda^{-1}_x(y)=\hat{\rho}_{\hat{\lambda}^{-1}_y(x)}(y),\\
-        \label{eq:hat3}\hat{\rho}^{-1}_x(y)=\lambda_{\rho^{-1}_y(y)}(y),\\
-        \label{eq:hat4}\rho^{-1}_y(x) = \hat{\lambda}_{\hat{\rho}^{-1}_x(y)}(x).
-    \end{align}
-\end{lemma}
-
-\begin{exercise}
-    \label{ex:hat}
-    Prove Lemma~\ref{lem:hat}.
-\end{exercise}
+In join work with Jespers, Kubat and Van Antwerpen \cite{}, we obtain a brace theoretic classification of simple solutions. 
 
 \begin{theorem}
-    Let $(X,r)$ be a solution. Then $r$ induce a solution $\bar{r}$ on $\bar{X}$ by
-    \begin{align*}
-        \bar{r}([x],[y])= ([\lambda_x(y)], [\rho_y(x)]),
-    \end{align*}
-    for all $x,y\in X$.
+    A simple solution $(X,r)$ is one of the following type:
+    \begin{enumerate}
+        \item $(X,r)$ is a simple permutation solution,
+        \item $(X,r)$ is a simple square-free\footnote{A solution $(X,r)$ is square-free if $r(x,x)=(x,x)$ for every $x\in X$.} derived solution (i.e. it is a simple quandle\footnote{A rack $(X,\triangleleft)$ is a quandle if $x\triangleleft x = x$, for every $x\in X$.}),
+        \item $(X,r)$ is a simple solution embedded in a solution associated to a finite skew brace. 
+    \end{enumerate}
 \end{theorem}
 
-\begin{proof}
-    First of all, let us prove that $\bar{r}$ is well-defined.
-    Let $x,x',y,y'\in X$ such that $x\sim x'$ and $y\sim y'$, i.e. $\lambda_x=\lambda_{x'}$, $\rho_x=\rho_{x'}$, and $\lambda_y=\lambda_{y'}$, $\rho_y=\rho_{y'}$.
-    From Proposition~\ref{prop:characterisation} we have 
-    \begin{align*}
-        \lambda_{\lambda_x(y)}\lambda_{\rho_y(x)}=\lambda_x\lambda_y=\lambda_x\lambda_{y'}
-        =\lambda_{\lambda_x(y')}\lambda_{\rho_{y'}(x)} = \lambda_{\lambda_x(y')}\lambda_{\rho_y(x)}
-    \end{align*}
-    and since $(X,r)$ is non-degenerate we get $\lambda_{\lambda_x(y)}=\lambda_{\lambda_x(y')}=\lambda_{\lambda_{{x'}(y')}}$.
-    Similarly,
-    \begin{align*}
-        \rho_{\rho_y(x)}\rho_{\lambda_x(y)}=\rho_x\rho_y=\rho_x\rho_{y'}
-        =\rho_{\rho_{y'}(x)}\rho_{\lambda_x(y')} = \rho_{\rho_y(x)}\rho_{\lambda_x(y')}
-    \end{align*}
-    and so 
-    $\rho_{\lambda_x(y)}=\rho_{\lambda_x(y')}=\rho_{\lambda_{{x'}(y')}}$. Hence
-    \begin{align*}
-        \lambda_x(y)\sim\lambda_{x'}(y').
-    \end{align*}
-    Following the same procedure we get
-    \begin{align*}
-        \lambda_{\lambda_x(y)}\lambda_{\rho_y(x)}=\lambda_x\lambda_y=\lambda_{x'}\lambda_{y}
-        =\lambda_{\lambda_{x'}(y)}\lambda_{\rho_{y}(x')} = \lambda_{\lambda_x(y)}\lambda_{\rho_{y'}(x')},
-    \end{align*}
-    i.e., $\lambda_{\rho_y(x)}=\lambda_{\rho_{y'}(x')}$. And 
-    \begin{align*}
-        \rho_{\rho_y(x)}\rho_{\lambda_x(y)}=\rho_x\rho_y=\rho_{x'}\rho_{y}
-        =\rho_{\rho_{y}(x')}\rho_{\lambda_x(y)} = \rho_{\rho_{y'}(x')}\rho_{\lambda_x(y)},
-    \end{align*}
-    i.e., $\rho_{\rho_y(x)} = \rho_{\rho_{y'}(x')}$.
-    Hence,
-    \begin{align*}
-        \rho_y(x) \sim \rho_{y'}(x').
-    \end{align*}
-    Therefore, $r$ is well-defined.
+\subsubsection{Simple permutation solution}
 
-    Now let us prove that $\bar{r}$ is bijective. Since $(X,r)$ is a solution in particular $r$ is bijective. Let us write
-    \begin{align*}
-        r^{-1}(x,y) = (\hat{\lambda}_x(y),\hat{\rho}_y(x)).
-    \end{align*}
-    Since $(X,r^{-1})$ is a solution with the same arguments as before we have that $\overline{r^{-1}}$ is well-defined. Moreover, if $z\in X$, then
-    \begin{align*}
-        \hat{\lambda}^{-1}_x(z) \overset{\eqref{eq:hat1}}{=}\rho_{\lambda^{-1}_x(z)}(x)\sim \rho_{\lambda^{-1}_{x'}(z)}(x)\sim \rho_{\lambda^{-1}_{x'}(z)}(x') \sim \hat{\lambda}^{-1}_{x'}(z)
-    \end{align*}
-    \begin{align*}
-        \overline{r^{-1}}\bar{r}(x,y) =\overline{r^{-1}}([\lambda_x(y)]
-    \end{align*}
-\end{proof}
+Recall that a $(X,r)$ is a permutation solution if there exist $\lambda,\rho$ commuting permutations such that $r(x,y)=(\lambda(y),\rho(x))$.
 
+We can give a combinatorial characterisation of simple permutation solutions.
 
+\begin{proposition}
+    A permutation solution $(X,r)$ is simple if and only if the caridnality of $X$ is a prime number $p$, the group $H=\langle\lambda,\rho\rangle$ is cyclic of order $p$.
 
-% \begin{frame}{}
-%     $\bar{r}$ is bijective. 
-%     \vspace{6cm}
-% \end{frame}
+    In particular, $(X,r)$ solution is isomorphic to $(\mathbb{Z}_p,t)$ such that $t(x,y)= (y+a,x+b)$ with $,a,b\in \mathbb{Z}$ and$(a,b)\neq (0,0)$.
+\end{proposition}
 
+\subsubsection{Simple quandle}
 
-% \begin{frame}{}
-%     $\bar{r}$ is non-degenerate. 
-%     \vspace{6cm}
-% \end{frame}
+The description of simple square-free derived solutions coiced with the description obtained by Joyce of simple quandles. 
 
-% \begin{frame}{}
-    
-% \end{frame}
+\begin{proposition}
+    A square-free derived solution $(X,r)$ is simple if and only if $(X,r)$ embedd in a solution $(A,r)$ where $A$ is a finite group and $r(y, y^{-1}xy)$ such that
+    \begin{itemize}
+        \item $X$ is a conjucacy class genereting $A$,
+        \item the derived subgroup $[A,A]$ is the smallest non-zero normal subgroup of $A$,
+        \item the quotient group $A/[A,A]$ is a cyclic group,
+        \item the center $Z(A)$ is trivial.
+    \end{itemize}
+\end{proposition}
 
-% \begin{frame}{}
-    
-% \end{frame}
+\subsubsection{Simple solutions embedded in solutions associated to finite skew braces}
 
-% \begin{frame}{Definition}
-%     Let $(X,r)$ be a solution. The solution $\operatorname{Ret}(X,r) =(\bar{X},\bar{r})$ induced by the equivalence relation $\sim$ is the \alert{retraction} of $(X,r)$.
+Let $(A,+,\circ)$ be a skew brace. In analogy with radical rings, we can associate to $A$ another binary operation $\ast:A\times A\to A$ such that $a\ast b = -a+a\circ b +b$, for every $a,b\in A$.
 
-%     \bigskip
+\begin{exercise}\label{ex:A2}
+    Let $(A,+,\circ)$ be a skew brace. Define $A^2$ the additive subgroup generated by $\{a\ast b=-a+a\circ b - b \colon a,b\in A\}$. Prove that 
+    $A^2$ is an ideal of $A$.
+\end{exercise}
 
-%     We define inductively $\operatorname{Ret}^{0}(X,r)=(X,r)$, $\operatorname{Ret}^1(X,r)=\operatorname{Ret}(X,r)$ and 
-%     \begin{align*}
-%         \operatorname{Ret}^{n+1}(X,r) = \operatorname{Ret}(\operatorname{Ret}^n(X,r)), \quad n\geq 1.
-%     \end{align*}
-% \end{frame}
+The ideal $A^2$ plays for skew braces a simplar role that the derived subgroup plays for groups. With this observation in mind, it might be not surpising the following proposition. 
 
-% \subsection{Multipermutation and irretractable solutions.}
-% \begin{frame}{Multipermutation}
-%     A solution $(X,r)$ is said to be a \alert{multipermutation solution of level} $n$, if $n$ is the smallest non-negative integer such that $|\operatorname{Ret}^{n}(X,r)| = 1$. 
-    
-%     \bigskip
-    
-%     The solution $(X,r)$ is said to be \alert{irretractable} if $\operatorname{Ret}(X,r)=(X,r)$. 
-% \end{frame}
+\begin{proposition}
+    A square-free solution $(X,r)$ which is not a derived solution nor a permutation solution is simple if and only if $(X,r)$ embedd in a solution asoociated to a non-trivial skew brace $(A,r_A)$ such that
+    \begin{itemize}
+        \item $X$ generates additively $A$,
+        \item the ideal $A^2$ is the smallest non-zero ideal of $A$,
+        \item the quotient skew brace $A/A^2$ is trivial skew brace with additive (and multiplicative) group cyclic,
+        \item the action of $A^2$ on $X$ is transitive.
+    \end{itemize}
+\end{proposition}
 
-
-% \begin{frame}{Examples}
-%     \begin{itemize}
-%         \item The trivial solution over a set with one element is a multipermutation solution of level zero.
-%         \item[]
-%         \item Permutation solutions are multipermutation solutions of level~$1$.
-%         \item[] 
-%         \item Let $X=\{1,2,3,4\}$ and let $r:X\times X\to X \times X$ defined by $r(x,y)=(\varphi_x(y),\varphi_y(x))$ where
-%         \begin{align*}
-%             \varphi_1=\varphi_2=\operatorname{id}, \quad \varphi_3=(3\ 4), \quad \varphi_4=(1\ 2)(3\ 4).
-%         \end{align*}
-%         Then $(X,r)$ is an involutive multipermutation solution of level~$3$.
-%     \end{itemize}
-% \end{frame}
-
-
-% \begin{frame}{}
-%     \textbf{Theorem. } Let $B$ be a skew brace and let $(B,r_B)$ be the associated solution. Then, the retraction $\operatorname{Ret}(B,r_B)$ is the solution associated with the quotient skew brace $B/\operatorname{Soc}(B)$.
-% \end{frame}
-
-% \begin{frame}{}
-    
-% \end{frame}
-
-% \begin{frame}{}
-    
-% \end{frame}
-
-\begin{theorem}\label{thm:ordermultipermutiation}
-    Let $(X,r)$ be a finite multipermutation solution to the YBE. If $|X|>1$, then $r$ has even order. 
-\end{theorem}
-
-\begin{proof}
-    Since $(X,r)\to\Ret(X,r)$, $x\mapsto[x]$ is a homomorphism of solutions, 
-    it follows that the order of the solution $\overline{r}$ divides the order of $r$. 
-    Assume that $(X,r)$ has multipermutation level $n$. 
-    There exists a homomorphism of solutions $(X,r)\to\Ret^{n-1}(X,r)$, thus 
-    it is enough to prove the theorem when
-    $r(x,y)=(\lambda(y),\rho(x))$ for commuting permutations $\lambda$ and $\rho$, i.e. 
-    multipermutation solutions of level $1$. If $r$ has order $2k+1$, then 
-    \begin{align*}
-        (x,y)=r^{2k+1}(x,y)=(\lambda^{k+1}\rho^k(y),\lambda^k\rho^{k+1}(x)).
-    \end{align*}
-    This implies that $\lambda^{k+1}\rho^k(y)=x$ for all $x,y\in X$. This equality in particular 
-    implies that $x=y$ because $\lambda^{k+1}\rho^k$ is a permutation, a contradiction. 
-\end{proof}
+Let us explain what the last item means. Let $A$ be a skew brace, $X\subset A$ and $I$ an ideal of $A$. We say that $I$ \emph{acts} on $X$ if $X$ is invariant uder the action of the group $(I,+)\rtimes (I,\circ)$ (where the semidirect product is given by the $\lambda$-map).
