@@ -1,64 +1,8 @@
 \section{22/02/2024}
 
 
-\subsection{Selection of problems}\mbox{ }
-    
-It is possible to prove the isomorphism theorems for skew braces. (See Exercises~\ref{ex:thmiso1}--\ref{ex:thmiso4}).
+\subsection{Exercises and Problems}\mbox{ }
 
-\begin{exercise}\label{ex:thmiso1}
-    Let $f : A\to B$ be a homomorphism of skew braces. Prove that $A/\ker f \cong f(A)$.
-\end{exercise}
-
-\begin{exercise}\label{ex:thmiso2}
-    Let $A$ be a skew brace and let $B$ be a subbrace of $A$. Prove that if $I$ is an ideal of $A$, then $B\circ I$ is a subbrace of $A$, $B\cap I$ is an ideal of $B$ and $(B\circ I)/I \cong B/(B\cap I)$.
-\end{exercise}
-
-\begin{exercise}\label{ex:thmiso3}
-    Let $A$ be a skew brace and $I$ and $J$ be ideals of $A$. Prove that if $I\subseteq J$, then $A/J\cong (A/I)/(J/I)$.
-\end{exercise}
-
-\begin{exercise}\label{ex:thmiso4}
-    Let $A$ be a skew brace and let $I$ be an ideal of $A$. Prove that there is a bijective correspondence between (left) ideals of $A$ containing $I$ and (left) ideals of $A/I$.
-\end{exercise}
-
-\begin{exercise}
-    Let $A$ be a skew brace and $I$ be a characteristic subgroup of the additive. Prove that $I$ is a left ideal of $A$.
-\end{exercise}
-
-Let us get some concrete examples of skew braces.
-
-\begin{exercise}
-    Let $p$ be a prime number and let  $A=\mathbb{Z}/(p^2)$ the ring of integers modulo $p^2$. Prove that $A$ with respect to the usual sum and the operation given by $x \circ y = x+y+pxy$ is a skew brace.
-\end{exercise}
-
-\begin{exercise}[The semidirect product]
-    Let $A,B$ be skew braces. 
-    Let $\alpha: (B,\circ)\to\Aut(A,+,\circ)$ be a homomorphism of groups. 
-    Define two operations on $A\times B$ by
-    \begin{align*}
-        (a,x)+(b,y) &= (a+b,x+y)\\
-        (a,x)\circ(b,y) &= (a\circ\alpha_{x}(b), x\circ y),
-    \end{align*}
-    for all $a,b\in A$ and $x,y\in B$. Prove that $(A\times B, +,\circ)$ is a skew brace. 
-    
-    This skew brace is the \emph{semidirect product} of the skew brace $A$ by $B$ via $\alpha$, and it is denoted by $A\rtimes_{\alpha}B$.
-\end{exercise}
-
-\begin{exercise}\label{ex:ef}
-        Let $(A,+)$ be a group with an \emph{exact factorisation} through the subgroups $B$ and $C$ (i.e. $B$ and $C$ are subgroups of $A$ such that $B\cap C=\{ 0\}$ and $A=B+C$). 
-        This means that each $x\in A$ can be written in a unique way as $x=x_B+x_C$, for some $x_B\in B$ and $x_C\in C$.
-        Set
-        \begin{align*}
-		    x\circ y&=x_B+y+x_C.
-	    \end{align*}
-        Prove that
-        \begin{enumerate}
-            \item $(A,\circ)$ is a group isomorphic to $B\times C$, the direct product of $B$ and $C$.
-            \item $(A,+,\circ)$ is a  skew brace.
-        \end{enumerate}
-    \end{exercise}
-
-\subsection{More exercises}\mbox{}
 
 \begin{exercise}\label{ex:taurtau}
     Let $(X,r)$ be a set-theoretic solution to the Yang--Baxter equation. Define for all $x,y \in X$
@@ -68,23 +12,35 @@ Let us get some concrete examples of skew braces.
     Then $(X,\bar{r})$ is a set-theoretic solution to the Yang--Baxter equation.
 \end{exercise}
 
-\index{Shelf}\index{Rack}
-A \emph{(right) shelf} is a pair $(X,\triangleleft)$ where $X$ is a non-empty set and $\triangleleft$ is a binary operation such that 
-    \begin{align*}
-        (x\triangleleft y)\triangleleft z=(x\triangleleft z)\triangleleft(y\triangleleft z).
-    \end{align*}
-    If, in addition, the maps $\rho_y:X \to X, x \mapsto x\triangleleft y$ are bijective for all $y\in X$, then $(X,\triangleleft)$ is called a \emph{(right) rack}.
-    
-\begin{exercise}\label{ex2}
-     Let $X$ be a non-empty set.
-     Let $\triangleleft: X\times X \to X$ be a binary operation and define $r: X\times X \to X\times X$ such that $r(x,y)= (y,x \triangleleft y)$. Then $r$ satisfies equation~\ref{eq:YBE} if and only if $(x\triangleleft y)\triangleleft z=(x\triangleleft z)\triangleleft(y\triangleleft z)$ holds for all $x,y,z \in X$. 
-     Moreover, $r$ is bijective if and only if the maps $\rho_y:X\to X, x \mapsto x\triangleleft y$ are bijective.
-\end{exercise}
 
-\begin{exercise}
-    Let $G$ be a group. 
-    Prove that $G$ with respect to the binary operation $\triangleleft$ defined by $x\triangleleft y =y^{-1}xy$ is a rack.
-\end{exercise}
+\subsection{Shelfs and racks}\mbox{}
+    
+    \begin{exercise}\label{ex2}
+         Let $X$ be a non-empty set.
+         Let $\triangleleft: X\times X \to X$ be a binary operation and define $r: X\times X \to X\times X$ such that $r(x,y)= (y,x \triangleleft y)$. Then $r$ satisfies equation~\ref{eq:YBE} if and only if $(x\triangleleft y)\triangleleft z=(x\triangleleft z)\triangleleft(y\triangleleft z)$ holds for all $x,y,z \in X$. 
+         Moreover, $r$ is bijective if and only if the maps $\rho_y:X\to X, x \mapsto x\triangleleft y$ are bijective.
+    \end{exercise}
+
+    \begin{definition}\index{Shelf}\index{Rack}
+         A \emph{(right) shelf} is a pair $(X,\triangleleft)$ where $X$ is a non-empty set and $\triangleleft$ is a binary operation such that 
+        \begin{align*}
+            (x\triangleleft y)\triangleleft z=(x\triangleleft z)\triangleleft(y\triangleleft z).
+        \end{align*}
+        If, in addition, the maps $\rho_y:X \to X, x \mapsto x\triangleleft y$ are bijective for all $y\in X$, then $(X,\triangleleft)$ is called a \emph{(right) rack}.
+    \end{definition}
+
+    \begin{proposition}\label{prop:rack}
+        Let $X$ be a non-empty set with a binary operation $\triangleleft: X\times X \to X$. Then $r(x,y) =(y,x\triangleleft y)$ is a set-theoretic solution to the Yang--Baxter equation if and only if $(X,\triangleleft)$ is a rack. 
+    \end{proposition}
+
+    \begin{proof}
+        Follows from exercise~\ref{ex2}.
+    \end{proof}
+
+    \begin{exercise}
+         Let $G$ be a group. Then $(G,r)$ where $r(x,y)=(y, y^{-1}xy)$ is a 
+         non-degenerate set-theoretic solution to the Yang--Baxter equation.
+    \end{exercise}
 
 \begin{exercise}
     Let $(X,r)$ be a solution. Define 
@@ -94,6 +50,29 @@ A \emph{(right) shelf} is a pair $(X,\triangleleft)$ where $X$ is a non-empty se
     Prove that $(X,\triangleleft)$ is a shelf.
 \end{exercise}
 
+
+\subsection{An intriguing connection between group actions and solutions}
+    The following theorem is the core result of the paper \cite{LYZ00} by Lu, Yan Zhu.
+
+    \begin{theorem}\label{thm:LYZ}
+         Let $G$ be a group, let $\lambda: G\times G \to G, (x,y)\mapsto \lambda_x(y)$ a left group action of $G$ on itself as a set and $\rho: G\times G \to G, (x,y)\mapsto \rho_y(x)$ a right group action of $G$ on itself as a set. If the ``compatibility'' condition 
+        \begin{align}\label{eq:LYZ}
+            uv = \lambda_u(v)\rho_v(u)
+        \end{align}
+        holds, then $(G,r)$, where
+        \begin{align*}
+            r:G\times G \to G\times G, \qquad (x,y)\mapsto (\lambda_x(y),\rho_y(x))
+        \end{align*}
+        is a solution.
+    \end{theorem}
+
+    \begin{exercise}\label{ex:LYZ}
+        Prove Theorem~\ref{thm:LYZ}
+    \end{exercise}
+
+\begin{exercise}
+    Let $p$ be a prime number and let  $A=\mathbb{Z}/(p^2)$ the ring of integers modulo $p^2$. Prove that $A$ with respect to the usual sum and the operation given by $x \circ y = x+y+pxy$ is a skew brace.
+\end{exercise}
 
 \begin{exercise}
     Let $A$ be a skew brace. Prove that
@@ -109,7 +88,7 @@ A \emph{(right) shelf} is a pair $(X,\triangleleft)$ where $X$ is a non-empty se
         \begin{align*}
             a \ast (b+c) = a\ast b + b + a\ast c - b
         \end{align*}
-        holds for all $a,b,c \in A$ and the operation $a\circ b = a+ a\ast b + c$ turns $A$ into a group.
+        holds for all $a,b,c \in A$ and the operation $a\circ b = a+ a\ast b + b$ turns $A$ into a group.
         \item Deduce that radical rings are examples of skew braces. 
         \end{enumerate}
 \end{exercise}
@@ -131,24 +110,18 @@ A \emph{(right) shelf} is a pair $(X,\triangleleft)$ where $X$ is a non-empty se
     \end{enumerate}
 \end{exercise}
 
-\begin{exercise}\label{ex:sd}
-    	Let $(A,+)$ and $(M,+)$ be groups and let $\alpha\colon A\to\Aut(M)$ be a
-    	group homomorphism. Prove that $M\times A$ with 
-    	\begin{align*}
-        	(x,a)+(y,b)&=(x+y,a+b),
-        	\\
-        	(x,a)\circ (y,b)&=(x+\alpha_a(y),a+b)
-    	\end{align*}
-    	is a skew brace. Similarly, prove that $M\times A$ with
-    	\begin{align*}
-        	(x,a)+(y,b)&=(x+\alpha_a(y),a+b),\\
-        	(x,a)\circ (y,b)&=(x+y,b+a)
-    	\end{align*}
-    	is a skew brace. 
-    \end{exercise}
-
+\begin{exercise}[The semidirect product]
+    Let $A,B$ be skew braces. 
+    Let $\alpha: (B,\circ)\to\Aut(A,+,\circ)$ be a homomorphism of groups. 
+    Define two operations on $A\times B$ by
+    \begin{align*}
+        (a,x)+(b,y) &= (a+b,x+y)\\
+        (a,x)\circ(b,y) &= (a\circ\alpha_{x}(b), x\circ y),
+    \end{align*}
+    for all $a,b\in A$ and $x,y\in B$. Prove that $(A\times B, +,\circ)$ is a skew brace. 
     
-
+    This skew brace is the \emph{semidirect product} of the skew brace $A$ by $B$ via $\alpha$, and it is denoted by $A\rtimes_{\alpha}B$.
+\end{exercise}
 
 \begin{exercise}\label{ex:fix}
     Consider the semidirect product $A= \mathbb{Z}/(3) \rtimes \mathbb{Z}/(2)$ of the trivial
@@ -166,7 +139,25 @@ A \emph{(right) shelf} is a pair $(X,\triangleleft)$ where $X$ is a non-empty se
     Prove that $\ker f$ is an ideal of $A$.
 \end{exercise}
 
+\begin{exercise}\label{ex:thmiso1}
+    Let $f : A\to B$ be a homomorphism of skew braces. Prove that $A/\ker f \cong f(A)$.
+\end{exercise}
 
+\begin{exercise}\label{ex:thmiso2}
+    Let $A$ be a skew brace and let $B$ be a subbrace of $A$. Prove that if $I$ is an ideal of $A$, then $B\circ I$ is a subbrace of $A$, $B\cap I$ is an ideal of $B$ and $(B\circ I)/I \cong B/(B\cap I)$.
+\end{exercise}
+
+\begin{exercise}\label{ex:thmiso3}
+    Let $A$ be a skew brace and $I$ and $J$ be ideals of $A$. Prove that if $I\subseteq J$, then $A/J\cong (A/I)/(J/I)$.
+\end{exercise}
+
+\begin{exercise}\label{ex:thmiso4}
+    Let $A$ be a skew brace and let $I$ be an ideal of $A$. Prove that there is a bijective correspondence between (left) ideals of $A$ containing $I$ and (left) ideals of $A/I$.
+\end{exercise}
+
+\begin{exercise}
+    Let $A$ be a skew brace and $I$ be a characteristic subgroup of the additive. Prove that $I$ is a left ideal of $A$.
+\end{exercise}
 
 \begin{exercise}
     Let $A$ and $B$ be skew braces. Prove that $f :A \to B$ is a homomorphism of skew braces if and only if $f(a+b)= f(a)+f(b)$ and $f(\lambda_a(b))=\lambda_{f(a)}(f(b))$, for all $a,b\in B$.
