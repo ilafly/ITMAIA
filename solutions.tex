@@ -75,76 +75,7 @@
     Similarly one obtains the converse. 
 \end{sol}
 
-\begin{sol}{ex:LYZ}
-    Let us write $r_1=r\times \id$ and $r_2=\id \times r$,  
-    \begin{align*}
-         r_1r_2r_1(x,y,z)&= (\lambda_{\lambda_x(y)}\lambda_{\rho_y(x)}(z),\rho_{\lambda_{\rho_y(x)}(z)}\lambda_x(y),\rho_z\rho_y(x)) \\&=(u_1,v_1,w_1),
-    \end{align*}
-    and
-    \begin{align*}
-        r_2r_1r_2(x,y,z)&=(\lambda_x\lambda_y(z),\lambda_{\rho_{\lambda_y(z)}(x)}\rho_z(y),\rho_{\rho_z(y)}\rho_{\lambda_y(z)}(x))\\&=(u_2,v_2,w_2).
-    \end{align*}
-    Then we obtain
-    \begin{align*}
-        u_1v_1w_1 &= \lambda_{\lambda_x(y)}\lambda_{\rho_y(x)}(z)\rho_{\lambda_{\rho_y(x)}(z)}\lambda_x(y)\rho_z\rho_y(x)\\
-        &\overset{\eqref{eq:LYZ}}{=}\lambda_x(y)\lambda_{\rho_y(x)}(z)\rho_z\rho_y(x)\\
-        &\overset{\eqref{eq:LYZ}}{=}\lambda_x(y)\rho_y(x)z\\
-        &\overset{\eqref{eq:LYZ}}{=}xyz
-    \end{align*}
-    and, similarly 
-    \begin{align*}
-        u_2v_2w_2 &=\lambda_x\lambda_y(z)\lambda_{\rho_{\lambda_y(z)}(x)}\rho_z(y)\rho_{\rho_z(y)}\rho_{\lambda_y(z)}(x)\\
-        &\overset{\eqref{eq:LYZ}}{=}\lambda_x\lambda_y(z)\rho_{\lambda_y(z)}(x)\rho_z(y)
-        \\
-        &\overset{\eqref{eq:LYZ}}{=}x\lambda_y(z)\rho_z(y)\\
-        &\overset{\eqref{eq:LYZ}}{=} xyz.
-    \end{align*}
-    Hence
-    \begin{align}\label{eq:LYXproduct}
-        u_1v_1w_1 =  xyz = u_2v_2w_2.
-    \end{align}
-    Moreover, since $\lambda$ is a left action of $G$ on itself, we  get
-    \begin{align*}
-        u_1=\lambda_{\lambda_x(y)}\lambda_{\rho_y(x)} (z) 
-        = \lambda_{\lambda_{x}(y)\rho_y(x)}(z) 
-        \overset{\eqref{eq:LYZ}}{=}\lambda_{xy}(z) = \lambda_x\lambda_y(z)=u_2.
-    \end{align*}
-    Similarly, since $\rho$ is a right action
-    \begin{align*}
-        w_2 = \rho_{\rho_z(y)}\rho_{\lambda_y(z)}(x) = \rho_{\lambda_y(z)\rho_z(y)} (x)\overset{\eqref{eq:LYZ}}{=} \rho_{yz}(x) = \rho_z\rho_y(x) = w_1.
-    \end{align*}
-    From \eqref{eq:LYXproduct} and $G$ being a group it follows that also $v_1=v_2$.
-    Moreover, $\lambda_x$ and $\rho_x$ are bijective maps by assumption. 
-    It is left to prove that $r$ is bijective.
-    First let us write $r(u,v)=(x,y)$, hence $\lambda_u(v)=x$, $\rho_v(u)=y$, and $uv=xy$. Now, since $\lambda$ is an action and in particular $\lambda^{-1}_v=\lambda_{v^{-1}}$, we get 
-    \begin{align*}
-        \lambda_y(v^{-1})u = \lambda_y(v^{-1})\rho^{-1}_v(y) = \lambda_y(v^{-1})\rho_{v^{-1}}(y) \overset{\eqref{eq:LYZ}}{=} yv^{-1} = x^{-1}u = (\lambda_u(v))^{-1}u,
-    \end{align*}
-    and so 
-    \begin{align}\label{eq:lambdainv}
-        (\lambda_u(v))^{-1}=\lambda_{\rho_v(u)}(v^{-1}).
-    \end{align}
-    Similarly, expanding $v\rho_x(u^{-1})$ one proves
-    \begin{align}\label{eq:rhoinv}
-        (\rho_v(u))^{-1}=\rho_{\lambda_u(v)}(u^{-1}).
-    \end{align}
-    Define
-    \begin{align*}
-        r'(x,y)=((\rho_{x^{-1}}(y^{-1}))^{-1},(\lambda_{y^{-1}}(x^{-1}))^{-1}).
-    \end{align*}
-    Then
-    \begin{align*}
-        rr'(x,y) &= (\lambda_{(\rho_{x^{-1}}(y^{-1}))^{-1}}((\lambda_{y^{-1}}(x^{-1}))^{-1}), \rho_{(\lambda_{y^{-1}}(x^{-1}))^{-1}}((\rho_{x^{-1}}(y^{-1}))^{-1}))\\
-        &\overset{\eqref{eq:lambdainv}\&\eqref{eq:rhoinv}}{=}(\lambda^{-1}_{\rho_{x^{-1}}(y^{-1})}\lambda_{\rho_{x^{-1}}(y^{-1})}(x),\rho^{-1}_{\lambda_{y^{-1}}(x^{-1})}\rho_{\lambda_{y^{-1}}(x^{-1})}(y)) \\
-        &=(x,y).
-    \end{align*}
-    And
-    \begin{align*}
-        r'r(x,y) &= ((\rho_{(\lambda_x(y))^{-1}}((\rho_y(x))^{-1}))^{-1},(\lambda_{(\rho_y(x))^{-1}}((\lambda_x(y))^{-1}))^{-1})\\
-        &\overset{\eqref{eq:lambdainv}\&\eqref{eq:rhoinv}}{=} ( (\rho^{-1}_{\lambda_x(y)}\rho_{\lambda_x(y)}(x^{-1}))^{-1}, (\lambda^{-1}_{\rho_y(x)}\lambda_{\rho_y(x)}(y^{-1}))^{-1})\\
-        &=((x^{-1})^{-1},(y^{-1})^{-1}) = (x,y).
-    \end{align*}
-\end{sol}
+
 
 \begin{sol}{ex:ef}
     Consider the map $\varphi:A\to B\times C, (x) \mapsto (x_B,-x_C)$. Clearly, $\varphi$ is bijective. Moreover, for $x,y\in A$ we have

@@ -1,37 +1,123 @@
+\documentclass[12pt]{amsproc}
+
+\newcommand{\course}{Skew braces and solutions to the Yang--Baxter equation}
+\input{mystuff}
+
+\begin{document}
+\maketitle %This command prints the title based on information entered above
+\setcounter{section}{1}
 \section{22/02/2024}
 
+\subsection{Useful definitions and results}
+
+\begin{definition}
+        A \emph{set-theoretic solution to the Yang--Baxter equation} is a pair $(X,r)$ where $X$ is a non-empty set and $r: X\times X \to X \times X$ is a map such that
+        \begin{align}\label{eq:YBE}
+            (r\times \id)(\id \times r)(r\times \id) = (\id \times r)(r\times \id)(\id \times r)
+        \end{align}
+\end{definition}
+
+\begin{definition}\index{Set-theoretic solution!Finite}\index{Set-theoretic solution!Non-degenerate}
+        Let $(X,r)$ be a set-theoretic solution to the  Yang--Baxter equation. We say that 
+        \begin{itemize}
+            \item $(X,r)$ is \emph{bijective} if $r$ is bijective.
+            \item $(X,r)$ is \emph{finite} if $X$ is finite.
+            \item $(X,r)$ is \emph{non-degenerate} if $\lambda_x,\rho_x$ are bijective for all $x\in X$.
+        \end{itemize}
+    \end{definition}
+
+\begin{convention}
+        From now on, a \emph{solution}  will always mean a bijective non-degenerate set-theoretic solution to the Yang--Baxter equation.
+\end{convention}
+
+\begin{definition}
+         A \emph{skew (left) brace} is a triple $(A,+,\circ)$, where 
+        $(A,+)$ and $(A,\circ)$ 
+    	are (not necessarily abelian) 
+    	groups and 
+    	\begin{align}\label{compatibility}
+    	    a\circ(b+c)=(a\circ b)-a+(a\circ c)
+    	\end{align}
+    	holds for all $a,b,c\in A$. 
+    
+    The groups $(A,+)$ and $(A,\circ)$ are respectively the \emph{additive} and \emph{multiplicative} group	of the skew brace $A$.
+\end{definition}
+
+\begin{fact}
+    Let $A$ be a skew brace. The following statements hold.
+        \begin{enumerate}
+            \item $1=0$, where $0$ denotes the identity of $(A,+)$ and by $1$ the identity of $(A,\circ)$.
+            \item $-(a\circ b) = - a + a\circ(- b) - a$, for all $a,b \in A$.
+        \end{enumerate}
+\end{fact}
+
+    \begin{fact}\label{prop:lambda}
+        Let $A$ be a skew brace. For each $a\in A$, the map 
+        \begin{align*}
+            \lambda_a:A\to A, b\mapsto -a + a \circ b
+        \end{align*}
+    is an automorphism of $(A,+)$. 
+    
+    Moreover, the map $\lambda: (A,\circ) \to \Aut(A,+), a \mapsto \lambda_a$, is a group homomorphism.
+    \end{fact}
+
+
+
+    \begin{fact}\label{prop:rho}
+        Let $A$ be a brace. For each $a\in A$, the map
+        \begin{align*}
+            \rho_b\colon A\to A,\quad
+            \mapsto (\lambda_a(b))'\circ a\circ b,
+        \end{align*}
+        is bijective. Moreover, the map 
+        $\rho\colon (A,\circ)\to\Sym(A)$, $b\mapsto\rho_b$, satisfies $\rho_c\rho_b=\rho_{b\circ c}$, for all $b,c\in A$. 
+    \end{fact}
+
+    \begin{definition}
+        An \emph{ideal} of a skew brace $A$ is a strong left ideal $I$ of $A$ such that    $(I,\circ)$ is a normal subgroup of $(A,\circ)$.
+    \end{definition}
 
 \subsection{Selection of problems}\mbox{ }
     
 It is possible to prove the isomorphism theorems for skew braces. (See Exercises~\ref{ex:thmiso1}--\ref{ex:thmiso4}).
 
-\begin{exercise}\label{ex:thmiso1}
+\begin{xca}
+     A map $f:A\to B$ between two skew braces $A$ and $B$ is a \emph{homomorphism} of skew braces if $f(a + b)= f(a) +f(b)$ and $f(a\circ b)= f(a)\circ f(b)$, for all $a,b\in A$.The \emph{kernel} of $f$ is
+    \begin{align*}
+        \ker f = \{a\in A\colon f(a)=0\}.
+    \end{align*}
+    
+    Let $f:A\to B$ be a homomorphism of two skew braces $A$ and $B$. 
+    Prove that $\ker f$ is an ideal of $A$.
+\end{xca}
+
+\begin{xca}\label{ex:thmiso1}
     Let $f : A\to B$ be a homomorphism of skew braces. Prove that $A/\ker f \cong f(A)$.
-\end{exercise}
+\end{xca}
 
-\begin{exercise}\label{ex:thmiso2}
+\begin{xca}\label{ex:thmiso2}
     Let $A$ be a skew brace and let $B$ be a subbrace of $A$. Prove that if $I$ is an ideal of $A$, then $B\circ I$ is a subbrace of $A$, $B\cap I$ is an ideal of $B$ and $(B\circ I)/I \cong B/(B\cap I)$.
-\end{exercise}
+\end{xca}
 
-\begin{exercise}\label{ex:thmiso3}
+\begin{xca}\label{ex:thmiso3}
     Let $A$ be a skew brace and $I$ and $J$ be ideals of $A$. Prove that if $I\subseteq J$, then $A/J\cong (A/I)/(J/I)$.
-\end{exercise}
+\end{xca}
 
-\begin{exercise}\label{ex:thmiso4}
+\begin{xca}\label{ex:thmiso4}
     Let $A$ be a skew brace and let $I$ be an ideal of $A$. Prove that there is a bijective correspondence between (left) ideals of $A$ containing $I$ and (left) ideals of $A/I$.
-\end{exercise}
+\end{xca}
 
-\begin{exercise}
+\begin{xca}
     Let $A$ be a skew brace and $I$ be a characteristic subgroup of the additive. Prove that $I$ is a left ideal of $A$.
-\end{exercise}
+\end{xca}
 
 Let us get some concrete examples of skew braces.
 
-\begin{exercise}
+\begin{xca}
     Let $p$ be a prime number and let  $A=\mathbb{Z}/(p^2)$ the ring of integers modulo $p^2$. Prove that $A$ with respect to the usual sum and the operation given by $x \circ y = x+y+pxy$ is a skew brace.
-\end{exercise}
+\end{xca}
 
-\begin{exercise}[The semidirect product]
+\begin{xca}[The semidirect product]
     Let $A,B$ be skew braces. 
     Let $\alpha: (B,\circ)\to\Aut(A,+,\circ)$ be a homomorphism of groups. 
     Define two operations on $A\times B$ by
@@ -42,9 +128,9 @@ Let us get some concrete examples of skew braces.
     for all $a,b\in A$ and $x,y\in B$. Prove that $(A\times B, +,\circ)$ is a skew brace. 
     
     This skew brace is the \emph{semidirect product} of the skew brace $A$ by $B$ via $\alpha$, and it is denoted by $A\rtimes_{\alpha}B$.
-\end{exercise}
+\end{xca}
 
-\begin{exercise}\label{ex:ef}
+\begin{xca}\label{ex:ef}
         Let $(A,+)$ be a group with an \emph{exact factorisation} through the subgroups $B$ and $C$ (i.e. $B$ and $C$ are subgroups of $A$ such that $B\cap C=\{ 0\}$ and $A=B+C$). 
         This means that each $x\in A$ can be written in a unique way as $x=x_B+x_C$, for some $x_B\in B$ and $x_C\in C$.
         Set
@@ -56,17 +142,17 @@ Let us get some concrete examples of skew braces.
             \item $(A,\circ)$ is a group isomorphic to $B\times C$, the direct product of $B$ and $C$.
             \item $(A,+,\circ)$ is a  skew brace.
         \end{enumerate}
-    \end{exercise}
+    \end{xca}
 
 \subsection{More exercises}\mbox{}
 
-\begin{exercise}\label{ex:taurtau}
+\begin{xca}\label{ex:taurtau}
     Let $(X,r)$ be a set-theoretic solution to the Yang--Baxter equation. Define for all $x,y \in X$
     \begin{align*}
         \bar{r}(x,y) = \tau r \tau (x,y) = (\rho_x(y),\lambda_y(x)).
     \end{align*}
     Then $(X,\bar{r})$ is a set-theoretic solution to the Yang--Baxter equation.
-\end{exercise}
+\end{xca}
 
 \index{Shelf}\index{Rack}
 A \emph{(right) shelf} is a pair $(X,\triangleleft)$ where $X$ is a non-empty set and $\triangleleft$ is a binary operation such that 
@@ -75,34 +161,34 @@ A \emph{(right) shelf} is a pair $(X,\triangleleft)$ where $X$ is a non-empty se
     \end{align*}
     If, in addition, the maps $\rho_y:X \to X, x \mapsto x\triangleleft y$ are bijective for all $y\in X$, then $(X,\triangleleft)$ is called a \emph{(right) rack}.
     
-\begin{exercise}\label{ex2}
+\begin{xca}\label{ex2}
      Let $X$ be a non-empty set.
      Let $\triangleleft: X\times X \to X$ be a binary operation and define $r: X\times X \to X\times X$ such that $r(x,y)= (y,x \triangleleft y)$. Then $r$ satisfies equation~\ref{eq:YBE} if and only if $(x\triangleleft y)\triangleleft z=(x\triangleleft z)\triangleleft(y\triangleleft z)$ holds for all $x,y,z \in X$. 
      Moreover, $r$ is bijective if and only if the maps $\rho_y:X\to X, x \mapsto x\triangleleft y$ are bijective.
-\end{exercise}
+\end{xca}
 
-\begin{exercise}
+\begin{xca}
     Let $G$ be a group. 
     Prove that $G$ with respect to the binary operation $\triangleleft$ defined by $x\triangleleft y =y^{-1}xy$ is a rack.
-\end{exercise}
+\end{xca}
 
-\begin{exercise}
+\begin{xca}
     Let $(X,r)$ be a solution. Define 
     \begin{align*}
         x\triangleleft y = \lambda_y\rho_{\lambda_x^{-1}(xy}(x).
     \end{align*}
     Prove that $(X,\triangleleft)$ is a shelf.
-\end{exercise}
+\end{xca}
 
 
-\begin{exercise}
+\begin{xca}
     Let $A$ be a skew brace. Prove that
     \begin{align*}
         \rho_b(a) = \lambda^{-1}_{\lambda_a(b)}(-(a\circ b) +a+a\circ b)
     \end{align*}
-\end{exercise}
+\end{xca}
 
-\begin{exercise}
+\begin{xca}
     Let $(A,+)$ be a (not necessarily abelian) group. 
     \begin{enumerate}
         \item Prove that a structure of skew brace over $A$ is equivalent to an operation $A\times A \to A$ $(a,b)\mapsto a\ast b$, such that
@@ -112,26 +198,26 @@ A \emph{(right) shelf} is a pair $(X,\triangleleft)$ where $X$ is a non-empty se
         holds for all $a,b,c \in A$ and the operation $a\circ b = a+ a\ast b + c$ turns $A$ into a group.
         \item Deduce that radical rings are examples of skew braces. 
         \end{enumerate}
-\end{exercise}
+\end{xca}
 
-\begin{exercise}
+\begin{xca}
     Let $A$ be a skew brace and $a\ast b = \lambda_a(b)-b = -a+a\circ b - b$. Prove the following identities:
     \begin{enumerate}
         \item $a\ast (b+c) = a\ast b + b +a\ast c -b$.
         \item $(a\circ b)\ast c = (a\ast(b\ast c)) + b\ast c + a\ast c$.
     \end{enumerate}
-\end{exercise}
+\end{xca}
 
-\begin{exercise}
+\begin{xca}
     Let $(A,+,\circ)$ be a triple, where $(A,+)$ and $(A,\circ)$ are groups, and $\lambda: A \to \Sym(A)$, $a\mapsto \lambda_a$ with $\lambda_a(b)=-a+a\circ b$. Prove that the following statements are equivalent:
     \begin{enumerate}
         \item $(A,+,\circ)$ is a skew brace.
         \item $\lambda_a\lambda_b(c)=\lambda_{a\circ b}(c)$, for all $a,b,c\in A$.
         \item $\lambda_a(b+c) = \lambda_a(b)+\lambda_a(c)$, for all $a,b,c\in A$.
     \end{enumerate}
-\end{exercise}
+\end{xca}
 
-\begin{exercise}\label{ex:sd}
+\begin{xca}\label{ex:sd}
     	Let $(A,+)$ and $(M,+)$ be groups and let $\alpha\colon A\to\Aut(M)$ be a
     	group homomorphism. Prove that $M\times A$ with 
     	\begin{align*}
@@ -145,29 +231,21 @@ A \emph{(right) shelf} is a pair $(X,\triangleleft)$ where $X$ is a non-empty se
         	(x,a)\circ (y,b)&=(x+y,b+a)
     	\end{align*}
     	is a skew brace. 
-    \end{exercise}
+    \end{xca}
 
     
 
 
-\begin{exercise}\label{ex:fix}
+\begin{xca}\label{ex:fix}
     Consider the semidirect product $A= \mathbb{Z}/(3) \rtimes \mathbb{Z}/(2)$ of the trivial
     skew braces $\mathbb{Z}/(3)$ and $\mathbb{Z}/(2)$ via the non-trivial action of $\mathbb{Z}/(2)$ over $\mathbb{Z}/(3)$.
-    Prove that $\Fix(B) $ is not an ideal of $A$.
-\end{exercise}
-
-\begin{exercise}
-     A map $f:A\to B$ between two skew braces $A$ and $B$ is a \emph{homomorphism} of skew braces if $f(a + b)= f(a) +f(b)$ and $f(a\circ b)= f(a)\circ f(b)$, for all $a,b\in A$.The \emph{kernel} of $f$ is
-    \begin{align*}
-        \ker f = \{a\in A\colon f(a)=0\}.
-    \end{align*}
     
-    Let $f:A\to B$ be a homomorphism of two skew braces $A$ and $B$. 
-    Prove that $\ker f$ is an ideal of $A$.
-\end{exercise}
+    Prove that $\Fix(A)=\{b \in B\colon \lambda_x(b)=b,\ \forall b\in A\}$ is not an ideal of $A$.
+\end{xca}
 
 
 
-\begin{exercise}
-    Let $A$ and $B$ be skew braces. Prove that $f :A \to B$ is a homomorphism of skew braces if and only if $f(a+b)= f(a)+f(b)$ and $f(\lambda_a(b))=\lambda_{f(a)}(f(b))$, for all $a,b\in B$.
-\end{exercise}
+
+
+
+\end{document}
