@@ -6,7 +6,7 @@ It first appeared in two independent papers of Yang \cite{Yang1967} and Baxter\
 \cite{Baxter1971}.
 
 \begin{definition}\index{Yang--Baxter equation}
-    A solution of the \emph{Yang--Baxter eqution} is a linear map  $R: V\otimes V \to V \otimes V$, where $V$ is a vector space such that
+    A solution of the \emph{Yang--Baxter equation} is a linear map  $R: V\otimes V \to V \otimes V$, where $V$ is a vector space such that
     \begin{align*}
         R_{12}R_{13}R_{23} = R_{23}R_{13}R_{12}
     \end{align*}
@@ -19,7 +19,7 @@ It first appeared in two independent papers of Yang \cite{Yang1967} and Baxter\
         \bar{R}_{12}\bar{R}_{23}\bar{R}_{12}=\bar{R}_{23}\bar{R}_{12}\bar{R}_{23}.
     \end{align*}
 
-    An interesting class of solutions of the Yang--Baxter equation arises when $V$ has a $R$-invariant basis $X$. In such a case the solution is said to be set-theoretic. 
+    An interesting class of solutions of the Yang--Baxter equation arises when $V$ has a $R$-invariant basis $X$. In this case, the solution is said to be set-theoretic. 
 
 \subsection{The set-theoretic version}
     Drinfeld in \cite{Dri1992} observed it makes sense to consider the Yang--Baxter equation in the category of sets and stated that 
@@ -98,9 +98,9 @@ It first appeared in two independent papers of Yang \cite{Yang1967} and Baxter\
         \end{enumerate}
     \end{examples}
 
-    If, on the set $X$, we have a bit more structure, we can define some more sophisticated solutions.
+    If we have a bit more structure on the set $X$, we can define more sophisticated solutions.
     \begin{example}
-        Let $G$ be a group and, let
+        Let $G$ be a group and let
         \begin{align*}
             r_1(x,y) &= (y, y^{-1}xy)\\
             r_2(x,y) &= (x^{2}y, y^{-1}x^{-1}y).
@@ -120,11 +120,11 @@ It first appeared in two independent papers of Yang \cite{Yang1967} and Baxter\
                 name prefix=braid,
             ] {braid={a_1}};
         \end{tikzpicture}
-        \caption{The map $r$ represented by a crossing and the identity as a straight line.}
+        \caption{The map $r$ is represented by a crossing and the identity as a straight line.}
         \label{fig:crossing}
     \end{figure}
 
-    Then the Yang--Baxter equation can be pictured as in Figure~\ref{fig:YangBaxter}.
+    Then, the Yang--Baxter equation can be pictured as in Figure~\ref{fig:YangBaxter}.
 
     \begin{figure}
         \centering
@@ -231,7 +231,7 @@ It first appeared in two independent papers of Yang \cite{Yang1967} and Baxter\
     In \cite{MR2278047}, Rump proved that radical rings provide examples of involutive solutions.
 
     \begin{definition}
-        A ring $(R,+,\cdot)$ is said to be \emph{radical} if $R$ with respect the binary operation $\circ$ defined by $x\circ y=x+y+xy$ is a group. We denote by $x'$ the inverse of $x$ with respect to $\circ$.  
+        A ring $(R,+,\cdot)$ is said to be \emph{radical} if $R$ with respect to the binary operation $\circ$ defined by $x\circ y=x+y+xy$ is a group. We denote by $x'$ the inverse of $x$ with respect to $\circ$.  
     \end{definition}
     
     \begin{definition}
@@ -284,7 +284,7 @@ It first appeared in two independent papers of Yang \cite{Yang1967} and Baxter\
          As for radical rings, we write $a'$ to denote the inverse of $a$ with respect to the circle operation $\circ$. 
     \end{convention}
         
-    Right left braces are defined similarly.
+    Right skew braces are defined similarly.
 
     \begin{definition}
          A \emph{skew right brace} is a triple $(A,+,\circ)$, where 
@@ -405,7 +405,7 @@ It first appeared in two independent papers of Yang \cite{Yang1967} and Baxter\
     \subsection{Skew braces and solutions}
     
     Now we can state the theorem that gives a first connection of skew braces with solutions. 
-    The following result has been proved by Guarnieri and Vendramin in \cite{MR3647970} extending an analogous result proved by Rump in \cite{MR2278047} for involutive solutions.  
+    Guarnieri and Vendramin have proved the following result in \cite{MR3647970} extending an analogous result proved by Rump in \cite{MR2278047} for involutive solutions.  
 
     \begin{theorem}
         Let $A$ be a skew brace. Then $(A,r_A)$, where 
@@ -489,7 +489,7 @@ It first appeared in two independent papers of Yang \cite{Yang1967} and Baxter\
 
     \begin{proof}
         We need to prove that $(I,\circ)$ is a subgroup of $(A,\circ)$. 
-        Clearly $I$ is non-empty, as it is an additive subgroup of $A$. 
+        Clearly, $I$ is non-empty, as it is an additive subgroup of $A$. 
         If $x,y\in I$, then 
         \begin{align*}
             x\circ y = x - x+ x\circ y = x+\lambda_x(y) \in I + I = I

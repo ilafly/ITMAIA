@@ -5,11 +5,11 @@
     \begin{definition}
         Let $(X,r)$ be a solution. The \emph{structure group} of $(X,r)$ is the group
         \begin{align*}
-            G(X,r)=\gr(X : xy=\lambda_x(y)\rho_y(x) \text{ for all }x,y\in X).
+            G(X,r)=\langle X : xy=\lambda_x(y)\rho_y(x) \text{ for all }x,y\in X\rangle.
         \end{align*}
         The \emph{derived structure group} of $(X,r)$ is the group
         \begin{align*} 
-            A(X,r)=\gr(X : x\lambda_x(y)=\lambda_x(y)\lambda_{\lambda_x(y)}\rho_y(x) \text{ for all }x,y\in X).
+            A(X,r)=\langle X : x\lambda_x(y)=\lambda_x(y)\lambda_{\lambda_x(y)}\rho_y(x) \text{ for all }x,y\in X\rangle.
         \end{align*}
     \end{definition}
 
@@ -45,7 +45,6 @@
 
     Let $(X,r)$ be a solution. Consider the structure group $G(X,r)$ of the solution $(X,r)$. Let $i\colon X\to G(X,r)$ be the natural map. 
 
-    \index{Solution!permutation group}
     The \emph{permutation group} of $(X,r)$ is the subgroup
     \[\mathcal{G}(X,r)=\langle (\lambda_x,\sigma^{-1}_x) : x\in X\rangle\subseteq\Sym_X\times\Sym_X.\]
     
@@ -57,29 +56,29 @@
     $h\colon G(X,r)\to \mathcal{G}(x,r)$ such that $hi(x)=(\lambda_x,\rho^{-1}_x)$ for all $x\in X$. We write
     \[ h(a)=(\lambda_a,\rho_a^{-1})\]
     for all $a\in G(X,r)$.
-    By Theorem~\ref{thm:structuregroup}, $G(X,r)$ has a unique structure of skew brace with multiplicative group the structure group $G(X,r)$ and $\lambda_{i(x)}(i(y))=i(\lambda_x(y))$ for all $x,y\in X$. One can prove that $\ker h$ is an ideal of the skew brace $G(X,r)$. This allows to give a skew brace strucure to the permution group.
+    By Theorem~\ref{thm:structuregroup}, $G(X,r)$ has a unique structure of skew brace with multiplicative group the structure group $G(X,r)$ and $\lambda_{i(x)}(i(y))=i(\lambda_x(y))$ for all $x,y\in X$. One can prove that $\ker h$ is an ideal of the skew brace $G(X,r)$. This allows to give a skew brace structure to the permutation group.
 
 \subsection{Simple solutions}
 
-Describing simple solution is a very hard and challenging task. A strategy to tackle such problem is to focus on ``building blocks'', such us indecomposable solutions and simple solutions. 
+Describing all solutions is a very difficult task. A strategy to tackle such a problem is to focus on ``building blocks'' such as indecomposable and simple solutions. 
 
 \begin{definition}
     A solution $(X,r)$ is said to be \emph{decomposable} if there exist $\emptyset \neq Y,Z \subseteq X$ such that $Y\cup Z = X$, $Y \cap Z = \emptyset$ and $r(Y\times Y)\subseteq Y\times Y$, $r(Z\times Z)\subseteq Z \times Z$. Otherwise, $(X,r)$ is said \emph{indecomposable}.
 \end{definition}
 
-It is not difficult to prove that a solution $(X,r)$ is indecomposable if the group $\langle \lambda_x, \rho_y \colon x, y \in \rangle$ acts transitivelly on $X$.
+It is not difficult to prove that a solution $(X,r)$ is indecomposable if the group $\langle \lambda_x, \rho_y \colon x, y \in \rangle$ acts transitively on $X$.
 
 \begin{definition}
-    A solution $(X,r)$ is said to be \emph{simple} if for any epimorphism of solutions $\varphi: (X,r) \to (Y,t)$, we have either $\varphi$ an isomorphis or $Y$ as singleton.
+    A solution $(X,r)$ is said to be \emph{simple} if for any epimorphism of solutions $\varphi: (X,r) \to (Y,t)$, we have either $\varphi$ an isomorphism or $Y$ a singleton.
 \end{definition}
 
-One can prove that a simple solution is in particular indecomposable. 
+One can prove that a simple solution is, in particular, indecomposable. 
 
-Cedó and Okniński in \cite{} proved that ome simple skew brace with additive structure abelian provide examples of (involutive) simple solutions. 
+Cedó and Okniński in \cite{MR4391683} proved that some simple skew braces with additive structure abelian provide examples of (involutive) simple solutions. 
 
-Joyce in 1982 studied simple racks and provided an algebraic characterisation of such racks. By Proposition~\ref{prop:rack}, a rack provide a solution and it is not difficult to see that simple racks are in particular examples of simple solutions. 
+Joyce, in 1982, studied simple racks and provided an algebraic characterisation of such racks. By Exercise~\ref{ex2}, a rack provides a solution, and it is not difficult to see that simple racks are, in particular, examples of simple solutions. 
 
-In join work with Jespers, Kubat and Van Antwerpen \cite{}, we obtain a brace theoretic classification of simple solutions. 
+In joint work with Jespers, Kubat, and Van Antwerpen \cite{colazzo2023simple}, we obtain a brace theoretic classification of simple solutions. 
 
 \begin{theorem}
     A simple solution $(X,r)$ is one of the following type:
@@ -97,19 +96,19 @@ Recall that a $(X,r)$ is a permutation solution if there exist $\lambda,\rho$ co
 We can give a combinatorial characterisation of simple permutation solutions.
 
 \begin{proposition}
-    A permutation solution $(X,r)$ is simple if and only if the caridnality of $X$ is a prime number $p$, the group $H=\langle\lambda,\rho\rangle$ is cyclic of order $p$.
+    A permutation solution $(X,r)$ is simple if and only if the cardinality of $X$ is a prime number $p$, the group $H=\langle\lambda,\rho\rangle$ is cyclic of order $p$.
 
     In particular, $(X,r)$ solution is isomorphic to $(\mathbb{Z}_p,t)$ such that $t(x,y)= (y+a,x+b)$ with $,a,b\in \mathbb{Z}$ and$(a,b)\neq (0,0)$.
 \end{proposition}
 
 \subsubsection{Simple quandle}
 
-The description of simple square-free derived solutions coiced with the description obtained by Joyce of simple quandles. 
+The description of simple square-free derived solutions coincides with the description obtained by Joyce of simple quandles. 
 
 \begin{proposition}
-    A square-free derived solution $(X,r)$ is simple if and only if $(X,r)$ embedd in a solution $(A,r)$ where $A$ is a finite group and $r(y, y^{-1}xy)$ such that
+    A square-free derived solution $(X,r)$ is simple if and only if $(X,r)$ embeds in a solution $(A,r)$ where $A$ is a finite group and $r(y, y^{-1}xy)$ such that
     \begin{itemize}
-        \item $X$ is a conjucacy class genereting $A$,
+        \item $X$ is a conjucacy class generating $A$,
         \item the derived subgroup $[A,A]$ is the smallest non-zero normal subgroup of $A$,
         \item the quotient group $A/[A,A]$ is a cyclic group,
         \item the center $Z(A)$ is trivial.
@@ -125,16 +124,16 @@ Let $(A,+,\circ)$ be a skew brace. In analogy with radical rings, we can associa
     $A^2$ is an ideal of $A$.
 \end{exercise}
 
-The ideal $A^2$ plays for skew braces a simplar role that the derived subgroup plays for groups. With this observation in mind, it might be not surpising the following proposition. 
+The ideal $A^2$ plays for skew braces a similar role as that the derived subgroup plays for groups. With this observation in mind, it might not be surprising the following proposition. 
 
 \begin{proposition}
-    A square-free solution $(X,r)$ which is not a derived solution nor a permutation solution is simple if and only if $(X,r)$ embedd in a solution asoociated to a non-trivial skew brace $(A,r_A)$ such that
+    A square-free solution $(X,r)$ which is not a derived solution nor a permutation solution is simple if and only if $(X,r)$ is embedded in a solution associated with a non-trivial skew brace $(A,r_A)$ such that
     \begin{itemize}
         \item $X$ generates additively $A$,
         \item the ideal $A^2$ is the smallest non-zero ideal of $A$,
-        \item the quotient skew brace $A/A^2$ is trivial skew brace with additive (and multiplicative) group cyclic,
+        \item the quotient skew brace $A/A^2$ is a trivial skew brace with additive (and multiplicative) group cyclic,
         \item the action of $A^2$ on $X$ is transitive.
     \end{itemize}
 \end{proposition}
 
-Let us explain what the last item means. Let $A$ be a skew brace, $X\subset A$ and $I$ an ideal of $A$. We say that $I$ \emph{acts} on $X$ if $X$ is invariant uder the action of the group $(I,+)\rtimes (I,\circ)$ (where the semidirect product is given by the $\lambda$-map).
+Let us explain what the last item means. Let $A$ be a skew brace, $X\subset A$ and $I$ an ideal of $A$. We say that $I$ \emph{acts} on $X$ if $X$ is invariant under the action of the group $(I,+)\rtimes (I,\circ)$ (where the $\ lambda$-map gives the semidirect product).
