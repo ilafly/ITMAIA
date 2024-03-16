@@ -5,34 +5,23 @@
     \begin{definition}
         Let $(X,r)$ be a solution. The \emph{structure group} of $(X,r)$ is the group
         \begin{align*}
-            G(X,r)=\langle X : xy=\lambda_x(y)\rho_y(x) \text{ for all }x,y\in X \rangle.
+            G(X,r)=\gr(X : xy=\lambda_x(y)\rho_y(x) \text{ for all }x,y\in X).
         \end{align*}
         The \emph{derived structure group} of $(X,r)$ is the group
         \begin{align*} 
-            A(X,r)=\langle X : x\lambda_x(y)=\lambda_x(y)\lambda_{\lambda_x(y)}\rho_y(x) \text{ for all }x,y\in X \rangle.
+            A(X,r)=\gr(X : x\lambda_x(y)=\lambda_x(y)\lambda_{\lambda_x(y)}\rho_y(x) \text{ for all }x,y\in X).
         \end{align*}
     \end{definition}
 
         
-    \begin{theorem}[\cite{MR1722951} or \cite{LYZ00}]\label{thm:structuregroup}
+    \begin{theorem}\label{thm:structuregroup}[\cite{MR1722951} or \cite{LYZ00}]
     Let $(X,r)$ be a solution.
-    Then, there exists a unique structure of skew brace with multiplicative group the structure group isomorphic to $G(X,r)$, additive strucutre isomorphic to $A(X,r)$ and such that $\lambda_{i(x)}(i(y))=i(\lambda_x(y))$ for all $x,y\in X$, where $\iota: X\to G(X,r), x\mapsto x$ is the canoical map. 
+    Then, there exists a unique structure of skew brace with multiplicative group the structure group isomorphic to $G(X,r)$, additive structure isomorphic to $A(X,r)$ and such that $\lambda_{i(x)}(i(y))=i(\lambda_x(y))$ for all $x,y\in X$, where $i: X\to G(X,r), x\mapsto x$ is the canonical map. 
     \end{theorem}
 
     \begin{proof}
         Omitted.
     \end{proof}
-
-    Note that the map $i$ in the previous theorem is not necessarily injective.
-
-    \begin{example}
-        Let $X=\{1,2,3,4\}$, $\lambda= (1\ 2)$ and $\rho=(3\ 4)$. Since $\lambda\rho=\rho\lambda$, we have that $r:X\times X\to X \times X$ defined by $r(x,y)=(\lambda(y),\rho(x))$ gives a solution. In $G(X,r)$ the elements $1$ and $2$ are identified and also $3$ and $4$. Indded in $G(X,r)$ we have 
-        \begin{align*}
-            1\circ 1 = \lambda(1)\circ \rho(1) = 2 \circ 1 \implies 1 = 2,\\
-            3\circ 3 = \lambda(3)\circ \rho(3) = 3 \circ 4 \implies 3=4.
-        \end{align*}
-        Therefore, $i$ is not injective. 
-    \end{example}
 
     The structure skew brace defined in the previous theorem satisfies the following universal property.
     
@@ -54,21 +43,21 @@
 
     \subsection{The permutation group of a solution}
 
-    If $(X,r)$ is a finite solution we can consider a finite quotient (as skew brace) of the strucure group that governs important property of such solution. 
-
     Let $(X,r)$ be a solution. Consider the structure group $G(X,r)$ of the solution $(X,r)$. Let $i\colon X\to G(X,r)$ be the natural map. 
 
     \index{Solution!permutation group}
     The \emph{permutation group} of $(X,r)$ is the subgroup
-\[\mathcal{G}(X,r)=\langle (\lambda_x,\rho^{-1}_x) : x\in X\rangle\subseteq\Sym_X\times\Sym_X.\]
-Since 
-\[ \lambda_x\lambda_y=\lambda_{\lambda_x(y)}\lambda_{\rho_y(x)}\quad\text{and}\quad \rho^{-1}_x\rho^{-1}_y=\rho^{-1}_{\lambda_x(y)}\rho^{-1}_{\rho_y(x)} \]
-for all $x,y\in X$, there exists a unique group homomorphism
-$h\colon G(X,r)\to \mathcal{G}(x,r)$ such that $hi(x)=(\lambda_x,\rho^{-1}_x)$ for all $x\in X$. We write $h(a)=(\lambda_a,\rho_a^{-1})$,
-for all $a\in G(X,r)$.
-By Theorem~\ref{thm:structuregroup}, $G(X,r)$ has a unique structure of skew brace with multiplicative group the structure group $G(X,r)$ and $\lambda_{i(x)}(i(y))=i(\lambda_x(y))$ for all $x,y\in X$. One can prove that $\ker h$ is an ideal of the skew brace $G(X,r)$. Hence, $\mathcal{G}(X,r)$ inherits a skew brace structure form $G(X,r)$.
-
-Given a skew brace $(A,+,\circ)$ with $(A,+)$ abelian, Bachiller, Cedó and Jespers in \cite{} provided a method to recostruct all (involutive) solutions such that $\mathcal{G}(X,r)$ is isomorphic as skew brace to $A$. In \cite{}, Bchiller generalised this construction dropping the assumption $(A,+)$ abelian.
+    \[\mathcal{G}(X,r)=\langle (\lambda_x,\sigma^{-1}_x) : x\in X\rangle\subseteq\Sym_X\times\Sym_X.\]
+    
+    Since 
+    \begin{align*}
+        \lambda_x\lambda_y=\lambda_{\lambda_x(y)}\lambda_{\rho_y(x)}\quad\text{and}\quad \rho^{-1}_x\rho^{-1}_y=\rho^{-1}_{\lambda_x(y)}\rho^{-1}_{\rho_y(x)}
+    \end{align*}
+    for all $x,y\in X$, there exists a unique group homomorphism
+    $h\colon G(X,r)\to \mathcal{G}(x,r)$ such that $hi(x)=(\lambda_x,\rho^{-1}_x)$ for all $x\in X$. We write
+    \[ h(a)=(\lambda_a,\rho_a^{-1})\]
+    for all $a\in G(X,r)$.
+    By Theorem~\ref{thm:structuregroup}, $G(X,r)$ has a unique structure of skew brace with multiplicative group the structure group $G(X,r)$ and $\lambda_{i(x)}(i(y))=i(\lambda_x(y))$ for all $x,y\in X$. One can prove that $\ker h$ is an ideal of the skew brace $G(X,r)$. This allows to give a skew brace strucure to the permution group.
 
 \subsection{Simple solutions}
 

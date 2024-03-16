@@ -305,18 +305,7 @@ It first appeared in two independent papers of Yang \cite{Yang1967} and Baxter\
         From now on, with the term skew brace, we will always mean a skew left brace.
     \end{convention}
 
-    \begin{examples}
-        Let $(A,+)$ be a group. 
-        \begin{enumerate}
-            \item Then $A$ is a skew brace with
-            $a\circ b=a+b$ for all $a,b\in A$. Such a skew brace is called a \emph{trival skew brace}.
-            \item Similarly, the operation $a\circ b=b+a$ turns $A$ into a skew brace. Such a skew brace is called an \emph{almost trivial skew brace}. 
-        \end{enumerate}
-    \end{examples}
-
-    \subsection{First examples}
-
-    \begin{example}
+        \begin{example}
         Let $(A,+)$ be a group. Then $A$ is a skew brace with
             $a\circ b=a+b$ for all $a,b\in A$. Such a skew brace is called a \emph{trivial skew brace}.
     \end{example}
@@ -324,45 +313,6 @@ It first appeared in two independent papers of Yang \cite{Yang1967} and Baxter\
     \begin{example}
           Let $(A,+)$ be a group. The operation $a\circ b=b+a$ turns $A$ into a skew brace. Such a skew brace is called an \emph{almost trivial skew brace}. 
     \end{example}
-
-    \begin{definition}
-        Let $A$ and $B$ be skew braces. Then $A\times B$ with 
-    	\begin{align*}
-    		(a,b)+(a_1,b_1)&=(a+a_1,b+b_1),\\
-    		(a,b)\circ (a_1,b_1)&=(a\circ a_1,b\circ b_1),
-    	\end{align*}
-    	is a skew brace. This is the \emph{direct product} of the skew braces $A$ and $B$. 
-    \end{definition}
-    
-    \begin{exercise}\label{ex:sd}
-    	Let $(A,+)$ and $(M,+)$ be groups and let $\alpha\colon A\to\Aut(M)$ be a
-    	group homomorphism. Prove that $M\times A$ with 
-    	\begin{align*}
-        	(x,a)+(y,b)&=(x+y,a+b),
-        	\\
-        	(x,a)\circ (y,b)&=(x+\alpha_a(y),a+b)
-    	\end{align*}
-    	is a skew brace. Similarly, prove that $M\times A$ with
-    	\begin{align*}
-        	(x,a)+(y,b)&=(x+\alpha_a(y),a+b),\\
-        	(x,a)\circ (y,b)&=(x+y,b+a)
-    	\end{align*}
-    	is a skew brace. 
-    \end{exercise}
-
-    \begin{exercise}\label{ex:ef}
-        Let $(A,+)$ be a group with an \emph{exact factorisation} through the subgroups $B$ and $C$ (i.e. $B$ and $C$ are subgroups of $A$ such that $B\cap C=\{ 0\}$ and $A=B+C$). 
-        This means that each $x\in A$ can be written in a unique way as $x=x_B+x_C$, for some $x_B\in B$ and $x_C\in C$.
-        Set
-        \begin{align*}
-		    x\circ y&=x_B+y+x_C.
-	    \end{align*}
-        Prove that
-        \begin{enumerate}
-            \item $(A,\circ)$ is a group isomorphic to $B\times C$, the direct product of $B$ and $C$.
-            \item $(A,+,\circ)$ is a  skew brace.
-        \end{enumerate}
-    \end{exercise}
 
     
     \subsection{Basic properties of skew braces}
