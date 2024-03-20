@@ -83,20 +83,20 @@ In joint work with Jespers, Kubat, and Van Antwerpen \cite{colazzo2023simple}, w
 \begin{theorem}
     A simple solution $(X,r)$ is one of the following type:
     \begin{enumerate}
-        \item $(X,r)$ is a simple permutation solution,
+        \item $(X,r)$ is a simple permutational solution,
         \item $(X,r)$ is a simple square-free\footnote{A solution $(X,r)$ is square-free if $r(x,x)=(x,x)$ for every $x\in X$.} derived solution (i.e. it is a simple quandle\footnote{A rack $(X,\triangleleft)$ is a quandle if $x\triangleleft x = x$, for every $x\in X$.}),
-        \item $(X,r)$ is a simple solution embedded in a solution associated to a finite skew brace. 
+        \item $(X,r)$ is a simple solution embedded in a solution associated with a finite skew brace. 
     \end{enumerate}
 \end{theorem}
 
-\subsubsection{Simple permutation solution}
+\subsubsection{Simple permutational solution}
 
-Recall that a $(X,r)$ is a permutation solution if there exist $\lambda,\rho$ commuting permutations such that $r(x,y)=(\lambda(y),\rho(x))$.
+Recall that a $(X,r)$ is a permutational solution if there exist $\lambda,\rho$ commuting permutations such that $r(x,y)=(\lambda(y),\rho(x))$.
 
-We can give a combinatorial characterisation of simple permutation solutions.
+We can give a combinatorial characterisation of simple permutational solutions.
 
 \begin{proposition}
-    A permutation solution $(X,r)$ is simple if and only if the cardinality of $X$ is a prime number $p$, the group $H=\langle\lambda,\rho\rangle$ is cyclic of order $p$.
+    A permutational solution $(X,r)$ is simple if and only if the cardinality of $X$ is a prime number $p$, the group $H=\langle\lambda,\rho\rangle$ is cyclic of order $p$.
 
     In particular, $(X,r)$ solution is isomorphic to $(\mathbb{Z}_p,t)$ such that $t(x,y)= (y+a,x+b)$ with $,a,b\in \mathbb{Z}$ and$(a,b)\neq (0,0)$.
 \end{proposition}
@@ -115,7 +115,7 @@ The description of simple square-free derived solutions coincides with the descr
     \end{itemize}
 \end{proposition}
 
-\subsubsection{Simple solutions embedded in solutions associated to finite skew braces}
+\subsubsection{Simple solutions embedded in solutions associated with finite skew braces}
 
 Let $(A,+,\circ)$ be a skew brace. In analogy with radical rings, we can associate to $A$ another binary operation $\ast:A\times A\to A$ such that $a\ast b = -a+a\circ b +b$, for every $a,b\in A$.
 
@@ -124,10 +124,10 @@ Let $(A,+,\circ)$ be a skew brace. In analogy with radical rings, we can associa
     $A^2$ is an ideal of $A$.
 \end{exercise}
 
-The ideal $A^2$ plays for skew braces a similar role as that the derived subgroup plays for groups. With this observation in mind, it might not be surprising the following proposition. 
+The ideal $A^2$ plays for skew braces, a similar role as that the derived subgroup plays for groups. With this observation in mind, the following proposition might not be surprising. 
 
 \begin{proposition}
-    A square-free solution $(X,r)$ which is not a derived solution nor a permutation solution is simple if and only if $(X,r)$ is embedded in a solution associated with a non-trivial skew brace $(A,r_A)$ such that
+    A square-free solution $(X,r)$, which is not a derived solution nor a permutational solution, is simple if and only if $(X,r)$ is embedded in a solution associated with a non-trivial skew brace $(A,r_A)$ such that
     \begin{itemize}
         \item $X$ generates additively $A$,
         \item the ideal $A^2$ is the smallest non-zero ideal of $A$,
