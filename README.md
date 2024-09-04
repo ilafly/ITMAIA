@@ -1,3 +1,6 @@
+# Skew braces and solutions to the Yang–Baxter equation
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.13683377.svg)](https://doi.org/10.5281/zenodo.13683377)
+
 ## Ilaria Colazzo
 
 The notes correspond to the series of lectures on Skew braces and solutions to the Yang–Baxter
